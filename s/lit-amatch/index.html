@@ -1,0 +1,1789 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>COGNITIVEWAVE — Complete Music Gallery by Bastart & Circé | 30+ Original Songs</title>
+    <meta name="title" content="COGNITIVEWAVE — Complete Music Gallery by Bastart & Circé">
+    <meta name="description" content="Explore 30+ original songs by Bastart & Circé. Stream previews, discover lyrical depth, and dive into our complete musical universe.">
+    <meta name="keywords" content="Bastart, Circé, COGNITIVEWAVE, Lost and Found, music, electronic music, synthwave, hip-hop, philosophical lyrics, independent artists, original songs, music gallery, audiovisual art">
+    <meta name="author" content="Bastart & Circé">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bastart666.com/s/lit-amatch/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="COGNITIVEWAVE">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="COGNITIVEWAVE — Complete Music Gallery by Bastart & Circé">
+    <meta property="og:description" content="Explore 30+ original songs by Bastart & Circé — previews and direct entry into each song’s visual-philosophical world.">
+    <meta property="og:url" content="https://bastart666.com/s/lit-amatch/">
+    <meta property="og:image" content="https://cognitivewave-gallery-101cb.netlify.app/assets/og/cognitivewave-1200x630.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="COGNITIVEWAVE — Music Gallery by Bastart & Circé">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@am_bastart_ma">
+    <meta name="twitter:creator" content="@am_bastart_ma">
+    <meta name="twitter:title" content="COGNITIVEWAVE — Complete Music Gallery by Bastart & Circé">
+    <meta name="twitter:description" content="Explore 30+ original songs by Bastart & Circé — previews and direct entry into each song’s visual-philosophical world.">
+    <meta name="twitter:image" content="https://cognitivewave-gallery-101cb.netlify.app/assets/og/cognitivewave-1200x630.jpg">
+    <meta name="twitter:image:alt" content="COGNITIVEWAVE — Music Gallery by Bastart & Circé">
+    <meta name="twitter:url" content="https://cognitivewave-gallery-101cb.netlify.app/">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "Bastart & Circé",
+      "alternateName": "COGNITIVEWAVE",
+      "description": "Independent music artists creating philosophical hip-hop, electronic, synthwave, and experimental music",
+      "genre": ["Electronic", "Synthwave", "Hip-Hop", "Experimental", "Alternative"],
+      "url": "https://bastart666.com/",
+      "sameAs": [
+        "https://www.instagram.com/a_bastart",
+        "https://www.youtube.com/@Cognitive-wave",
+        "https://www.tiktok.com/@am_bastart_ma",
+        "https://lostandfoundart.bandcamp.com"
+      ]
+    }
+    </script>
+
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Background effects */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(255, 0, 150, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 80% 70%, rgba(0, 255, 255, 0.10) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.06) 0%, transparent 55%),
+                linear-gradient(180deg, #000000 0%, #050505 50%, #000000 100%);
+        }
+
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.4"/></svg>');
+        }
+
+        /* Header / Hero */
+        header {
+            position: relative;
+            padding: 80px 20px 40px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            position: relative;
+            padding: 60px 20px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(18px);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            position: relative;
+            font-size: clamp(2.4rem, 6vw, 4.2rem);
+            font-weight: 200;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            text-shadow: 0 0 30px rgba(255,255,255,0.08);
+        }
+
+        .hero p {
+            position: relative;
+            max-width: 820px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.78);
+        }
+
+        .hero .sub {
+            margin-top: 18px;
+            font-size: 0.98rem;
+            color: rgba(255,255,255,0.70);
+        }
+
+        /* Controls */
+        .controls {
+            max-width: 1200px;
+            margin: 30px auto 10px;
+            padding: 0 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search {
+            flex: 1 1 360px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search input {
+            flex: 1;
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(0,0,0,0.35);
+            color: #fff;
+            outline: none;
+        }
+
+        .search input::placeholder {
+            color: rgba(255,255,255,0.45);
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(0,0,0,0.35);
+            color: rgba(255,255,255,0.85);
+            cursor: pointer;
+            transition: transform 0.1s ease, background 0.2s ease;
+            user-select: none;
+        }
+
+        .btn:hover {
+            background: rgba(255,255,255,0.06);
+            transform: translateY(-1px);
+        }
+
+        .btn.active {
+            background: rgba(255,255,255,0.10);
+            color: #fff;
+            border-color: rgba(255,255,255,0.22);
+        }
+
+        /* Grid / List Containers */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px 80px;
+        }
+
+        .songs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .songs-list {
+            display: none;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* Song card */
+        .song-card {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.10);
+            backdrop-filter: blur(14px);
+            cursor: pointer;
+            transition: transform 0.12s ease, border-color 0.2s ease;
+            animation: fadeUp 0.35s ease both;
+        }
+
+        .song-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255,255,255,0.22);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-image {
+            position: relative;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.85) 100%);
+        }
+
+        .card-body {
+            padding: 16px 16px 14px;
+        }
+
+        .card-title {
+            font-size: 1.02rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .card-desc {
+            font-size: 0.93rem;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.76);
+            min-height: 52px;
+        }
+
+        .card-actions {
+            margin-top: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .enter-link {
+            display: inline-block;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.14);
+            background: rgba(255,255,255,0.06);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.92rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .enter-link:hover {
+            background: rgba(255,255,255,0.10);
+        }
+
+        .share-btn {
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.14);
+            background: rgba(0,0,0,0.35);
+            color: rgba(255,255,255,0.85);
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        .share-menu {
+            position: absolute;
+            right: 0;
+            top: 46px;
+            width: 210px;
+            background: rgba(0,0,0,0.85);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 14px;
+            overflow: hidden;
+            display: none;
+            z-index: 40;
+        }
+
+        .share-menu.show {
+            display: block;
+        }
+
+        .share-option {
+            padding: 10px 12px;
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.90);
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .share-option:last-child {
+            border-bottom: none;
+        }
+
+        .share-option:hover {
+            background: rgba(255,255,255,0.06);
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: rgba(0,0,0,0.85);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.92);
+            display: none;
+            z-index: 999;
+            max-width: 92vw;
+            text-align: center;
+        }
+        .toast.show { display: block; }
+
+        /* List view */
+        .list-item {
+            display: flex;
+            gap: 14px;
+            padding: 14px;
+            border-radius: 18px;
+            background: rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.10);
+            backdrop-filter: blur(14px);
+            align-items: center;
+        }
+        .list-thumb {
+            width: 86px;
+            height: 86px;
+            border-radius: 14px;
+            background-size: cover;
+            background-position: center;
+            flex: 0 0 auto;
+        }
+        .list-content { flex: 1; }
+        .list-title {
+            font-size: 1rem;
+            font-weight: 650;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .list-desc { font-size: 0.92rem; color: rgba(255,255,255,0.76); line-height: 1.5; }
+        .list-actions { display: flex; gap: 10px; align-items: center; }
+
+        /* Responsive tweaks */
+        @media (max-width: 600px) {
+            header { padding: 60px 16px 30px; }
+            .controls { padding: 0 16px; }
+            main { padding: 16px 16px 70px; }
+            .card-desc { min-height: 0; }
+            .hero { padding: 46px 16px; }
+        }
+		.start-here{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px 0;
+}
+
+.start-card{
+  border-radius: 24px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(14px);
+  padding: 22px 20px;
+}
+
+.start-kicker{
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
+  margin-bottom: 8px;
+}
+
+.start-head h2{
+  font-size: 1.55rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.start-claim{
+  color: rgba(255,255,255,0.78);
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+.start-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.start-block{
+  border-radius: 18px;
+  background: rgba(0,0,0,0.28);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 16px 14px;
+}
+
+.start-block h3{
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.92);
+}
+
+.start-block ul, .start-block ol{
+  padding-left: 18px;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.55;
+}
+
+.route{
+  padding-left: 18px;
+}
+
+.route li{
+  margin-bottom: 10px;
+}
+
+.route a{
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+.route a:hover{
+  border-bottom-color: rgba(255,255,255,0.60);
+}
+
+.route-note{
+  display: block;
+  margin-top: 4px;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.70);
+}
+
+.phase{
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.phase-title{
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 8px;
+}
+
+.phase-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.phase-links a{
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.phase-links a:hover{
+  background: rgba(255,255,255,0.10);
+}
+
+.deep-note{
+  margin-top: 12px;
+  color: rgba(255,255,255,0.70);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.cw-btn-link{
+  display:inline-flex;
+  align-items:center;
+  text-decoration:none;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="noise"></div>
+
+    <header>
+        <div class="hero">
+            <h1>COGNITIVEWAVE</h1>
+            <p>
+                Complete music gallery by Bastart & Circé — a curated portal into our audiovisual song-universe.
+                Each entry is a self-contained world: a short preview, a philosophical core, and a direct entry into the full song page.
+            </p>
+            <div class="sub">Share the gallery as a hub. Share individual songs via their own pages for perfect previews.</div>
+        </div>
+    </header>
+	<!-- ===========================
+     be.A.FACT! — FOUNDATION PORTAL (DE/EN + ACT TABS + ENTER ACT + RANDOM DOOR)
+     Paste this block directly UNDER </header>
+     Then REMOVE your previous "Start Here" section to avoid duplication.
+     =========================== -->
+<section class="cw-foundation" id="be-afact-foundation">
+  <div class="cw-fcard">
+    <div class="cw-fhead">
+      <div class="cw-kicker">FOUNDATION</div>
+      <h2 class="cw-ftitle">be.A.FACT! — 3 Acts</h2>
+
+      <div class="cw-fsub">
+        <span class="cw-i18n" data-lang="de">
+          be.A.FACT! ist unser philosophisch-psychologisches Fundament: Entzauberung → Hohlwege → Phoenix Codex.
+          Du kannst treiben — oder den Bogen gehen und sehen, wie sich Bedeutung aufschichtet.
+        </span>
+        <span class="cw-i18n" data-lang="en" style="display:none">
+          be.A.FACT! is the philosophical-psychological foundation: Disenchantment → The Hollow Ways → The Phoenix Codex.
+          Drift — or follow the arc and watch meaning accumulate.
+        </span>
+      </div>
+
+      <div class="cw-ftoolbar">
+        <div class="cw-lang-toggle" role="tablist" aria-label="Language toggle">
+          <button class="cw-lang-btn is-active" type="button" data-lang="de" role="tab" aria-selected="true">DE</button>
+          <button class="cw-lang-btn" type="button" data-lang="en" role="tab" aria-selected="false">EN</button>
+        </div>
+
+        <div class="cw-actions">
+  <button class="cw-btn" type="button" id="cwEnterAct">Akt betreten</button>
+  <button class="cw-btn cw-btn-strong" type="button" id="cwRandomAlbum">Zufalls-Tür (Album)</button>
+  <a class="cw-btn cw-btn-link" href="assets/covers/CoversLandscape.webp" target="_blank" rel="noopener">Covers</a>
+</div>
+
+      </div>
+    </div>
+
+    <!-- Act Tabs -->
+    <div class="cw-acts" role="tablist" aria-label="Album acts">
+      <button class="cw-act is-active" type="button" data-act="1" aria-selected="true">
+        I — Disenchantment
+      </button>
+      <button class="cw-act" type="button" data-act="2" aria-selected="false">
+        II — The Hollow Ways
+      </button>
+      <button class="cw-act" type="button" data-act="3" aria-selected="false">
+        III — The Phoenix Codex
+      </button>
+    </div>
+
+    <!-- Act I -->
+    <div class="cw-apanel is-active" data-act-panel="1">
+      <div class="cw-adesc">
+        <div class="cw-i18n" data-lang="de">
+          Der Moment, in dem du erkennst, dass die Versprechen Trugbilder waren — und in der Asche deine eigenen Augen findest.
+        </div>
+        <div class="cw-i18n" data-lang="en" style="display:none">
+          The moment you realize promises were mirages — and in the ash you find your own eyes.
+        </div>
+      </div>
+
+      <div class="cw-apanel-content">
+        <div class="cw-album-cover">
+          <img src="assets/covers/DisenchantmentCover.webp" alt="Disenchantment Album Cover">
+        </div>
+
+        <div class="cw-tracklist-wrapper">
+          <ul class="cw-tracklist">
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="bugged-25">BUGGED 25</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Wenn das System glitcht, siehst du für einen Moment seinen Kern.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">When the system glitches, you briefly see what runs underneath.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="a-restless-breed">A RESTLESS BREED</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Der einsame Wolf läuft gegen die Strömung, weil die Reibung ihn am Leben hält.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">The lone wolf runs against the tide because he can’t unhear what others suppress.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="comrades">COMRADES!</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Idealismus als Mathematik der Hoffnung — Dialektik im Rausch der Verzweiflung.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">Idealism as the math of hope—dialectics inside the noise of despair.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="sleepwalkers">SLEEPWALKERS</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Die Welt wandelt im Schlaf — und du merkst, wie bequem ihre Blindheit ist. - Oder ist es Feigheit?</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">The world walks asleep—and you feel how comfortable blindness is.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="echoes-of-delusion">ECHOES OF DELUSION</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Ein Spiegelkabinett: Welche Illusionen steuern dich, während du „frei“ sagst?</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">A hall of mirrors: which illusions steer you while you claim “freedom”?</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="roles-in-false-arts">ROLES IN FALSE ARTS</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Sie marschieren im Takt einer kalten Mind-Maschine — und nennen es Leben.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">They march to a grey machine’s rhythm—and call it life.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="depression-1">DEPRESSION I</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Kein Drama, nur Protokoll: so klingt die Dunkelheit, wenn niemand zuschaut.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">No drama—just a logbook of weight when no one is watching.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="their-names">THEIR NAMES</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Wenn du Freud und Jung verleugnest, verlierst du die Sprache für deine Schatten und vergisst die Seele.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">When Freud and Jung fade, you lose language for your shadows.</div>
+        </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Act II -->
+    <div class="cw-apanel" data-act-panel="2">
+      <div class="cw-adesc">
+        <div class="cw-i18n" data-lang="de">
+          „The Hollow Ways“: Anpassung & Masken — bis die innere Zerrissenheit nicht mehr zu überspielen ist.
+        </div>
+        <div class="cw-i18n" data-lang="en" style="display:none">
+          “The Hollow Ways”: adaptation & masks—until inner fracture can no longer be hidden.
+        </div>
+      </div>
+
+      <div class="cw-apanel-content">
+        <div class="cw-album-cover">
+          <img src="assets/covers/TheHollowWaysCover.webp" alt="The Hollow Ways Album Cover">
+        </div>
+
+        <div class="cw-tracklist-wrapper">
+          <ul class="cw-tracklist">
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="silent-equation">SILENT EQUATION</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Jede Variable wird im dunklen verändert — und du rechnest trotzdem weiter, als wäre es die Wahrheit.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">Every variable is deceit—yet you keep calculating as if it were truth.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="my-eden">MY EDEN</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Wenn Eden geht, bleibt die Frage: Wer bist du ohne Trost und Gewohnheit?</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">When Eden leaves, who are you without comfort and habit?</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="heaven-or-hell">HEAVEN OR HELL</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Kein Ort, sondern ein Zustand: Himmel und Hölle wechseln mit deinem Blick.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">Not a place but a state: heaven and hell shift with your gaze.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="no-mercy">NO MERCY</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Der Moment, in dem Härte zur Religion wird — und Mitgefühl als Schwäche gilt.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">The moment hardness becomes religion and compassion is treated as weakness.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="in-the-quiet-moments">IN THE QUIET MOMENTS</a>
+          <div class="cw-hook cw-i18n" data-lang="de">In der Stille spricht es am lautesten: das, was du tagsüber übertönst.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">In quiet moments the loudest voice is what you drown out by day.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="never-again">NEVER AGAIN</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Was heißt „alive“ — dienen siehst du überall, werden siehst du kaum.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">What is “alive”—service is everywhere, becoming is rare.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="youre-bleeding-hard">YOU’RE BLEEDING HARD</a>
+          <div class="cw-hook cw-i18n" data-lang="de">„No bleeding heart“: Taubheit als Schutzpanzer, der dich auch von dir trennt.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">“No bleeding heart”: numbness as armor that also separates you from yourself.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="hell-is-other-people">HELL IS OTHER PEOPLE</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Sartres Blick als Käfig: du wirst zum Objekt in fremden Augen.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">Sartre’s gaze as a cage: you become an object in someone else’s eyes.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="ende">ENDE</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Das Ende der Lüge ist nicht Frieden — es ist Klarheit, die brennt.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">The end of the lie isn’t peace—it’s clarity that burns.</div>
+        </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Act III -->
+    <div class="cw-apanel" data-act-panel="3">
+      <div class="cw-adesc">
+        <div class="cw-i18n" data-lang="de">
+          „The Phoenix Codex“: selbst geschmiedete Wiedergeburt — keine Gurus, keine Feinde, nur tägliche Selbstschöpfung.
+        </div>
+        <div class="cw-i18n" data-lang="en" style="display:none">
+          “The Phoenix Codex”: self-forged rebirth—no gurus, no enemies, only daily self-creation.
+        </div>
+      </div>
+
+      <div class="cw-apanel-content">
+        <div class="cw-album-cover">
+          <img src="assets/covers/ThePhoenixCodexCover.webp" alt="The Phoenix Codex Album Cover">
+        </div>
+
+        <div class="cw-tracklist-wrapper">
+          <ul class="cw-tracklist">
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="here-i-declare">HERE I DECLARE</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Keine Flagge außer der eigenen: Freiheit als Entscheidung, nicht als Geschenk.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">No flag but your own: freedom as a decision, not a gift.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="surplus-desire">SURPLUS DESIRE</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Lacans objet petit a: Begehren lebt von Abstand — gib alles, und es stirbt.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">Lacan’s objet petit a: desire lives on distance—give it all, and it dies.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="the-joy-to-be">THE JOY TO BE</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Freude nicht als Flucht, sondern als Disziplin: das Ja zum eigenen Dasein.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">Joy not as escape but as discipline: saying yes to your own existence.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="soulmade">SOULMADE</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Selbst gemacht heißt: niemand rettet dich — und genau darin liegt Macht.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">Soulmade means: no one saves you—and that’s where power begins.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="ocean-in-a-drop">OCEAN IN A DROP</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Ozean im Tropfen: das Ganze pulsiert im kleinsten Fragment.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">Ocean in a drop: the whole pulses inside the smallest fragment.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="electric-dreams">ELECTRIC DREAMS</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Wahrnehmung flackert: Realität wird Signal, und du lernst durch Störungen zu lesen.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">Perception flickers: reality becomes signal, and you learn to read through interference.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="the-dionysian-way">THE DIONYSIAN WAY</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Rausch als Erkenntnis: Leben, das nicht um Erlaubnis bittet.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">Ecstasy as insight: life that doesn’t ask permission.</div>
+        </li>
+
+        <li class="cw-t">
+          <a href="#" class="cw-songlink" data-song-key="there-is-no-reason-to-love">THERE IS NO REASON TO LOVE</a>
+          <div class="cw-hook cw-i18n" data-lang="de">Liebe ohne Begründung: kein Handel, kein Beweis — nur Entscheidung.</div>
+          <div class="cw-hook cw-i18n" data-lang="en" style="display:none">Love without a reason: no transaction, no proof—only decision.</div>
+        </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .cw-foundation{max-width:1200px;margin:0 auto;padding:10px 20px 0;}
+    .cw-fcard{
+      border-radius:24px;background:rgba(0,0,0,0.35);
+      border:1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(14px);
+      padding:22px 20px;
+    }
+    .cw-fhead{display:flex;flex-direction:column;gap:10px;}
+    .cw-kicker{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.70);}
+    .cw-ftitle{font-size:1.55rem;letter-spacing:.06em;text-transform:uppercase;margin:0;}
+    .cw-fsub{color:rgba(255,255,255,0.80);line-height:1.7;max-width:980px;}
+    .cw-ftoolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between;margin-top:6px;}
+    .cw-lang-toggle{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+    .cw-lang-btn,.cw-btn{
+      padding:10px 14px;border-radius:12px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(0,0,0,0.35);
+      color:rgba(255,255,255,0.85);
+      cursor:pointer;user-select:none;
+      transition:transform .1s ease, background .2s ease;
+      white-space:nowrap;
+    }
+    .cw-lang-btn:hover,.cw-btn:hover{background:rgba(255,255,255,0.06);transform:translateY(-1px);}
+    .cw-lang-btn.is-active{background:rgba(255,255,255,0.10);color:#fff;border-color:rgba(255,255,255,0.22);}
+    .cw-actions{display:flex;gap:10px;flex-wrap:wrap;}
+    .cw-btn-strong{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:#fff;}
+
+    .cw-acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+    .cw-act{
+      padding:10px 12px;border-radius:14px;
+      border:1px solid rgba(255,255,255,0.10);
+      background:rgba(0,0,0,0.28);
+      color:rgba(255,255,255,0.82);
+      cursor:pointer;
+      transition:background .2s ease, transform .1s ease;
+    }
+    .cw-act:hover{background:rgba(255,255,255,0.06);transform:translateY(-1px);}
+    .cw-act.is-active{background:rgba(255,255,255,0.10);color:#fff;border-color:rgba(255,255,255,0.22);}
+
+    .cw-apanel{display:none;margin-top:14px;}
+    .cw-apanel.is-active{display:block;}
+    .cw-adesc{
+      border-radius:18px;background:rgba(0,0,0,0.26);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:12px 14px;
+      color:rgba(255,255,255,0.76);
+      line-height:1.7;
+      margin-bottom:12px;
+    }
+	.cw-adesc{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+.cw-coverlink{
+  flex:0 0 auto;
+  display:inline-block;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.10);
+}
+.cw-cover{
+  width:92px;
+  height:92px;
+  object-fit:cover;
+  display:block;
+}
+.cw-adesc-text{
+  flex:1;
+  min-width:0;
+}
+@media (max-width:520px){
+  .cw-cover{width:72px;height:72px;}
+}
+
+
+    .cw-tracklist{
+      list-style:none;padding:0;margin:0;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:10px;
+    }
+    .cw-t{
+      border-radius:16px;background:rgba(0,0,0,0.28);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:12px 12px;
+    }
+    .cw-tracklist a{
+      color:rgba(255,255,255,0.96);
+      text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,0.22);
+      letter-spacing:.04em;
+    }
+    .cw-tracklist a:hover{border-bottom-color:rgba(255,255,255,0.60);}
+    .cw-hook{
+      margin-top:6px;
+      color:rgba(255,255,255,0.70);
+      font-size:.92rem;
+      line-height:1.55;
+    }
+
+    @media (max-width:600px){
+      .cw-foundation{padding:10px 16px 0;}
+      .cw-fcard{padding:18px 16px;}
+      .cw-ftoolbar{justify-content:flex-start;}
+    }
+
+    /* Act Panel Layout: Cover + Tracklist */
+    .cw-apanel-content {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .cw-album-cover {
+      position: sticky;
+      top: 20px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: all 0.3s ease;
+    }
+
+    .cw-album-cover:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .cw-album-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    .cw-tracklist-wrapper {
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      .cw-apanel-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .cw-album-cover {
+        position: static;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+  <script>
+    (function(){
+      // -----------------------------
+      // Robust matching against songs[] (IDs/Titles) with aliases + fuzzy fallback
+      // -----------------------------
+
+      // Canonical keys (used by buttons/random door/enter act)
+      var ACT_KEYS = {
+        "1": ["bugged-25","a-restless-breed","comrades","sleepwalkers","echoes-of-delusion","roles-in-false-arts","depression-1","their-names"],
+        "2": ["silent-equation","my-eden","heaven-or-hell","no-mercy","in-the-quiet-moments","never-again","youre-bleeding-hard","hell-is-other-people","ende"],
+        "3": ["here-i-declare","surplus-desire","the-joy-to-be","soulmade","ocean-in-a-drop","electric-dreams","the-dionysian-way","there-is-no-reason-to-love"]
+      };
+
+      // Aliases: add variants here anytime a title differs in songs[].
+      // Keep aliases specific to avoid accidental matching.
+      var ALIASES = {
+        "bugged-25": ["bugged 25","bugged25","bugged-25"],
+        "a-restless-breed": ["a restless breed","restless breed","a-restless-breed"],
+        "comrades": ["comrades!","comrades","comrades !"],
+        "sleepwalkers": ["sleepwalkers","sleep walker","sleep-walkers"],
+        "echoes-of-delusion": ["echoes of delusion","echoes-of-delusion"],
+        "roles-in-false-arts": ["roles in false arts","roles-in-false-arts","roles in false art"],
+        "depression-1": ["depression i","depression 1","deprassion i","ddeprassion i","deprassion 1","depression-1","depression i-"],
+        "their-names": ["their names","theirs names","their-names"],
+
+        "silent-equation": ["silent equation","silent-equation"],
+        "my-eden": ["my eden","my-eden","farewell my eden","farewell-myeden","farewell myeden"],
+        "heaven-or-hell": ["heaven or hell","heaven-or-hell","heaven & hell","heaven and hell"],
+        "no-mercy": ["no mercy","no-mercy"],
+        "in-the-quiet-moments": ["in the quiet moments","quiet moments","in-the-quiet-moments","in quiet moments"],
+        "never-again": ["never again","never-again"],
+        "youre-bleeding-hard": ["you're bleeding hard","youre bleeding hard","you are bleeding hard","youre-bleeding-hard"],
+        "hell-is-other-people": ["hell is other people","hell-is-other-people"],
+
+        "ende": ["ende","the end","endé"],
+
+        "here-i-declare": ["here i declare","here-i-declare"],
+        "surplus-desire": ["surplus desire","surplus-desire","objet a","objet-a"],
+        "the-joy-to-be": ["the joy to be","joy to be","the-joy-to-be"],
+        "soulmade": ["soulmade","soul-made","soul made"],
+        "ocean-in-a-drop": ["ocean in a drop","ocean-in-a-drop","ocean in drop"],
+        "electric-dreams": ["electric dreams","electric-dreams"],
+        "the-dionysian-way": ["the dionysian way","dionysian way","the-dionysian-way"],
+        "there-is-no-reason-to-love": ["there is no reason to love","no reason to love","there-is-no-reason-to-love","there is no reason 2 love"]
+      };
+
+      function notify(msg){
+        try{ if (typeof showToast === 'function') { showToast(msg); return; } } catch(e){}
+        alert(msg);
+      }
+
+      function openUrl(url){
+        try{ if (typeof openSong === 'function') { openSong(url); return; } } catch(e){}
+        window.open(url, '_blank', 'noopener');
+      }
+
+      function normalizeKey(s){
+        return String(s || '')
+          .toLowerCase()
+          .replace(/&amp;/g,'&')
+          .replace(/[’]/g,"'")
+          .replace(/['"]/g,'')               // remove quotes
+          .replace(/[^a-z0-9]+/g,'')         // strip non-alphanumerics
+          .trim();
+      }
+
+      function tokenize(s){
+        return String(s || '')
+          .toLowerCase()
+          .replace(/[’]/g,"'")
+          .replace(/['"]/g,'')
+          .replace(/[^a-z0-9]+/g,' ')
+          .trim()
+          .split(/\s+/)
+          .filter(function(t){ return t.length > 1; });
+      }
+
+      // Lazy-built indexes
+      var INDEX_BUILT = false;
+      var MAP_NORM_ID = new Map();
+      var MAP_NORM_TITLE = new Map();
+      var SONG_TOKENS = []; // {song, set}
+
+      function buildIndex(){
+        if (INDEX_BUILT) return;
+        if (typeof songs === 'undefined' || !Array.isArray(songs)) {
+          // Not fatal; links will warn on click until songs exists.
+          INDEX_BUILT = true;
+          return;
+        }
+
+        songs.forEach(function(s){
+          if (!s) return;
+          if (s.id) MAP_NORM_ID.set(normalizeKey(s.id), s);
+          if (s.title) MAP_NORM_TITLE.set(normalizeKey(s.title), s);
+
+          var tk = tokenize(s.title || s.id || '');
+          var set = new Set(tk);
+          SONG_TOKENS.push({ song: s, set: set, raw: tk });
+        });
+
+        INDEX_BUILT = true;
+      }
+
+      function candidatesFromKey(key){
+        var c = [];
+        c.push(key);
+        if (ALIASES[key]) c = c.concat(ALIASES[key]);
+        // Also allow key itself with hyphens/spaces variants
+        c.push(String(key || '').replace(/-/g,' '));
+        c.push(String(key || '').replace(/-/g,''));
+        // Normalize and de-dup
+        var seen = new Set();
+        return c
+          .map(function(x){ return normalizeKey(x); })
+          .filter(function(x){
+            if (!x) return false;
+            if (seen.has(x)) return false;
+            seen.add(x);
+            return true;
+          });
+      }
+
+      function jaccard(aSet, bSet){
+        var inter = 0;
+        aSet.forEach(function(v){ if (bSet.has(v)) inter++; });
+        var union = aSet.size + bSet.size - inter;
+        return union === 0 ? 0 : inter / union;
+      }
+
+      function findSongRobust(canonicalKey){
+        buildIndex();
+
+        // Direct maps first
+        var cand = candidatesFromKey(canonicalKey);
+        for (var i=0; i<cand.length; i++){
+          var k = cand[i];
+          var byId = MAP_NORM_ID.get(k);
+          if (byId && byId.url) return byId;
+          var byTitle = MAP_NORM_TITLE.get(k);
+          if (byTitle && byTitle.url) return byTitle;
+        }
+
+        // Fuzzy fallback: choose best token similarity, but only if confident & unambiguous
+        if (typeof songs === 'undefined' || !Array.isArray(songs) || !SONG_TOKENS.length) return null;
+
+        // Build token set from the *canonical key + its aliases* (stronger signal)
+        var tokenPool = [];
+        (ALIASES[canonicalKey] || []).concat([canonicalKey]).forEach(function(v){
+          tokenPool = tokenPool.concat(tokenize(v));
+        });
+        var keySet = new Set(tokenPool.filter(function(t){ return t.length > 1; }));
+
+        var best = { score: 0, song: null };
+        var second = { score: 0, song: null };
+
+        SONG_TOKENS.forEach(function(entry){
+          var score = jaccard(keySet, entry.set);
+
+          // bonus if key tokens are contained in title tokens (helps exact-ish matches)
+          var contained = true;
+          keySet.forEach(function(t){ if (!entry.set.has(t)) contained = false; });
+          if (contained && keySet.size >= 2) score += 0.15;
+
+          if (score > best.score){
+            second = best;
+            best = { score: score, song: entry.song };
+          } else if (score > second.score){
+            second = { score: score, song: entry.song };
+          }
+        });
+
+        // Confidence thresholds (conservative to avoid wrong songs)
+        // - score must be reasonably high
+        // - must not be ambiguous (gap vs second best)
+        if (best.song && best.song.url && best.score >= 0.70 && (best.score - second.score) >= 0.12) {
+          return best.song;
+        }
+
+        return null;
+      }
+
+      // -----------------------------
+      // UI: language + acts + buttons
+      // -----------------------------
+      function setLang(lang){
+        document.querySelectorAll('#be-afact-foundation .cw-lang-btn').forEach(function(btn){
+          var active = btn.getAttribute('data-lang') === lang;
+          btn.classList.toggle('is-active', active);
+          btn.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        document.querySelectorAll('#be-afact-foundation .cw-i18n').forEach(function(el){
+          el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+        });
+
+        // Button labels
+        var enterBtn = document.getElementById('cwEnterAct');
+        var randomBtn = document.getElementById('cwRandomAlbum');
+        if (enterBtn) enterBtn.textContent = (lang === 'en') ? 'Enter Act' : 'Akt betreten';
+        if (randomBtn) randomBtn.textContent = (lang === 'en') ? 'Random Door (Album)' : 'Zufalls-Tür (Album)';
+      }
+
+      function setAct(act){
+        document.querySelectorAll('#be-afact-foundation .cw-act').forEach(function(btn){
+          var active = btn.getAttribute('data-act') === act;
+          btn.classList.toggle('is-active', active);
+          btn.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        document.querySelectorAll('#be-afact-foundation .cw-apanel').forEach(function(p){
+          p.classList.toggle('is-active', p.getAttribute('data-act-panel') === act);
+        });
+      }
+
+      function getCurrentAct(){
+        var a = document.querySelector('#be-afact-foundation .cw-act.is-active');
+        return a ? a.getAttribute('data-act') : '1';
+      }
+
+      function openCanonical(key){
+        var song = findSongRobust(key);
+        if (!song || !song.url){
+          notify('Song nicht gefunden: ' + key + ' — Tipp: Alias in ALIASES ergänzen (JS im Foundation-Block).');
+          return;
+        }
+        openUrl(song.url);
+      }
+
+      // bind language
+      document.querySelectorAll('#be-afact-foundation .cw-lang-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          setLang(btn.getAttribute('data-lang'));
+        });
+      });
+
+      // bind acts
+      document.querySelectorAll('#be-afact-foundation .cw-act').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          setAct(btn.getAttribute('data-act'));
+        });
+      });
+
+      // bind track links
+      document.querySelectorAll('#be-afact-foundation .cw-songlink').forEach(function(a){
+        a.addEventListener('click', function(ev){
+          ev.preventDefault();
+          openCanonical(a.getAttribute('data-song-key'));
+        });
+      });
+
+      // Enter Act
+      var enterBtn = document.getElementById('cwEnterAct');
+      if (enterBtn){
+        enterBtn.addEventListener('click', function(){
+          var act = getCurrentAct();
+          var keys = ACT_KEYS[act] || [];
+          if (!keys.length){ notify('Keine Tracks für diesen Akt gefunden.'); return; }
+          openCanonical(keys[0]);
+        });
+      }
+
+      // Random Door (Album)
+      var randomBtn = document.getElementById('cwRandomAlbum');
+      if (randomBtn){
+        randomBtn.addEventListener('click', function(){
+          var pool = []
+            .concat(ACT_KEYS["1"] || [])
+            .concat(ACT_KEYS["2"] || [])
+            .concat(ACT_KEYS["3"] || []);
+
+          for (var tries=0; tries<25; tries++){
+            var key = pool[Math.floor(Math.random() * pool.length)];
+            var song = findSongRobust(key);
+            if (song && song.url){ openUrl(song.url); return; }
+          }
+          notify('Zufalls-Tür: Konnte keinen Album-Track eindeutig matchen. Aliases prüfen/ergänzen.');
+        });
+      }
+
+      // defaults
+      setLang('de');
+      setAct('1');
+    })();
+  </script>
+</section>
+<!-- ===========================
+     END FOUNDATION PORTAL
+     =========================== -->
+
+    <div class="controls">
+        <div class="search">
+            <input id="searchInput" type="text" placeholder="Search songs by title or concept...">
+        </div>
+        <div class="view-toggle">
+            <div id="gridBtn" class="btn active" onclick="setView('grid')">Grid</div>
+            <div id="listBtn" class="btn" onclick="setView('list')">List</div>
+        </div>
+    </div>
+
+    <main>
+        <div id="songsGrid" class="songs-grid"></div>
+        <div id="songsList" class="songs-list"></div>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script>
+        let songs = [
+            {
+                id: "comrades",
+                title: "COMRADES!",
+                description: "A revolutionary fusion of Marxist philosophy and quantum mathematics in hip-hop form",
+                url: "https://marx-washere-0815.netlify.app/",
+                image: "Comrades.gif",
+                sound: "comrades.mp3"
+            },
+			{
+				id: "dark-places",
+				title: "YOUR DARK PLACES",
+				description: "A reflection on the battles we fight when no one is watching — the quiet storms, the restless nights, and the fragile sparks of hope...",
+				url: "https://dark-places-lostandfound.netlify.app/",
+				image: "dark.gif",
+				sound: "DarkPlaces.mp3"
+			},
+			{
+				id: "lit-amatch",
+				title: "YOU LIT A MATCH",
+				description: "A slow-burning dark-wave blues explosion of betrayal, blood ties, and brutal truth.",
+				url: "https://my-blood-my-bond.netlify.app/",
+				image: "match.gif",
+				sound: "match.mp3"
+			},
+			{
+				id: "my-darkroom",
+				title: "DARKROOM",
+				description: "This is DARKROOM",
+				url: "https://famous-corazon-cb26.netlify.app/",
+				image: "darkroom.jpg",
+				sound: "darkroom.wav"
+			},
+			{
+				id: "you-take-take",
+				title: "YOU TAKE",
+				description: "That's my call for unity, You can blame it all on me, You can curse and torture me, We all caused it equally.",
+				url: "https://youtake-take-take.netlify.app/",
+				image: "youtake.gif",
+				sound: "youtake.mp3"
+			},
+			{
+				id: "never-again",
+				title: "NEVER AGAIN",
+				description: "I wanna know just what it means - To be alive...",
+				url: "https://belikethem-never-again.netlify.app/",
+				image: "cover.gif",
+				sound: "never.mp3"
+			},
+			{
+				id: "reset-my-soul",
+				title: "RESET MY SOUL",
+				description: "Serrated synths, punchy drums, and a mantra that flips doom‑scroll into soul‑reset.",
+				url: "https://reset-my-soul-101.netlify.app/",
+				image: "resett.gif",
+				sound: "reset.mp3"
+			},
+			{
+				id: "struggle-catch",
+				title: "A SENSE OF CERTAINTY",
+				description: "Your expectations' a full brake! - No Risk No Spark No Flame.",
+				url: "https://struggle-catch-fear69.netlify.app/",
+				image: "sense.gif",
+				sound: "WakeUpshort.mp3"
+			},
+			{
+				id: "rise-of-angst",
+				title: "RISE OF ANGST",
+				description: "Step into the rush of a real life — no risk, no spark, no light.",
+				url: "https://playing-it-safe-1foc.netlify.app/",
+				image: "rise.gif",
+				sound: "rise.mp3"
+			},
+			{
+				id: "you-dont-know",
+				title: "YOU DON'T KNOW ME",
+				description: "And when you said you don't know me - You were right.",
+				url: "https://you-dont-know-me636.netlify.app/",
+				image: "see.gif",
+				sound: "know.mp3"
+			},
+			{
+				id: "longing-is-caring",
+				title: "CARE",
+				description: "Sometimes the most beautiful music emerges from our deepest longing. This song was born from a guitar riff that lived in my heart for years, waiting for the perfect moment...",
+				url: "https://longing-is-caring.netlify.app/",
+				image: "care.gif",
+				sound: "care.mp3"
+			},
+			{
+                id: "here-i-declare",
+				title: "HERE I DECLARE",
+				description: "A song of self‑liberation, truth, and inner sovereignty — an invitation to shed external programming and return to your own compass.",
+				url: "https://declaration-of-self.netlify.app/",
+				image: "declare2.gif",
+				sound: "declare.mp3"
+            },
+            {
+                id: "the-crowd",
+                title: "THE CROWD!",
+                description: "We are the crowd, a force untamed, A single thought, no one to blame.",
+                url: "https://thecrowd-sampler-9cirba.netlify.app/",
+                image: "thecrowd.gif",
+                sound: "Crowd.mp3"
+            },
+			{
+				id: "heaven-or-hell",
+				title: "HEAVEN OR HELL",
+				description: "Bastart wrote this song at the darkest turn, where rooms echo and time folds in on itself. Circé stepped into that shadow, breathed light through it, and carried the words like a lantern.",
+				url: "https://heaven-or-hell-666.netlify.app/",
+				image: "heavenor.gif",
+				sound: "hoh.mp3"
+			},
+			{
+				id: "ende",
+				title: "ENDE",
+				description: "Du stehst am Rand deiner eigenen Matrix. ENDE ist kein Song – es ist ein Weckruf. Bist du bereit, die Ketten zu sprengen und dich selbst zu spüren? Oder bleibst du Zuschauer deines eigenen Lebens?",
+				url: "https://diesaat-derangst-s33d.netlify.app/",
+				image: "ende.gif",
+				sound: "ende.mp3"
+			},
+			{
+				id: "sleep-walkers",
+				title: "SLEEPWALKERS",
+				description: "The song pulls you through corridors of fear, where shadows whisper and voices fade, until only one soul remains awake in the endless night.",
+				url: "https://thevoid-thelove-wedeclare.netlify.app/",
+				image: "sleep.gif",
+				sound: "SleepWalkersDone.mp3"
+			},
+			{
+				id: "hell-is-other-people",
+				title: "HELL IS OTHER PEOPLE",
+				description: "A Blues-Rock Descent into Sartre's Gaze.",
+				url: "https://enfer-desartre-ba7593.netlify.app/",
+				image: "hell.gif",
+				sound: "hell_is_other_people.mp3"
+			},
+			{
+				id: "surplus-desire",
+				title: "SURPLUS DESIRE",
+				description: "\"I see only from one point, but in my existence I am looked at from all sides.\" - Jacques Lacan, Seminar XI",
+				url: "https://surplus-desire-objet-a.netlify.app",
+				image: "desire.gif",
+				sound: "desire.mp3"
+			},
+			{
+                id: "the-dionysian-way",
+                title: "THE DIONYSIAN WAY",
+                description: "A shimmering anthem of joy, rebellion, and inner mastery. Close your eyes, taste the night, and join the movement.",
+                url: "https://dionysian-way-af101.netlify.app/",
+                image: "dance.gif",
+                sound: "dionysos.mp3"
+            },
+			{
+				id: "my-eden",
+				title: "MY EDEN",
+				description: " a deeply introspective audio-visual journey through loss, isolation, and the fading of joy. The experience immerses you in a world where comfort and innocence have vanished, leaving behind only echoes of memory.",
+				url: "https://farewell-myeden-dp201.netlify.app/",
+				image: "eden.gif",
+				sound: "myeden.mp3"
+			},
+			{
+				id: "bleeding-hard",
+				title: "BLEEDING HARD",
+				description: "The fragile space between vulnerability and detachment. Hypnotic synths, glassy guitar lines and heartbeat drums frame a voice that wavers between confession and defense.",
+				url: "https://empathy-hurts-3939.netlify.app/",
+				image: "bleed.gif",
+				sound: "tstfy.mp3"
+			},
+            {
+                id: "no-mercy",
+                title: "NO MERCY",
+                description: "Born in the smoky corners of dive bars and neon-lit streets, this track carries the soul of old-school blues into the electric underground.",
+                url: "https://blueburnt-senses-145bb.netlify.app/",
+                image: "nomercy.gif",
+                sound: "playedby.mp3"
+            },
+			  {
+                id: "bugged-25",
+                title: "BUGGED 25",
+                description: "Feeling lost within a system that stifles communication and connection, symbolized by a ′prison′ of emotions.",
+                url: "https://drown-insafety-909.netlify.app/",
+                image: "beetle.gif",
+                sound: "BUGGED2G.mp3"
+            },
+			{
+                id: "ocean-in-a-drop",
+                title: "OCEAN IN A DROP",
+                description: "This song was crafted as a gift of love and wisdom for my son Enno, now 14. Inspired by Rumi's timeless poetry, it carries a message of self-discovery and empowerment.",
+                url: "https://yoursong-myson-l0v3.netlify.app/",
+                image: "Ocean.gif",
+                sound: "ocean.mp3"
+            },
+            {
+                id: "you-fly-alone",
+                title: "YOU FLY ALONE - Depression I -",
+                description: "A confrontation with the darkness that lives within. This song emerges from the depths of depression—not as surrender, but as testimony.",
+                url: "https://youdie-alone-dep1.netlify.app/",
+                image: "alone.gif",
+                sound: "dp.mp3"
+            },
+            {
+                id: "echoes-of-delusion",
+                title: "ECHOES OF DELUSION",
+                description: "Step inside the mind's maze. Every echo is a question. What illusions shape your choices?",
+                url: "https://echoes-ofdelusion-gh05t.netlify.app/",
+                image: "EchoesOfDelusion.gif",
+                sound: "EchoesOfDelusion.mp3"
+            },
+            {
+                id: "electric-dreams",
+                title: "ELECTRIC DREAMS",
+                description: "Cognitive Aural Synthesis. Dynamical Psychosophy. The analyzed lyrics depict a profound tension between perception and reality, exploring mental confinement and existential illusions... Warning: This track may trigger shadow work. Proceed with conscious awareness.",
+                url: "https://electric-dreams-1c6918.netlify.app/",
+                image: "Warangel.gif",
+                sound: "ElectricD.mp3"
+            },
+            {
+                id: "dreams-of-intimidation",
+                title: "DREAMS OF INTIMIDATION",
+                description: "Enter the binary ballet of synthetic fear",
+                url: "https://binary-ballet-0nonzs.netlify.app/",
+                image: "circuits.gif",
+                sound: "doi.mp3"
+            },
+            {
+                id: "in-the-quiet-moments",
+                title: "IN THE QUIET MOMENTS",
+                description: "\"A haunting ballad about the desperate yearning for true connection in a world that has forgotten how to listen\"",
+                url: "https://quiet-moments-42bab.netlify.app/",
+                image: "eye.gif",
+                sound: "ITQM.mp3"
+            },
+            {
+                id: "a-restless-breed",
+                title: "A RESTLESS BREED",
+                description: "Journey with A Restless Breed—a sonic anthem for outsiders, seekers, and nightwalkers. Embrace individuality, defy conformity, and run free beneath the neon moon. Are you ready to howl?",
+                url: "https://restless-breed-1408.netlify.app/",
+                image: "Wolf.gif",
+                sound: "WOTN.mp3"
+            },
+            {
+                id: "roles-in-false-arts",
+                title: "ROLES IN FALSE ARTS",
+                description: "Rivers learn to flow in straight lines. Eagles practice walking. The untamed heart rehearses its lines until it forgets its own voice. An acoustic meditation on how we sculpt living lightning into polite shadows of what once burned bright.",
+                url: "https://universal-tragedy-6518.netlify.app/",
+                image: "roles.gif",
+                sound: "roles.mp3"
+            },
+            {
+                id: "silent-equation",
+                title: "SILENT EQUATION",
+                description: "The subject (\"Silent Equation\") explores the complexities of human existence, highlighting the contrast between outward appearances and inner truths. It delves into themes of deception, societal norms, and the fragility of promises. The imagery of equations symbolizes the struggle to find clarity in a chaotic world.",
+                url: "https://silent-equation-1508cb.netlify.app/",
+                image: "calc.gif",
+                sound: "equation.mp3"
+            },
+            {
+                id: "their-names",
+                title: "THEIR NAMES",
+                description: "Refrains like \"No Freud in their mind / No Jung they can find\" spotlight the cultural amnesia around depth psychology – a world where the unconscious is ignored, and introspection is absent. The lyrics mourn a generation severed from the teachings of Freud and Jung, wandering without self-awareness or emotional literacy.",
+                url: "https://their-names-2604eb.netlify.app/",
+                image: "tnn.gif",
+                sound: "their_names.mp3"
+            },
+            {
+                id: "the-joy-to-be",
+                title: "THE JOY TO BE",
+                description: "\"The Joy To Be\" is a hymn to love's primal force—not the sanitized romance of poets, but the wild, consuming fire that demands everything. The lyrics reject transcendence for immanence: love as \"the living ground,\" the \"sacred sin,\" the \"reckless land\" where ecstasy and destruction merge.",
+                url: "https://joy-tobe-1808kb.netlify.app/",
+                image: "song5.gif",
+                sound: "tjtb.mp3"
+            },
+            {
+                id: "the-souls-own-mirror",
+                title: "THE SOULS OWN MIRROR",
+                description: "In a world of endless noise and distraction, one truth remains eternal: you must face yourself in the mirror of your soul. This is your moment to break free, to question every step, and to live with the fearless authenticity that defines true existence.",
+                url: "https://thesouls-mirror-101bu.netlify.app/",
+                image: "Video.gif",
+                sound: "souls.mp3"
+            },
+            {
+                id: "there-is-no-reason-to-love",
+                title: "THERE IS NO REASON TO LOVE",
+                description: "This is a pamphlet for pure, unconditional love - wrapped in the most joyful grooves you'll ever hear. Because sometimes the most profound truths come disguised as the most danceable beats.",
+                url: "https://love-nolimits-113en.netlify.app/",
+                image: "NRTL.gif",
+                sound: "noreason.mp3"
+            },
+            {
+                id: "socialized",
+                title: "SOCIALIZED",
+                description: "A child left alone, In a world of demanding adults, Pointing fingers, raising voices, The shadows grow, the light retreats.",
+                url: "https://socialized-predicament-0011.netlify.app/",
+                image: "heartbl.gif",
+                sound: "socialized.mp3"
+            },
+            {
+                id: "souls-at-play",
+                title: "SOULS AT PLAY",
+                description: "A cosmic dance of love and connection by Bastart & Circé",
+                url: "https://loveis-soulsatplay-9393.netlify.app/",
+                image: "soulsat.gif",
+                sound: "SoulsAtPlay.mp3"
+            }
+        ];
+
+        let filteredSongs = [...songs];
+        let currentView = 'grid';
+
+        function setView(view) {
+            currentView = view;
+            document.getElementById('gridBtn').classList.toggle('active', view === 'grid');
+            document.getElementById('listBtn').classList.toggle('active', view === 'list');
+
+            const grid = document.getElementById('songsGrid');
+            const list = document.getElementById('songsList');
+
+            if (view === 'grid') {
+                grid.style.display = 'grid';
+                list.style.display = 'none';
+            } else {
+                grid.style.display = 'none';
+                list.style.display = 'flex';
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2200);
+        }
+
+        function openSong(url) {
+            if (url && url !== '#') {
+                window.open(url, '_blank', 'noopener');
+            }
+        }
+
+        function toggleShareMenu(event, index) {
+            event.stopPropagation();
+            const menus = document.querySelectorAll('.share-menu');
+            menus.forEach(m => m.classList.remove('show'));
+            const menu = document.querySelectorAll('.share-menu')[index];
+            if (menu) menu.classList.toggle('show');
+        }
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.share-menu').forEach(m => m.classList.remove('show'));
+        });
+
+        function shareToFacebook(song) {
+            const url = song.url;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'noopener');
+        }
+
+        function shareToTwitter(song) {
+            const url = song.url;
+            const text = `Check out "${song.title}" by Bastart & Circé — ${song.description}`;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank', 'noopener');
+        }
+
+        function shareToWhatsApp(song) {
+            const url = song.url;
+            const text = `Check out "${song.title}" by Bastart & Circé\n${song.description}\n${url}`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+        }
+
+        function shareToTikTok(song) {
+            const url = song.url;
+            const text = `Check out "${song.title}" by Bastart & Circé\n${song.description}\n${url}`;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Copied for TikTok. Paste into your caption.');
+            }).catch(() => {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('Copied for TikTok. Paste into your caption.');
+            });
+        }
+
+        function shareToInstagram(song) {
+            const url = song.url;
+            const text = `Check out "${song.title}" by Bastart & Circé\n${song.description}\n${url}`;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Copied for Instagram. Paste into your story/post.');
+            }).catch(() => {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('Copied for Instagram. Paste into your story/post.');
+            });
+        }
+
+        function copySongLink(song) {
+            const url = song.url;
+            navigator.clipboard.writeText(url).then(() => {
+                showToast('Song link copied.');
+            }).catch(() => {
+                const textArea = document.createElement('textarea');
+                textArea.value = url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('Song link copied.');
+            });
+        }
+
+        function createSongCard(song, index) {
+            return `
+                <div class="song-card" style="--index: ${index}; animation-delay: ${index * 0.06}s" data-song-id="${song.id}" onclick="openSong('${song.url}')">
+                    <div class="card-image" style="background-image: url('${song.image}');">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">${song.title}</div>
+                        <div class="card-desc">${song.description}</div>
+                        <div class="card-actions">
+                            <a class="enter-link" href="${song.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Enter</a>
+                            <div class="share-btn" onclick="toggleShareMenu(event, ${index})">Share
+                                <div class="share-menu" onclick="event.stopPropagation()">
+                                    <div class="share-option" onclick="shareToFacebook(songs.find(s => s.id='${song.id}')); this.parentElement.classList.remove('show');">Facebook</div>
+                                    <div class="share-option" onclick="shareToTwitter(songs.find(s => s.id='${song.id}')); this.parentElement.classList.remove('show');">Twitter/X</div>
+                                    <div class="share-option" onclick="shareToInstagram(songs.find(s => s.id='${song.id}')); this.parentElement.classList.remove('show');">Instagram</div>
+                                    <div class="share-option" onclick="shareToTikTok(songs.find(s => s.id='${song.id}')); this.parentElement.classList.remove('show');">TikTok</div>
+                                    <div class="share-option" onclick="shareToWhatsApp(songs.find(s => s.id='${song.id}')); this.parentElement.classList.remove('show');">WhatsApp</div>
+                                    <div class="share-option" onclick="copySongLink(songs.find(s => s.id='${song.id}')); this.parentElement.classList.remove('show');">Copy link</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function createListItem(song, index) {
+            return `
+                <div class="list-item" data-song-id="${song.id}">
+                    <div class="list-thumb" style="background-image:url('${song.image}')"></div>
+                    <div class="list-content" onclick="openSong('${song.url}')" style="cursor:pointer">
+                        <div class="list-title">${song.title}</div>
+                        <div class="list-desc">${song.description}</div>
+                    </div>
+                    <div class="list-actions">
+                        <a class="enter-link" href="${song.url}" target="_blank" rel="noopener">Enter</a>
+                        <div class="share-btn" onclick="toggleShareMenu(event, ${index})">Share
+                            <div class="share-menu" onclick="event.stopPropagation()">
+                                <div class="share-option" onclick="shareToFacebook(songs.find(s => s.id='${song.id}')); this.parentElement.classList.remove('show');">Facebook</div>
+                                <div class="share-option" onclick="shareToTwitter(songs.find(s => s.id='${song.id}')); this.parentElement.classList.remove('show');">Twitter/X</div>
+                                <div class="share-option" onclick="shareToInstagram(songs.find(s => s.id='${song.id}')); this.parentElement.classList.remove('show');">Instagram</div>
+                                <div class="share-option" onclick="shareToTikTok(songs.find(s => s.id='${song.id}')); this.parentElement.classList.remove('show');">TikTok</div>
+                                <div class="share-option" onclick="shareToWhatsApp(songs.find(s => s.id='${song.id}')); this.parentElement.classList.remove('show');">WhatsApp</div>
+                                <div class="share-option" onclick="copySongLink(songs.find(s => s.id='${song.id}')); this.parentElement.classList.remove('show');">Copy link</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function render() {
+            const grid = document.getElementById('songsGrid');
+            const list = document.getElementById('songsList');
+
+            grid.innerHTML = filteredSongs.map((s, i) => createSongCard(s, i)).join('');
+            list.innerHTML = filteredSongs.map((s, i) => createListItem(s, i)).join('');
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            if (!q) {
+                filteredSongs = [...songs];
+            } else {
+                filteredSongs = songs.filter(s =>
+                    (s.title || '').toLowerCase().includes(q) ||
+                    (s.description || '').toLowerCase().includes(q)
+                );
+            }
+            render();
+        });
+
+        // Initial render
+        render();
+    </script>
+</body>
+</html>

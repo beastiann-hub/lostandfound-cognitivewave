@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- META-OG-START -->
+<title>SURPLUS DESIRE — Bastart &amp; Circé</title>
+<meta name="description" content="A sonic meditation on l&#x27;objet petit a—the unattainable object that structures all longing">
+
+<link rel="canonical" href="https://bastart666.com/s/surplus-desire/">
+
+<meta property="og:type" content="music.song">
+<meta property="og:site_name" content="Bastart & Circé">
+<meta property="og:title" content="SURPLUS DESIRE — Bastart &amp; Circé">
+<meta property="og:description" content="A sonic meditation on l&#x27;objet petit a—the unattainable object that structures all longing">
+<meta property="og:url" content="https://bastart666.com/s/surplus-desire/">
+<meta property="og:image" content="https://surplus-desire-objet-a.netlify.app/assets/og/desire.jpg">
+<meta property="og:image:alt" content="SURPLUS DESIRE — Bastart &amp; Circé">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SURPLUS DESIRE — Bastart &amp; Circé">
+<meta name="twitter:description" content="A sonic meditation on l&#x27;objet petit a—the unattainable object that structures all longing">
+<meta name="twitter:image" content="https://surplus-desire-objet-a.netlify.app/assets/og/desire.jpg">
+<meta name="twitter:url" content="https://surplus-desire-objet-a.netlify.app/">
+<!-- META-OG-END -->
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose-primary: #f43f5e;
+      --rose-secondary: #e11d48;
+      --amber-primary: #fbbf24;
+      --amber-secondary: #f59e0b;
+    }
+    
+    * { font-family: 'Inter', sans-serif; }
+    .serif { font-family: 'Playfair Display', serif; }
+    
+    @keyframes shimmer { 
+      0% { transform: translateX(-100%); } 
+      100% { transform: translateX(200%); } 
+    }
+    @keyframes wave { 
+      0% { transform: scaleY(0.3); } 
+      50% { transform: scaleY(1.2); } 
+      100% { transform: scaleY(0.3); } 
+    }
+    @keyframes float { 
+      0%, 100% { transform: translateY(0px) rotate(0deg); } 
+      50% { transform: translateY(-15px) rotate(180deg); } 
+    }
+    @keyframes orbit { 
+      0% { transform: rotate(0deg) translateX(60px) rotate(0deg); } 
+      100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); } 
+    }
+    @keyframes pulse-glow { 
+      0%, 100% { box-shadow: 0 0 20px rgba(244, 63, 94, 0.3); } 
+      50% { box-shadow: 0 0 40px rgba(244, 63, 94, 0.6), 0 0 60px rgba(251, 191, 36, 0.2); } 
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInFromLeft {
+      0% { opacity: 0; transform: translateX(-50px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    
+    .grain { 
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Cdefs%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1"/%3E%3C/filter%3E%3C/defs%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.1"/%3E%3C/svg%3E');
+      mix-blend-mode: soft-light; 
+      opacity: 0.15; 
+    }
+    
+    .btn { 
+      @apply rounded-xl px-6 py-3 text-sm font-medium transition-all duration-300 transform;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { 
+      @apply bg-gradient-to-r from-rose-600 to-rose-500 text-white;
+      box-shadow: 0 8px 25px rgba(244, 63, 94, 0.3);
+    }
+    .btn-primary:hover { 
+      box-shadow: 0 12px 35px rgba(244, 63, 94, 0.4);
+    }
+    .btn-outline { 
+      @apply border-2 border-zinc-600 text-zinc-200 bg-zinc-900/30 backdrop-blur-sm;
+    }
+    .btn-outline:hover { 
+      @apply border-rose-500 bg-rose-500/10;
+    }
+    
+    input[type="range"] { 
+      accent-color: var(--rose-primary);
+      @apply h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      @apply appearance-none w-4 h-4 bg-gradient-to-r from-rose-500 to-rose-400 rounded-full cursor-pointer;
+      box-shadow: 0 0 10px rgba(244, 63, 94, 0.5);
+    }
+    
+    .glass-card {
+      background: rgba(24, 24, 27, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(244, 63, 94, 0.1);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    }
+    
+    .desire-orb {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border: 2px solid rgba(244, 63, 94, 0.3);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .desire-orb:hover {
+      transform: scale(1.1);
+      border-color: rgba(244, 63, 94, 0.6);
+    }
+    .desire-object {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: radial-gradient(circle, var(--amber-primary), var(--amber-secondary));
+      border-radius: 50%;
+      animation: orbit 12s linear infinite;
+      box-shadow: 0 0 25px rgba(251, 191, 36, 0.7);
+    }
+    
+    .floating-element {
+      position: absolute;
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+      opacity: 0.6;
+    }
+    
+    .section-enter {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, var(--rose-primary), var(--amber-primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-bg {
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(244, 63, 94, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+    }
+    
+    .verse-block {
+      transition: all 0.3s ease;
+      border-left: 3px solid transparent;
+    }
+    .verse-block:hover {
+      border-left-color: var(--rose-primary);
+      background: rgba(244, 63, 94, 0.05);
+      transform: translateX(8px);
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--rose-primary), var(--amber-primary));
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+	   /* Gallery section */
+    .gallery-section {
+      margin: 4rem 0;
+    }
+
+    .gallery-section h2 {
+      font-family: 'Orbitron', monospace;
+      color: var(--accent-cyan);
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-shadow: 0 0 20px var(--glow-cyan);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      border-radius: 15px;
+      display: block;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(45deg, var(--accent-purple), var(--accent-pink));
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255, 0, 128, 0.3), rgba(0, 255, 255, 0.3));
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .gallery-item .gallery-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      color: var(--text-main);
+      font-family: 'Orbitron', monospace;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      z-index: 3;
+      position: absolute;
+      text-shadow: 0 0 10px var(--glow-cyan);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px var(--glow-pink);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item:hover::before {
+      background: linear-gradient(45deg, rgba(255, 0, 128, 0.1), rgba(0, 255, 255, 0.1));
+    }
+
+    .gallery-item:nth-child(even):hover {
+      box-shadow: 0 0 40px var(--glow-cyan);
+    }
+
+    /* Fallback styling if no image */
+    .gallery-item:not([data-has-image]) {
+      background: linear-gradient(45deg, var(--accent-purple), var(--accent-pink));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-item:not([data-has-image]) .gallery-label {
+      position: static;
+      background: none;
+      padding: 1rem;
+    }
+	/* Button Container */
+        .cognitivewave-nav {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        /* Main Button Styles */
+        .gallery-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover Effects */
+        .gallery-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
+        .gallery-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Icon Styles */
+        .gallery-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-button:hover .gallery-icon {
+            transform: translateX(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-button {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+            
+            .gallery-icon {
+                width: 16px;
+                height: 16px;
+            }
+        }
+	
+  </style>
+
+</head>
+<body class="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-rose-600/30 relative overflow-x-hidden">
+  
+  <!-- Navigation -->
+  <header class="fixed top-0 w-full z-50 glass-card border-b border-zinc-800/30">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-600 via-rose-500 to-amber-500 p-0.5">
+          <div class="w-full h-full rounded-full bg-zinc-950 flex items-center justify-center">
+            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-rose-500 to-amber-400"></div>
+          </div>
+        </div>
+        <div>
+          <h1 class="text-lg font-semibold tracking-wide text-gradient">SURPLUS DESIRE</h1>
+          <p class="text-xs text-zinc-500">L'objet petit a</p>
+        </div>
+		<div class="cognitivewave-nav">
+            <a href="https://cognitivewave-gallery-101cb.netlify.app" class="gallery-button">
+                <svg class="gallery-icon" viewBox="0 0 24 24">
+                    <path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"/>
+                </svg>
+                Back to Gallery
+            </a>
+        </div>
+      </div>
+      <div class="flex items-center gap-8 text-sm font-medium">
+        <a class="nav-link text-zinc-300 hover:text-rose-400" href="#experience">Experience</a>
+        <a class="nav-link text-zinc-300 hover:text-rose-400" href="#concept">Concept</a>
+        <a class="nav-link text-zinc-300 hover:text-rose-400" href="#verses">Verses</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center hero-bg">
+    <!-- Floating Elements -->
+    <div class="floating-element w-6 h-6 bg-gradient-to-r from-rose-500/30 to-transparent" style="top: 20%; left: 15%; animation-delay: 0s;"></div>
+    <div class="floating-element w-4 h-4 bg-gradient-to-r from-amber-400/40 to-transparent" style="top: 70%; right: 20%; animation-delay: 2s;"></div>
+    <div class="floating-element w-8 h-8 bg-gradient-to-r from-violet-500/20 to-transparent" style="top: 40%; right: 10%; animation-delay: 4s;"></div>
+    <div class="floating-element w-3 h-3 bg-gradient-to-r from-rose-400/50 to-transparent" style="top: 60%; left: 20%; animation-delay: 6s;"></div>
+
+    <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+      
+      <!-- Interactive Desire Orb -->
+      <div class="flex justify-center mb-12">
+        <div class="desire-orb" id="desireOrb">
+          <div class="desire-object" id="desireObject"></div>
+          <div class="absolute inset-4 border border-dashed border-rose-400/20 rounded-full"></div>
+          <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-rose-500/50 rounded-full transform -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+        </div>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="serif text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-tight">
+        SURPLUS
+        <br>
+        <span class="text-gradient font-medium">DESIRE</span>
+      </h1>
+      
+      <!-- Subtitle -->
+      <div class="max-w-4xl mx-auto mb-12">
+        <p class="text-xl md:text-2xl text-zinc-300 leading-relaxed mb-6">
+          A sonic meditation on <em class="serif text-rose-400">l'objet petit a</em>—<br>
+          the unattainable object that structures all longing
+        </p>
+        <div class="w-32 h-0.5 bg-gradient-to-r from-transparent via-rose-500 to-transparent mx-auto mb-6"></div>
+        <p class="text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
+          The closer we reach toward fulfillment, the further it withdraws,<br>
+          generating the luminous surplus that keeps desire perpetually in motion
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center justify-center gap-6 mb-16">
+        <a href="#experience" class="btn btn-primary text-base px-8 py-4">
+          Experience the Void
+        </a>
+        <a href="#concept" class="btn btn-outline text-base px-8 py-4">
+          Explore the Theory
+        </a>
+      </div>
+
+      <!-- Rotating Quote -->
+      <div class="max-w-3xl mx-auto">
+        <blockquote id="rotatingQuote" class="serif text-xl md:text-2xl italic text-zinc-300 leading-relaxed opacity-80">
+          "The mystery is what keeps me close"
+        </blockquote>
+        <div class="w-16 h-0.5 bg-gradient-to-r from-rose-500 to-amber-500 mx-auto mt-4"></div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="w-6 h-10 border-2 border-zinc-400 rounded-full flex justify-center">
+        <div class="w-1 h-3 bg-zinc-400 rounded-full mt-2 animate-pulse"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-32 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <h2 class="serif text-4xl md:text-5xl font-light text-zinc-100 mb-6">The Experience</h2>
+        <div class="w-24 h-0.5 bg-gradient-to-r from-rose-500 to-amber-500 mx-auto mb-6"></div>
+        <p class="text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+          Immerse yourself in the soundscape of longing, where each note gestures toward 
+          a resolution that perpetually defers its own arrival
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Album Artwork -->
+        <div class="relative">
+          <div class="glass-card rounded-3xl p-8 aspect-square flex items-center justify-center relative overflow-hidden">
+            <!-- Animated Background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-rose-600/10 via-transparent to-amber-400/10"></div>
+            <div class="absolute top-1/4 left-1/4 w-32 h-32 bg-rose-500/5 rounded-full blur-xl animate-pulse"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-24 h-24 bg-amber-400/5 rounded-full blur-xl animate-pulse" style="animation-delay: 2s;"></div>
+            
+            <!-- Cover Art Content -->
+            <div class="relative z-10 text-center">
+              <div class="w-40 h-40 mx-auto mb-8 rounded-full bg-gradient-to-br from-rose-600 via-rose-500 to-amber-500 p-1">
+                <div class="w-full h-full rounded-full bg-zinc-950 flex items-center justify-center relative">
+                  <div class="w-24 h-24 rounded-full bg-gradient-to-br from-rose-600 to-amber-400 flex items-center justify-center relative overflow-hidden">
+                    <div class="w-8 h-8 rounded-full bg-zinc-950 relative">
+                      <div class="absolute inset-0 bg-gradient-to-br from-rose-500 to-amber-400 rounded-full animate-pulse"></div>
+                    </div>
+                    <!-- Rotating elements -->
+                    <div class="absolute inset-0">
+                      <div class="w-2 h-2 bg-zinc-100 rounded-full absolute" style="top: 20%; left: 70%; animation: orbit 8s linear infinite;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="serif text-2xl font-medium text-zinc-100 mb-2">SURPLUS DESIRE</h3>
+              <p class="text-zinc-400 text-sm tracking-wide">The Object That Always Withdraws</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audio Player -->
+        <div class="glass-card rounded-3xl p-8">
+          
+          <!-- Player Header -->
+          <div class="flex items-center gap-6 mb-8">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center relative overflow-hidden">
+              <svg viewBox="0 0 24 24" class="w-8 h-8 text-rose-500">
+                <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3,3">
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12;360 12 12" dur="10s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+              <div id="playerOrb" class="absolute w-3 h-3 bg-gradient-to-r from-amber-400 to-yellow-300 rounded-full animate-pulse-glow"></div>
+            </div>
+            
+            <div class="flex-1">
+              <h4 class="text-lg font-semibold text-zinc-100 mb-1">SURPLUS DESIRE</h4>
+              <p class="text-sm text-zinc-400 mb-2">A meditation on longing and the unattainable</p>
+              <p id="audioStatus" class="text-xs text-zinc-500">Ready to play: desire.mp3</p>
+              <p id="audioError" class="text-xs text-rose-400 hidden"></p>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="flex items-center gap-4 mb-8">
+            <button id="playButton" class="btn btn-primary flex-1 text-base py-4">
+              ▶ Play
+            </button>
+            <button id="muteButton" class="btn btn-outline px-6 py-4">
+              🔊
+            </button>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between text-sm text-zinc-400 mb-3">
+              <span id="currentTime">0:00</span>
+              <span id="duration">0:00</span>
+            </div>
+            <input id="progressBar" type="range" min="0" max="100" value="0" 
+                   class="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer" />
+          </div>
+
+          <!-- Visualizer -->
+          <div class="flex items-end justify-center gap-1 h-20 mb-4" id="visualizer">
+            <!-- Bars will be generated by JavaScript -->
+          </div>
+
+          <audio id="audioElement" preload="metadata"></audio>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concept Section -->
+  <section id="concept" class="py-32 bg-zinc-900/20">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <h2 class="serif text-4xl md:text-5xl font-light text-zinc-100 mb-6">The Concept</h2>
+        <div class="w-24 h-0.5 bg-gradient-to-r from-rose-500 to-amber-500 mx-auto mb-6"></div>
+        <p class="text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed">
+          Understanding the psychoanalytic framework that structures this musical exploration
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-20 items-start">
+        
+        <!-- Theoretical Content -->
+        <div class="space-y-8">
+          <div class="glass-card rounded-2xl p-8">
+            <h3 class="serif text-2xl font-medium text-zinc-100 mb-6">L'objet petit a</h3>
+            <div class="space-y-4 text-zinc-300 leading-relaxed">
+              <p>
+                In Lacanian psychoanalysis, <em class="text-rose-400">l'objet petit a</em> represents the object-cause of desire—not the thing we want, but what makes us want. It's the structural absence around which all longing orbits.
+              </p>
+              <p>
+                This object is fundamentally unattainable because desire would cease to exist upon its possession. Instead, it maintains its power precisely through withdrawal, creating what Lacan calls the "surplus jouissance"—the excess pleasure generated by the gap between demand and satisfaction.
+              </p>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-8">
+            <h3 class="serif text-2xl font-medium text-zinc-100 mb-6">Musical Structure</h3>
+            <div class="space-y-4 text-zinc-300 leading-relaxed">
+              <p>
+                The composition mirrors this psychoanalytic structure through themes that approach resolution but perpetually defer fulfillment. Each musical phrase gestures toward completion while maintaining the tension that generates desire.
+              </p>
+         
+            </div>
+          </div>
+
+          <blockquote class="glass-card rounded-2xl p-8">
+            <p class="serif text-lg italic text-zinc-200 leading-relaxed mb-4">
+              "The unconscious is structured like a language, and the object a is what permits desire to be constituted with regard to fantasy."
+            </p>
+            <cite class="text-sm text-zinc-400">— Jacques Lacan</cite>
+          </blockquote>
+        </div>
+
+        <!-- Interactive Visualization -->
+        <div class="glass-card rounded-2xl p-8 h-96 flex items-center justify-center relative overflow-hidden">
+          <div class="relative w-80 h-80">
+            
+            <!-- Central Void -->
+            <div class="absolute inset-0 border-2 border-dashed border-rose-500/30 rounded-full flex items-center justify-center">
+              <span class="text-xs text-zinc-500 tracking-widest font-medium">THE VOID</span>
+            </div>
+            
+            <!-- Desire Paths -->
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 320 320">
+              <defs>
+                <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgba(244, 63, 94, 0.4)"/>
+                  <stop offset="50%" stop-color="rgba(251, 191, 36, 0.6)"/>
+                  <stop offset="100%" stop-color="rgba(244, 63, 94, 0.4)"/>
+                </linearGradient>
+              </defs>
+              <path d="M 80 160 Q 160 80, 240 160 Q 160 240, 80 160" 
+                    fill="none" stroke="url(#pathGradient)" stroke-width="2" opacity="0.8">
+                <animate attributeName="stroke-dasharray" values="0,600;300,300;0,600" dur="6s" repeatCount="indefinite"/>
+              </path>
+              <circle cx="160" cy="160" r="120" fill="none" stroke="url(#pathGradient)" stroke-width="1" opacity="0.3">
+                <animate attributeName="stroke-dasharray" values="0,750;375,375;0,750" dur="8s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+            
+            <!-- Orbiting Objects -->
+            <div class="absolute w-4 h-4 bg-amber-400 rounded-full" style="top: 25%; left: 75%; animation: orbit 10s linear infinite;"></div>
+            <div class="absolute w-3 h-3 bg-rose-400 rounded-full" style="top: 70%; left: 25%; animation: orbit 14s linear infinite reverse;"></div>
+            <div class="absolute w-2 h-2 bg-violet-400 rounded-full" style="top: 45%; left: 85%; animation: orbit 18s linear infinite;"></div>
+            
+            <!-- Center Point -->
+            <div class="absolute top-1/2 left-1/2 w-6 h-6 bg-gradient-to-r from-rose-500 to-transparent rounded-full transform -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verses Section -->
+  <section id="verses" class="py-32">
+    <div class="max-w-5xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <h2 class="serif text-4xl md:text-5xl font-light text-zinc-100 mb-6">Verses of Longing</h2>
+        <div class="w-24 h-0.5 bg-gradient-to-r from-rose-500 to-amber-500 mx-auto mb-6"></div>
+        <p class="text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+          Each verse circles around the unattainable, finding beauty in the space between desire and fulfillment
+        </p>
+      </div>
+
+      <!-- Lyrics Container -->
+      <div class="glass-card rounded-3xl p-12">
+        <div class="space-y-12" id="lyricsContainer">
+          <!-- Lyrics will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+   <section class="gallery-section">
+      <h2>Explore More</h2>
+      <div class="gallery-grid">
+        <a href="https://magnificent-unicorn-6b876e.netlify.app" class="gallery-item" data-has-image>
+          <img src="jelly.gif" alt="Dive" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">Dive In!</div>
+        </a>
+        <a href="https://bastart-portfolio-666.netlify.app" class="gallery-item" data-has-image>
+          <img src="eye.gif" alt="Videos" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">Portfolio</div>
+        </a>
+        <a href="https://electric-dreams-1c6918.netlify.app" class="gallery-item" data-has-image>
+          <img src="ED.gif" alt="Electric Dreams" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">PSYCHOSOPHY</div>
+        </a>
+        <a href="https://their-names-2604eb.netlify.app" class="gallery-item" data-has-image>
+          <img src="tnn.gif" alt="Their Names" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">Their Names</div>
+        </a>
+        <a href="https://thecrowd-sampler-9cirba.netlify.app" class="gallery-item" data-has-image>
+          <img src="thecrowd.gif" alt="TC" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">The Crowd! Interactive Sampler</div>
+        </a>
+        <a href="https://binary-ballet-0nonzs.netlify.app/" class="gallery-item" data-has-image>
+          <img src="movement_-maze.gif" alt="Intimidation" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">Intimidation</div>
+        </a>
+      </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800/50 bg-zinc-950/90 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-3 gap-12 mb-12">
+        
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-rose-600 via-rose-500 to-amber-500 p-0.5">
+              <div class="w-full h-full rounded-full bg-zinc-950 flex items-center justify-center">
+                <div class="w-5 h-5 rounded-full bg-gradient-to-br from-rose-500 to-amber-400"></div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gradient">SURPLUS DESIRE</h3>
+              <p class="text-xs text-zinc-500">L'objet petit a</p>
+            </div>
+          </div>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            A sonic meditation on the psychoanalytic structure of desire, 
+            where fulfillment perpetually defers its own arrival.
+          </p>
+        </div>
+
+        <!-- Theory -->
+        <div>
+          <h4 class="text-sm font-semibold text-zinc-300 mb-4 tracking-wide">THEORETICAL FRAMEWORK</h4>
+          <ul class="space-y-2 text-sm text-zinc-400">
+            <li>Lacanian Psychoanalysis</li>
+            <li>Object Relations Theory</li>
+            <li>Surplus Jouissance</li>
+            <li>The Real, Imaginary, Symbolic</li>
+          </ul>
+        </div>
+
+        <!-- Quote -->
+        <div>
+          <blockquote class="text-sm text-zinc-400 italic leading-relaxed mb-4">
+            "What we have to circumscribe, by means of the artifice we are developing, 
+            is the pre-existence of a gaze—I see only from one point, but in my existence 
+            I am looked at from all sides."
+          </blockquote>
+          <cite class="text-xs text-zinc-500">— Jacques Lacan, Seminar XI</cite>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="pt-8 border-t border-zinc-800/30 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-zinc-500">
+          © <span id="currentYear"></span> SURPLUS DESIRE. Designed around the notion of <em>objet petit a</em>.
+        </p>
+        <p class="text-xs text-zinc-600">
+          Experience the void that structures all desire
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Grain Overlay -->
+  <div class="pointer-events-none fixed inset-0 grain z-30" aria-hidden="true"></div>
+
+  <script>
+    // Initialize audio
+    const audio = document.getElementById('audioElement');
+    audio.src = 'desire.mp3';
+    audio.load();
+
+    // Get DOM elements
+    const playButton = document.getElementById('playButton');
+    const muteButton = document.getElementById('muteButton');
+    const currentTime = document.getElementById('currentTime');
+    const duration = document.getElementById('duration');
+    const progressBar = document.getElementById('progressBar');
+    const visualizer = document.getElementById('visualizer');
+    const audioStatus = document.getElementById('audioStatus');
+    const audioError = document.getElementById('audioError');
+    const desireOrb = document.getElementById('desireOrb');
+    const desireObject = document.getElementById('desireObject');
+    const rotatingQuote = document.getElementById('rotatingQuote');
+    const lyricsContainer = document.getElementById('lyricsContainer');
+    const currentYear = document.getElementById('currentYear');
+
+    // Set current year
+    currentYear.textContent = new Date().getFullYear();
+
+    // Lyrics content
+    const lyrics = `I don't want to know where this goes  
+The mystery is what keeps me close  
+Desire's a journey, no need to end  
+I crave what I can't comprehend  
+
+Don't meet my expectations  
+I thrive in the pull of temptation  
+The chase is my spark, and I  
+Flourish in tension's embrace  
+
+Your touch hints at the unknown  
+A pleasure just out of my zone  
+Don't give it all, let the desire stay  
+The hunger is why I stay  
+
+Don't meet my expectations  
+I thrive in the pull of temptation  
+The chase is my spark, and I  
+Flourish in tension's embrace  
+
+In every look, every word unsaid  
+It's the not-knowing that keeps us led  
+The void and the love we declare  
+
+Leave me in the in-between  
+Where dreams are more than they seem  
+In longing, I find my gleam  
+
+Don't meet my expectations  
+I thrive in the pull of temptation  
+The chase is my spark, and I  
+Flourish in tension's embrace  
+
+We stand on this fragile line  
+Desire's echo never dies  
+Between what's yours and mine`;
+
+    // Parse and display lyrics
+    const verses = lyrics.split(/\n\s*\n/);
+    lyricsContainer.innerHTML = verses.map((verse, index) => `
+      <div class="verse-block glass-card rounded-2xl p-8 transform transition-all duration-500" 
+           style="animation-delay: ${index * 200}ms;">
+        <div class="text-lg md:text-xl leading-loose text-zinc-200 serif">
+          ${verse.replace(/\n/g, '<br>')}
+        </div>
+      </div>
+    `).join('');
+
+    // Rotating quotes
+    const quotes = [
+      "The mystery is what keeps me close",
+      "I thrive in the pull of temptation", 
+      "Flourish in tension's embrace",
+      "Leave me in the in-between",
+      "In longing, I find my gleam",
+      "Desire's echo never dies"
+    ];
+    
+    let quoteIndex = 0;
+    setInterval(() => {
+      rotatingQuote.style.opacity = '0';
+      setTimeout(() => {
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+        rotatingQuote.textContent = `"${quotes[quoteIndex]}"`;
+        rotatingQuote.style.opacity = '1';
+      }, 500);
+    }, 4000);
+
+    // Create visualizer bars
+    for (let i = 0; i < 40; i++) {
+      const bar = document.createElement('div');
+      bar.className = 'transition-all duration-150 ease-out';
+      bar.style.width = '3px';
+      bar.style.borderRadius = '2px';
+      bar.style.background = `linear-gradient(to top, 
+        rgba(244, 63, 94, 0.8), 
+        rgba(251, 191, 36, 0.6))`;
+      bar.style.height = '4px';
+      bar.style.transformOrigin = 'bottom center';
+      visualizer.appendChild(bar);
+    }
+
+    // Interactive desire orb
+    desireOrb.addEventListener('click', () => {
+      // Move the object when clicked (demonstrating withdrawal)
+      const randomAngle = Math.random() * 360;
+      desireObject.style.animationDelay = `-${randomAngle / 360 * 12}s`;
+      
+      // Visual feedback
+      desireOrb.style.borderColor = 'rgba(244, 63, 94, 0.8)';
+      setTimeout(() => {
+        desireOrb.style.borderColor = 'rgba(244, 63, 94, 0.3)';
+      }, 300);
+    });
+
+    // Audio player functionality
+    function formatTime(seconds) {
+      if (!isFinite(seconds)) return '0:00';
+      const minutes = Math.floor(seconds / 60);
+      const secs = String(Math.floor(seconds % 60)).padStart(2, '0');
+      return `${minutes}:${secs}`;
+    }
+
+    function updateVisualizer(isPlaying) {
+      const bars = visualizer.children;
+      for (let i = 0; i < bars.length; i++) {
+        const bar = bars[i];
+        if (isPlaying) {
+          const height = 8 + Math.random() * 40;
+          const delay = (i % 8) * 50;
+          bar.style.animation = `wave ${600 + (i % 5) * 100}ms ease-in-out ${delay}ms infinite`;
+          bar.style.height = `${height}px`;
+        } else {
+          bar.style.animation = 'none';
+          bar.style.height = '4px';
+        }
+      }
+    }
+
+    // Event listeners
+    playButton.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play().catch(error => {
+          console.log('Autoplay prevented:', error);
+          audioError.textContent = 'Click to enable audio playback';
+          audioError.classList.remove('hidden');
+        });
+      } else {
+        audio.pause();
+      }
+    });
+
+    muteButton.addEventListener('click', () => {
+      audio.muted = !audio.muted;
+      muteButton.textContent = audio.muted ? '🔇' : '🔊';
+    });
+
+    progressBar.addEventListener('input', () => {
+      const value = parseFloat(progressBar.value);
+      audio.currentTime = (value / 100) * audio.duration;
+    });
+
+    // Audio event listeners
+    audio.addEventListener('loadedmetadata', () => {
+      duration.textContent = formatTime(audio.duration);
+      progressBar.max = 100;
+      audioStatus.textContent = 'Ready to play: desire.mp3';
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      currentTime.textContent = formatTime(audio.currentTime);
+      if (audio.duration) {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.value = progress;
+      }
+    });
+
+    audio.addEventListener('play', () => {
+      playButton.innerHTML = '⏸ Pause';
+      updateVisualizer(true);
+    });
+
+    audio.addEventListener('pause', () => {
+      playButton.innerHTML = '▶ Play';
+      updateVisualizer(false);
+    });
+
+    audio.addEventListener('ended', () => {
+      playButton.innerHTML = '▶ Play';
+      updateVisualizer(false);
+      progressBar.value = 0;
+    });
+
+    audio.addEventListener('error', () => {
+      audioError.textContent = 'Error loading desire.mp3 - ensure file exists in directory';
+      audioError.classList.remove('hidden');
+      audioStatus.textContent = 'Audio load failed';
+    });
+
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 80; // Account for fixed header
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('section-enter');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all major sections
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Initialize verse block animations
+    setTimeout(() => {
+      document.querySelectorAll('.verse-block').forEach((block, index) => {
+        setTimeout(() => {
+          block.style.opacity = '1';
+          block.style.transform = 'translateY(0)';
+        }, index * 200);
+      });
+    }, 1000);
+
+    // Parallax effect for floating elements
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.5;
+      
+      document.querySelectorAll('.floating-element').forEach((element, index) => {
+        const speed = 0.5 + (index * 0.1);
+        element.style.transform = `translateY(${rate * speed}px)`;
+      });
+    });
+
+    console.log('SURPLUS DESIRE - Page loaded successfully');
+    console.log('Audio source:', audio.src);
+  </script>
+</body>
+</html>

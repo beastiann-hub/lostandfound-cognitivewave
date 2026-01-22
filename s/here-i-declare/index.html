@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- META-OG-START -->
+<title>HERE I DECLARE — Bastart &amp; Circé</title>
+<meta name="description" content="A song of self‑liberation, truth, and inner sovereignty. An invitation to shed external programming and return to your own compass.">
+
+<link rel="canonical" href="https://bastart666.com/s/here-i-declare/">
+
+<meta property="og:type" content="music.song">
+<meta property="og:site_name" content="Bastart & Circé">
+<meta property="og:title" content="HERE I DECLARE — Bastart &amp; Circé">
+<meta property="og:description" content="A song of self‑liberation, truth, and inner sovereignty. An invitation to shed external programming and return to your own compass.">
+<meta property="og:url" content="https://bastart666.com/s/here-i-declare/">
+<meta property="og:image" content="https://declaration-of-self.netlify.app/assets/og/declare.jpg">
+<meta property="og:image:alt" content="HERE I DECLARE — Bastart &amp; Circé">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HERE I DECLARE — Bastart &amp; Circé">
+<meta name="twitter:description" content="A song of self‑liberation, truth, and inner sovereignty. An invitation to shed external programming and return to your own compass.">
+<meta name="twitter:image" content="https://declaration-of-self.netlify.app/assets/og/declare.jpg">
+<meta name="twitter:url" content="https://declaration-of-self.netlify.app/">
+<!-- META-OG-END -->
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <style>
+    :root{
+      --bg:#0b0f1a;
+      --bg-2:#141c2b;
+      --fg:#e8ecf2;
+      --muted:#aab3c2;
+      --accent:#f6c453;
+      --accent-2:#6fd1ff;
+      --card:rgba(255,255,255,0.05);
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+    }
+    html,body{height:100%;background:var(--bg);color:var(--fg);font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji","Segoe UI Emoji";}
+    *{box-sizing:border-box}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+    /* Enhanced animated backdrop with particles */
+    .backdrop{
+      position:fixed;inset:0;z-index:-1;overflow:hidden;
+      background: radial-gradient(1200px 1200px at 10% 20%, rgba(111,209,255,.12), transparent 55%),
+                  radial-gradient(900px 900px at 90% 80%, rgba(246,196,83,.10), transparent 60%),
+                  linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+    }
+    .glow{
+      position:absolute;inset:-20% -20% auto auto;filter:blur(70px);opacity:.25;pointer-events:none;
+      width:60vmax;height:60vmax;border-radius:50%;
+      background:conic-gradient(from 0deg at 50% 50%, var(--accent), var(--accent-2), var(--accent));
+      animation:spin 20s linear infinite;
+    }
+    
+    .particles{
+      position:absolute;inset:0;pointer-events:none;
+    }
+    .particle{
+      position:absolute;width:2px;height:2px;background:var(--accent-2);
+      border-radius:50%;opacity:0.3;
+      animation:float 8s infinite ease-in-out;
+    }
+    
+    @keyframes spin{to{transform:rotate(1turn)}}
+    @keyframes float{
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+      50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
+    }
+
+    header{position:sticky;top:0;background:linear-gradient(180deg, rgba(11,15,26,.9), rgba(11,15,26,0));backdrop-filter:saturate(120%) blur(8px);z-index:50;border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{font-weight:700;letter-spacing:.5px}
+    .brand b{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .navlinks a{opacity:.8;margin-left:18px;transition:opacity 0.3s ease}
+    .navlinks a:hover{opacity:1;text-shadow:0 0 10px var(--accent-2)}
+
+    .hero{min-height:88vh;display:flex;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px}
+    .title{font-size: clamp(40px, 7vw, 86px);line-height:1.02;margin:0 0 12px}
+    .subtitle{font-size: clamp(18px, 2.8vw, 22px);color:var(--muted);max-width:55ch}
+
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);transition:all 0.3s ease}
+    .card:hover{border-color:rgba(255,255,255,.15);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+
+    /* Enhanced Audio Player */
+    .player{padding:22px;display:flex;align-items:center;gap:16px;position:relative;overflow:hidden}
+    .play{display:inline-grid;place-items:center;width:64px;height:64px;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));
+      box-shadow:0 10px 20px rgba(0,0,0,.35);border:none;cursor:pointer;
+      transition:all 0.3s ease;position:relative}
+    .play:hover{transform:scale(1.05);box-shadow:0 15px 30px rgba(0,0,0,.5)}
+    .play svg{width:26px;height:26px;fill:#0b0f1a;transition:all 0.3s ease}
+    .play.breathing{animation:breathe 3s infinite ease-in-out}
+    
+    @keyframes breathe{
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    /* Audio Visualizer */
+    .visualizer{
+      position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;
+      opacity:0;transition:opacity 0.3s ease;
+    }
+    .visualizer.active{opacity:1}
+    .viz-bar{
+      position:absolute;bottom:0;width:3px;background:linear-gradient(0deg, var(--accent-2), var(--accent));
+      border-radius:2px;transform-origin:bottom;
+    }
+
+    .track-meta{display:flex;flex-direction:column;gap:6px}
+    .track-title{font-weight:700;font-size:18px}
+    .time{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px}
+    .controls{margin-left:auto;display:flex;gap:10px}
+    .pill{padding:10px 14px;border:1px solid rgba(255,255,255,.12);border-radius:999px;transition:all 0.3s ease}
+    .pill:hover{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.08)}
+
+    /* Journey Map */
+    .journey{position:relative;padding:120px 0}
+    .journey-path{
+      position:absolute;left:50%;top:0;bottom:0;width:2px;
+      background:linear-gradient(180deg, transparent 0%, var(--accent-2) 20%, var(--accent) 80%, transparent 100%);
+      transform:translateX(-50%);
+    }
+    .journey-step{
+      position:relative;margin:80px 0;opacity:0;transform:translateX(-30px);
+      transition:all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .journey-step.active{opacity:1;transform:translateX(0)}
+    .journey-step:nth-child(even) .step-content{margin-left:auto;text-align:right}
+    .journey-step:nth-child(even) .step-icon{right:0;left:auto}
+    
+    .step-content{
+      background:var(--card);border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);padding:28px;max-width:400px;
+      box-shadow:var(--shadow);position:relative;
+    }
+    .step-icon{
+      position:absolute;top:50%;left:0;transform:translate(-50%, -50%);
+      width:40px;height:40px;border-radius:50%;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 4px 12px rgba(0,0,0,.3);
+    }
+    .step-icon svg{width:20px;height:20px;fill:#0b0f1a}
+
+    .step-title{font-size:20px;font-weight:700;margin:0 0 8px;color:var(--accent)}
+    .step-verse{font-style:italic;margin:12px 0;padding:12px 0;
+      border-top:1px solid rgba(255,255,255,.1);
+      border-bottom:1px solid rgba(255,255,255,.1)}
+
+    .section{padding:96px 0}
+    .section h2{font-size: clamp(28px, 5vw, 42px);margin:0 0 18px}
+    .section p.lead{font-size:20px;color:var(--muted);max-width:70ch}
+
+    .story .card{padding:28px}
+
+    .quote{font-size: clamp(22px,3.2vw,28px);line-height:1.35;margin:28px 0;padding-left:18px;border-left:3px solid var(--accent);position:relative}
+    .quote::before{
+      content:'"';position:absolute;left:-8px;top:-10px;
+      font-size:48px;color:var(--accent);opacity:0.5;
+    }
+
+    /* Enhanced Lyrics */
+    .lyrics .card{padding:28px;position:relative}
+    .lyrics-text{white-space:pre-wrap;word-wrap:break-word;font: 16px/1.9 ui-serif, Georgia, Cambria, "Times New Roman", serif;color:#e6e9f0;margin:0}
+    .lyrics-line{display:block;margin:8px 0;padding:4px 0;border-radius:4px;
+      transition:all 0.3s ease;cursor:pointer}
+    .lyrics-line:hover{background:rgba(246,196,83,0.1);padding-left:8px}
+    .lyrics-line.highlight{background:rgba(246,196,83,0.2);color:var(--accent);
+      box-shadow:0 0 20px rgba(246,196,83,0.3);animation:glow 0.5s ease}
+    
+    @keyframes glow{
+      0%, 100%{box-shadow:0 0 20px rgba(246,196,83,0.3)}
+      50%{box-shadow:0 0 30px rgba(246,196,83,0.6)}
+    }
+
+    .lyrics .hint{color:var(--muted);font-size:14px;margin-top:12px}
+
+    /* Reflection Space */
+    .reflection{background:linear-gradient(135deg, rgba(246,196,83,0.05), rgba(111,209,255,0.05));
+      border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:40px;margin:40px 0}
+    .reflection h3{color:var(--accent);margin:0 0 20px}
+    .reflection-prompt{font-style:italic;color:var(--muted);margin:16px 0;
+      padding:16px;background:rgba(0,0,0,.2);border-radius:8px;border-left:3px solid var(--accent-2)}
+
+    .cta{text-align:center}
+    .cta .buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);transition:all 0.3s ease}
+    .btn:hover{background:rgba(255,255,255,.08);transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,.2)}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0b0f1a;border-color:transparent;font-weight:700}
+    .btn.primary:hover{transform:translateY(-2px) scale(1.02)}
+
+    footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
+
+    /* Entrances */
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .8s cubic-bezier(0.22, 1, 0.36, 1), transform .8s cubic-bezier(0.22, 1, 0.36, 1)}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* Small screens */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr;gap:28px}
+      .hero{padding-top:28px}
+      .journey-step .step-content{max-width:300px}
+      .journey-step:nth-child(even) .step-content{text-align:left}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .glow, .reveal, .particle, .play.breathing{animation:none;transition:none}
+    }
+	/* Button Container */
+        .cognitivewave-nav {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        /* Main Button Styles */
+        .gallery-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover Effects */
+        .gallery-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
+        .gallery-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Icon Styles */
+        .gallery-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-button:hover .gallery-icon {
+            transform: translateX(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-button {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+            
+            .gallery-icon {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        /* Alternative Styles (uncomment to use) */
+        
+        .gallery-button.minimal {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+            box-shadow: none;
+        }
+
+        .gallery-button.minimal:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-1px);
+        }
+        */
+
+        /*
+        .gallery-button.dark {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-button.dark:hover {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        }
+  </style>
+  <social-links></social-links>
+
+
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <div class="glow"></div>
+    <div class="particles" id="particles"></div>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><b>DECLARE</b> • the single</div>
+        <div class="navlinks" role="navigation" aria-label="Primary">
+          <a href="#listen">Listen</a>
+          <a href="#journey">Journey</a>
+          <a href="#story">Story</a>
+          <a href="#lyrics">Lyrics</a>
+          <a href="#reflect">Reflect</a>
+          <a href="#join">Join</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1 class="title reveal">Here I Declare: I Am Free</h1>
+          <p class="subtitle reveal" style="transition-delay:.06s">
+            A song of self‑liberation, truth, and inner sovereignty — an invitation to shed external programming and return to your own compass.
+          </p>
+
+          <div id="listen" class="card player reveal" style="margin-top:26px;transition-delay:.12s">
+            <button class="play breathing" id="playBtn" aria-label="Play">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <div class="visualizer" id="visualizer"></div>
+            <div class="track-meta">
+              <div class="track-title">DECLARE</div>
+              <div class="time"><span id="cur">0:00</span> / <span id="dur">0:00</span></div>
+            </div>
+            <div class="controls">
+              <a class="pill" href="#lyrics">Read Lyrics</a>
+              <a class="pill" href="#story">Song Story</a>
+            </div>
+            <audio id="audio" preload="metadata" crossorigin="anonymous" aria-label="Audio player for Declare"></audio>
+          </div>
+		  <div class="cognitivewave-nav">
+            <a href="https://cognitivewave-gallery-101cb.netlify.app" class="gallery-button">
+                <svg class="gallery-icon" viewBox="0 0 24 24">
+                    <path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"/>
+                </svg>
+                Back to Gallery
+            </a>
+        </div>
+
+          <div class="reveal" style="margin-top:18px;transition-delay:.18s">
+            <div class="quote">
+              "I am free — not by chains broken, but by truth revealed."
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal" style="padding:28px;align-self:start;transition-delay:.14s">
+          <h3 style="margin:0 0 10px">What you'll feel</h3>
+          <p class="lead" style="margin:0">
+            Warmth and clarity. Space to breathe. The courage to stand sovereign and love as truth — needing nothing but the fullness of your own flame.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY MAP -->
+    <section class="journey" id="journey">
+      <div class="container">
+        <h2 class="reveal" style="text-align:center;margin-bottom:60px">The Journey of Liberation</h2>
+        <div class="journey-path"></div>
+        
+        <div class="journey-step" data-step="awakening">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Awakening</h3>
+            <p>The moment of recognition — standing unveiled by the winds of doubt, feeling the ground beneath your feet where judgment falters.</p>
+            <div class="step-verse">"I stand as I am, unveiled by the winds of doubt"</div>
+          </div>
+        </div>
+
+        <div class="journey-step" data-step="sovereignty">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Claiming Sovereignty</h3>
+            <p>Raising no flag but your own, following no creed but the pulse that speaks within. Finding wholeness in fearless breath.</p>
+            <div class="step-verse">"No flag do I raise but my own, no creed but the pulse that speaks within"</div>
+          </div>
+        </div>
+
+        <div class="journey-step" data-step="liberation">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Rising in Light</h3>
+            <p>Untouched by the weight of others' ideals, you rise in your own becoming. Not to be seen, but to see and to love authentically.</p>
+            <div class="step-verse">"I rise in the light of my own becoming, not to be seen but to see"</div>
+          </div>
+        </div>
+
+        <div class="journey-step" data-step="love">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Love as Truth</h3>
+            <p>In the space where belonging is no longer a cage, you discover love as the sun loves the sky — needing nothing but its own fullness.</p>
+            <div class="step-verse">"And to love as the sun loves the sky, needing nothing but the fullness of its flame"</div>
+          </div>
+        </div>
+
+        <div class="journey-step" data-step="declaration">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">The Declaration</h3>
+            <p>Here you declare your freedom — not by chains broken, but by truth revealed. You love not as others ask, but as you choose.</p>
+            <div class="step-verse">"Here I declare: I am free, not by chains broken, but by truth revealed"</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="section story" id="story">
+      <div class="container">
+        <div class="card reveal">
+          <h2>The Story</h2>
+          <p class="lead">
+            This piece was born from the fire of reclaiming freedom — not the kind that's granted or revoked,
+            but the kind revealed at the core of being. It moves beyond creed and judgment to celebrate a
+            love that is truth itself. "Declare" is an anthem for anyone ready to step outside the cage of belonging
+            and stand as a sovereign soul in the wild expanse.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LYRICS -->
+    <section class="section lyrics" id="lyrics">
+      <div class="container">
+        <div class="card reveal">
+          <h2>Lyrics</h2>
+          <div class="lyrics-text" id="lyricsText">
+            <span class="lyrics-line">I stand as I am</span>
+            <span class="lyrics-line">Unveiled by the winds of doubt</span>
+            <span class="lyrics-line">Barefoot on the ground where judgment falters</span>
+            <span class="lyrics-line">And the echoes of belonging fade</span>
+            <br>
+            <span class="lyrics-line">No flag do I raise but my own</span>
+            <span class="lyrics-line">No creed but the pulse that speaks within</span>
+            <span class="lyrics-line">For here in this fearless breath</span>
+            <span class="lyrics-line">I find myself whole</span>
+            <span class="lyrics-line">A sovereign soul in the wild expanse of being</span>
+            <br>
+            <span class="lyrics-line">Untouched by the weight of ideals</span>
+            <span class="lyrics-line">Cast like shadows from other's dreams</span>
+            <span class="lyrics-line">I rise in the light of my own becoming</span>
+            <span class="lyrics-line">Not to be seen but to see</span>
+            <span class="lyrics-line">And to love</span>
+            <span class="lyrics-line">As the sun loves the sky</span>
+            <span class="lyrics-line">Needing nothing but the fullness of its flame</span>
+            <br>
+            <span class="lyrics-line">In this space</span>
+            <span class="lyrics-line">Where belonging is no longer a cage</span>
+            <span class="lyrics-line">But a soft breeze that passes through</span>
+            <span class="lyrics-line">I am both root and sky</span>
+            <span class="lyrics-line">Claimed only by the self that knows no fear</span>
+            <br>
+            <span class="lyrics-line">Here I declare:</span>
+            <span class="lyrics-line">I am free</span>
+            <span class="lyrics-line">Not by chains broken</span>
+            <span class="lyrics-line">But by truth revealed</span>
+            <span class="lyrics-line">And in that truth I love</span>
+            <span class="lyrics-line">Not as they ask me to love</span>
+            <span class="lyrics-line">But as I am as I choose</span>
+            <span class="lyrics-line">As I am Love itself</span>
+            <br>
+            <span class="lyrics-line">Here I declare:</span>
+            <span class="lyrics-line">I am free</span>
+            <span class="lyrics-line">Not by chains broken</span>
+            <span class="lyrics-line">But by truth revealed</span>
+            <span class="lyrics-line">And in that truth I love</span>
+            <span class="lyrics-line">Not as they ask me to love</span>
+            <span class="lyrics-line">But as I am as I choose</span>
+            <span class="lyrics-line">As I am Love itself</span>
+          </div>
+          <div class="hint">© You. All rights reserved. Please do not reproduce without permission.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFLECTION SPACE -->
+    <section class="section" id="reflect">
+      <div class="container">
+        <div class="reflection reveal">
+          <h3>Reflect on Your Own Declaration</h3>
+          <p>Take a moment to contemplate your own journey toward self-liberation.</p>
+          
+          <div class="reflection-prompt">
+            💭 What external voices or expectations have you been carrying that aren't truly yours?
+          </div>
+          
+          <div class="reflection-prompt">
+            🌟 When do you feel most authentic and sovereign in your own being?
+          </div>
+          
+          <div class="reflection-prompt">
+            💝 How would you love if you loved purely from your own truth, without seeking approval?
+          </div>
+          
+          <p style="margin-top:24px;font-style:italic;text-align:center;color:var(--muted)">
+            "In this space where belonging is no longer a cage, but a soft breeze that passes through..."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta" id="join">
+      <div class="container reveal">
+        <h2>Be part of the journey</h2>
+        <p class="lead">Get the track, join the mailing list, and receive future releases first.</p>
+        <div class="buttons">
+          <a class="btn primary" href="declare.mp3" download>⬇ Download the Song</a>
+          <a class="btn" href="#" aria-label="Listen on your favorite platform">▶ Listen on Streaming</a>
+          <a class="btn" href="mailto:lostandfound@bastart666.com?subject=Join%20the%20journey%20—%20DECLARE">💌 Join via Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="year"></span> • DECLARE — A song of self‑liberation.</div>
+    </div>
+  </footer>
+<script>
+  window.SOCIAL_DEFAULTS = {
+    instagram: "https://www.instagram.com/a_bastart",
+    youtube:   "https://www.youtube.com/@Cognitive-wave",
+    tiktok:    "https://www.tiktok.com/@am_bastart_ma",
+    facebook:  "https://facebook.com/bastian.neumann.75",
+    bandcamp:  "https://lostandfoundart.bandcamp.com",
+    website:   "https://bastart666.com",
+
+    podcast_spotify: "https://open.spotify.com/show/4pp2WsZDvsAOtV1wML7TxR?si=175c5cad04274f09",
+    podcast_youtube: "https://youtube.com/playlist?list=PL8eUxrFChU0AkQqkgOvwxHmfYBD7WkSrh&si=YfCECRqgz2BTJBcO",
+    podcast_apple: null
+  };
+</script>
+<script type="module" src="/assets/social-links.js"></script>
+  <script>
+  // Utility: $ for single, $$ for multiple
+  const $ = (s) => document.querySelector(s);
+  const $$ = (s) => Array.from(document.querySelectorAll(s));
+    const audio = $("#audio");
+    const playBtn = $("#playBtn");
+    const cur = $("#cur");
+    const dur = $("#dur");
+    const year = $("#year");
+    const visualizer = $("#visualizer");
+    const particles = $("#particles");
+    year.textContent = new Date().getFullYear();
+
+    // Populate audio src and time display
+    audio.src = "declare.mp3";
+    // Add time display if missing
+    if (!cur) {
+      const timeDiv = document.createElement('div');
+      timeDiv.className = 'time';
+      timeDiv.innerHTML = '<span id="cur">0:00</span> / <span id="dur">0:00</span>';
+      const meta = $(".track-meta");
+      if (meta) meta.appendChild(timeDiv);
+    }
+
+    // Populate track meta
+    if ($('.track-meta')) {
+      $('.track-meta').innerHTML = '<div class="track-title">DECLARE</div><div class="time"><span id="cur">0:00</span> / <span id="dur">0:00</span></div>';
+    }
+
+    // Populate quote
+    if ($('.quote')) {
+      $('.quote').textContent = '“I am free — not by chains broken, but by truth revealed.”';
+    }
+
+    // Populate story
+    if ($('.story .lead')) {
+      $('.story .lead').textContent = `This piece was born from the fire of reclaiming freedom — not the kind that’s granted or revoked, but the kind revealed at the core of being. It moves beyond creed and judgment to celebrate a love that is truth itself. “Declare” is an anthem for anyone ready to step outside the cage of belonging and stand as a sovereign soul in the wild expanse.`;
+    }
+
+    // Populate lyrics
+    if ($('#lyricsText')) {
+      $('#lyricsText').innerHTML = `
+<span class="lyrics-line">I stand as I am</span>
+<span class="lyrics-line">Unveiled by the winds of doubt</span>
+<span class="lyrics-line">Barefoot on the ground where judgment falters</span>
+<span class="lyrics-line">And the echoes of belonging fade</span>
+<br>
+<span class="lyrics-line">No flag do I raise but my own</span>
+<span class="lyrics-line">No creed but the pulse that speaks within</span>
+<span class="lyrics-line">For here in this fearless breath</span>
+<span class="lyrics-line">I find myself whole</span>
+<span class="lyrics-line">A sovereign soul in the wild expanse of being</span>
+<br>
+<span class="lyrics-line">Untouched by the weight of ideals</span>
+<span class="lyrics-line">Cast like shadows from other's dreams</span>
+<span class="lyrics-line">I rise in the light of my own becoming</span>
+<span class="lyrics-line">Not to be seen but to see</span>
+<span class="lyrics-line">And to love</span>
+<span class="lyrics-line">As the sun loves the sky</span>
+<span class="lyrics-line">Needing nothing but the fullness of its flame</span>
+<br>
+<span class="lyrics-line">In this space</span>
+<span class="lyrics-line">Where belonging is no longer a cage</span>
+<span class="lyrics-line">But a soft breeze that passes through</span>
+<span class="lyrics-line">I am both root and sky</span>
+<span class="lyrics-line">Claimed only by the self that knows no fear</span>
+<br>
+<span class="lyrics-line">Here I declare:</span>
+<span class="lyrics-line">I am free</span>
+<span class="lyrics-line">Not by chains broken</span>
+<span class="lyrics-line">But by truth revealed</span>
+<span class="lyrics-line">And in that truth I love</span>
+<span class="lyrics-line">Not as they ask me to love</span>
+<span class="lyrics-line">But as I am as I choose</span>
+<span class="lyrics-line">As I am Love itself</span>
+<br>
+<span class="lyrics-line">Here I declare:</span>
+<span class="lyrics-line">I am free</span>
+<span class="lyrics-line">Not by chains broken</span>
+<span class="lyrics-line">But by truth revealed</span>
+<span class="lyrics-line">And in that truth I love</span>
+<span class="lyrics-line">Not as they ask me to love</span>
+<span class="lyrics-line">But as I am as I choose</span>
+<span class="lyrics-line">As I am Love itself</span>
+      `;
+    }
+
+    // Create floating particles
+    function createParticles() {
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 8 + 's';
+        particle.style.animationDuration = (6 + Math.random() * 4) + 's';
+        particles.appendChild(particle);
+      }
+    }
+    createParticles();
+
+    // Audio visualizer setup
+    let audioContext, analyser, dataArray;
+    function setupAudioVisualizer() {
+      try {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const source = audioContext.createMediaElementSource(audio);
+        analyser = audioContext.createAnalyser();
+        source.connect(analyser);
+        analyser.connect(audioContext.destination);
+        
+        analyser.fftSize = 64;
+        dataArray = new Uint8Array(analyser.frequencyBinCount);
+        
+        // Create visualizer bars
+        for (let i = 0; i < 20; i++) {
+          const bar = document.createElement('div');
+          bar.className = 'viz-bar';
+          bar.style.left = (i * 5) + '%';
+          visualizer.appendChild(bar);
+        }
+        
+        animateVisualizer();
+      } catch (e) {
+        console.log('Audio visualization not supported');
+      }
+    }
+
+    function animateVisualizer() {
+      if (!analyser) return;
+      
+      requestAnimationFrame(animateVisualizer);
+      analyser.getByteFrequencyData(dataArray);
+      
+      const bars = $('.viz-bar');
+      bars.forEach((bar, i) => {
+        const value = dataArray[i * 2] || 0;
+        const height = (value / 255) * 100;
+        bar.style.transform = `scaleY(${Math.max(0.1, height / 100)})`;
+        bar.style.opacity = Math.max(0.3, height / 100);
+      });
+    }
+
+    function fmt(t){ 
+      if(!isFinite(t)) return "0:00"; 
+      const m=Math.floor(t/60); 
+      const s=Math.floor(t%60); 
+      return m+":"+(s<10?"0":"")+s; 
+    }
+
+    // Audio event listeners
+    audio.addEventListener("loadedmetadata", ()=> dur.textContent = fmt(audio.duration));
+    audio.addEventListener("timeupdate", ()=> cur.textContent = fmt(audio.currentTime));
+
+    playBtn.addEventListener("click", async ()=>{
+      if(audio.paused){ 
+        if (!audioContext) setupAudioVisualizer();
+        if (audioContext && audioContext.state === 'suspended') {
+          await audioContext.resume();
+        }
+        
+        audio.play(); 
+        playBtn.innerHTML='<svg viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>'; 
+        playBtn.setAttribute("aria-label","Pause");
+        playBtn.classList.remove('breathing');
+        visualizer.classList.add('active');
+        animateParticlesWithMusic();
+      }
+      else { 
+        audio.pause(); 
+        playBtn.innerHTML='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; 
+        playBtn.setAttribute("aria-label","Play");
+        playBtn.classList.add('breathing');
+        visualizer.classList.remove('active');
+      }
+    });
+
+    // Enhanced particle animation with music
+    function animateParticlesWithMusic() {
+      if (!audio.paused && analyser) {
+        analyser.getByteFrequencyData(dataArray);
+        const intensity = dataArray.reduce((a, b) => a + b) / dataArray.length / 255;
+        
+        $('.particle').forEach((particle, i) => {
+          const scale = 1 + intensity * 2;
+          const brightness = 0.3 + intensity * 0.7;
+          particle.style.transform = `scale(${scale})`;
+          particle.style.opacity = brightness;
+        });
+        
+        requestAnimationFrame(animateParticlesWithMusic);
+      }
+    }
+
+    // Keyboard controls
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && !e.target.matches('input, textarea')) {
+        e.preventDefault();
+        playBtn.click();
+      }
+    });
+
+    // Interactive lyrics
+    $$(".lyrics-line").forEach((line, index) => {
+      line.addEventListener('click', () => {
+        $$(".lyrics-line").forEach(l => l.classList.remove('highlight'));
+        line.classList.add('highlight');
+        // Create ripple effect
+        const rect = line.getBoundingClientRect();
+        const ripple = document.createElement('div');
+        ripple.style.position = 'absolute';
+        ripple.style.borderRadius = '50%';
+        ripple.style.background = 'rgba(246,196,83,0.3)';
+        ripple.style.transform = 'scale(0)';
+        ripple.style.animation = 'ripple 0.6s linear';
+        ripple.style.left = (rect.left + rect.width/2) + 'px';
+        ripple.style.top = (rect.top + rect.height/2) + 'px';
+        document.body.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+        setTimeout(() => line.classList.remove('highlight'), 2000);
+      });
+    });
+
+    // Add ripple animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click", e=>{
+      const id = a.getAttribute("href");
+      const el = document.querySelector(id);
+      if(el){ 
+        e.preventDefault(); 
+        el.scrollIntoView({behavior:"smooth", block:"start"}); 
+      }
+    }));
+
+    // Reveal on scroll with enhanced timing
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{ 
+        if(en.isIntersecting) {
+          en.target.classList.add("visible");
+          
+          // Special handling for journey steps
+          if(en.target.classList.contains('journey-step')) {
+            setTimeout(() => {
+              en.target.classList.add('active');
+            }, 200);
+          }
+        }
+      });
+    }, {threshold:.15, rootMargin: '0px 0px -50px 0px'});
+
+    document.querySelectorAll(".reveal, .journey-step").forEach(el=>obs.observe(el));
+
+    // Journey step scroll animations
+    const journeyObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          
+          // Add particles around active step
+          if (entry.target.dataset.step) {
+            createStepParticles(entry.target);
+          }
+        }
+      });
+    }, {threshold: 0.3});
+
+    $('.journey-step').forEach(step => journeyObs.observe(step));
+
+    function createStepParticles(step) {
+      const rect = step.getBoundingClientRect();
+      
+      for (let i = 0; i < 5; i++) {
+        const particle = document.createElement('div');
+        particle.style.position = 'fixed';
+        particle.style.width = '4px';
+        particle.style.height = '4px';
+        particle.style.background = 'var(--accent-2)';
+        particle.style.borderRadius = '50%';
+        particle.style.pointerEvents = 'none';
+        particle.style.zIndex = '100';
+        particle.style.left = (rect.left + rect.width/2) + 'px';
+        particle.style.top = (rect.top + rect.height/2) + 'px';
+        
+        const angle = (i / 5) * Math.PI * 2;
+        const distance = 50 + Math.random() * 30;
+        const endX = rect.left + rect.width/2 + Math.cos(angle) * distance;
+        const endY = rect.top + rect.height/2 + Math.sin(angle) * distance;
+        
+        particle.animate([
+          { transform: 'scale(0)', opacity: 1 },
+          { transform: 'scale(1)', opacity: 0.8, offset: 0.5 },
+          { transform: 'scale(0)', opacity: 0 }
+        ], {
+          duration: 1500,
+          easing: 'ease-out'
+        });
+        
+        particle.animate([
+          { left: (rect.left + rect.width/2) + 'px', top: (rect.top + rect.height/2) + 'px' },
+          { left: endX + 'px', top: endY + 'px' }
+        ], {
+          duration: 1500,
+          easing: 'ease-out'
+        });
+        
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 1500);
+      }
+    }
+
+    // Theme toggling based on scroll position
+    let currentTheme = 'liberation';
+    const themes = {
+      liberation: { primary: '#f6c453', secondary: '#6fd1ff' },
+      sovereignty: { primary: '#ff6b6b', secondary: '#4ecdc4' },
+      love: { primary: '#ff9ff3', secondary: '#54a0ff' }
+    };
+
+    function updateTheme(newTheme) {
+      if (currentTheme === newTheme) return;
+      currentTheme = newTheme;
+      
+      const root = document.documentElement;
+      root.style.setProperty('--accent', themes[newTheme].primary);
+      root.style.setProperty('--accent-2', themes[newTheme].secondary);
+    }
+
+    // Scroll-based theme changes
+    window.addEventListener('scroll', () => {
+      const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      
+      if (scrollPercent < 0.3) {
+        updateTheme('liberation');
+      } else if (scrollPercent < 0.7) {
+        updateTheme('sovereignty');
+      } else {
+        updateTheme('love');
+      }
+    });
+
+    // Enhanced hover effects for cards
+    $$(".card").forEach(card => {
+      card.addEventListener('mouseenter', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.1), rgba(255,255,255,0.05))`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.background = 'var(--card)';
+      });
+    });
+
+    // Initialize breathing animation for play button
+    if (!audio.paused) {
+      playBtn.classList.remove('breathing');
+    }
+
+    // Auto-scroll journey on audio play
+    audio.addEventListener('play', () => {
+      if (window.location.hash !== '#journey') {
+        setTimeout(() => {
+          const journeySection = $('#journey');
+          if (journeySection && window.scrollY < journeySection.offsetTop - 100) {
+            journeySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 2000);
+      }
+    });
+
+    // Add floating quotes
+    const inspirationalQuotes = [
+      "I am both root and sky",
+      "Claimed only by the self that knows no fear", 
+      "As the sun loves the sky",
+      "A sovereign soul in the wild expanse",
+      "Needing nothing but the fullness of its flame"
+    ];
+
+    function createFloatingQuote() {
+      const quote = inspirationalQuotes[Math.floor(Math.random() * inspirationalQuotes.length)];
+      const element = document.createElement('div');
+      element.textContent = `"${quote}"`;
+      element.style.position = 'fixed';
+      element.style.color = 'var(--accent-2)';
+      element.style.fontSize = '14px';
+      element.style.fontStyle = 'italic';
+      element.style.opacity = '0';
+      element.style.pointerEvents = 'none';
+      element.style.zIndex = '10';
+      element.style.left = Math.random() * (window.innerWidth - 200) + 'px';
+      element.style.top = window.innerHeight + 'px';
+      
+      document.body.appendChild(element);
+      
+      element.animate([
+        { opacity: 0, transform: 'translateY(0px)' },
+        { opacity: 0.6, transform: 'translateY(-50px)', offset: 0.1 },
+        { opacity: 0.6, transform: 'translateY(-' + (window.innerHeight + 100) + 'px)', offset: 0.9 },
+        { opacity: 0, transform: 'translateY(-' + (window.innerHeight + 150) + 'px)' }
+      ], {
+        duration: 15000,
+        easing: 'linear'
+      });
+      
+      setTimeout(() => element.remove(), 15000);
+    }
+
+    // Create floating quotes periodically when music is playing
+    setInterval(() => {
+      if (!audio.paused && Math.random() < 0.3) {
+        createFloatingQuote();
+      }
+    }, 8000);
+
+    console.log('🌟 DECLARE - Enhanced experience loaded');
+    console.log('💝 Press spacebar to play/pause');
+    console.log('✨ Click on lyrics for interactive highlights');
+  </script>
+</body>
+</html>

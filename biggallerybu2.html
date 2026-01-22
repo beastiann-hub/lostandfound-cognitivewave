@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COGNITIVEWAVE - Song Gallery</title>
+    
+    <!-- Dynamic Open Graph Meta Tags -->
+    <meta property="og:title" content="COGNITIVEWAVE - Song Gallery" id="og-title">
+    <meta property="og:description" content="Creations by BASTART & CIRCÉ - Explore our musical dimensions" id="og-description">
+    <meta property="og:image" content="" id="og-image">
+    <meta property="og:url" content="" id="og-url">
+    <meta property="og:type" content="music.song">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="COGNITIVEWAVE - Song Gallery" id="twitter-title">
+    <meta name="twitter:description" content="Creations by BASTART & CIRCÉ" id="twitter-description">
+    <meta name="twitter:image" content="" id="twitter-image">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+            background: #0a0a0a;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, #000000 0%, #111111 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            overflow-x: hidden;
+            line-height: 1.4;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.9) 100%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 200;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255,255,255,0.1);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1.5s ease-out;
+            letter-spacing: -2px;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 3rem;
+            animation: fadeInUp 1.5s ease-out 0.3s both;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            animation: fadeInUp 1.5s ease-out 0.6s both;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat {
+            text-align: center;
+            color: white;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 100;
+            display: block;
+            color: #ffffff;
+            font-family: 'SF Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0.5rem;
+            font-weight: 300;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            padding: 0 2rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-input {
+            padding: 1.2rem 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            color: white;
+            font-size: 0.95rem;
+            width: 320px;
+            transition: all 0.3s ease;
+            font-family: 'SF Mono', monospace;
+            letter-spacing: 0.5px;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+            font-style: italic;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .toggle-btn {
+            padding: 1.2rem 1.8rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: rgba(255, 255, 255, 0.7);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'SF Mono', monospace;
+        }
+
+        .toggle-btn:hover, .toggle-btn.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .song-card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            animation: fadeInUp 0.8s ease-out;
+            backdrop-filter: blur(20px);
+            position: relative;
+        }
+
+        .song-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-image {
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-color: #111;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, 
+                rgba(0,0,0,0.2) 0%, 
+                rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            opacity: 0;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+        }
+
+        .song-card:hover .play-button {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .share-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 3;
+            backdrop-filter: blur(10px);
+        }
+
+        .share-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: scale(1.1);
+        }
+
+        .share-menu {
+            position: absolute;
+            top: 3.5rem;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.5rem;
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            min-width: 180px;
+            max-height: 200px;
+            overflow-y: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+        }
+
+        .share-menu.show {
+            display: flex;
+        }
+
+        .share-option {
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-family: 'SF Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .share-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateX(2px);
+        }
+
+        .share-option.instagram:hover { border-color: #e4405f; }
+        .share-option.tiktok:hover { border-color: #fe2c55; }
+        .share-option.facebook:hover { border-color: #1877f2; }
+        .share-option.twitter:hover { border-color: #1da1f2; }
+        .share-option.whatsapp:hover { border-color: #25d366; }
+        .share-option.copy:hover { border-color: #ffd700; }
+
+        /* Custom scrollbar for share menu */
+        .share-menu::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .share-menu::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+        }
+
+        .share-menu::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+        }
+
+        .share-menu::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .song-title {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .song-description {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            font-weight: 300;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .listen-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'SF Mono', monospace;
+            backdrop-filter: blur(10px);
+        }
+
+        .listen-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        audio {
+            width: 100%;
+            margin-bottom: 1.5rem;
+            border-radius: 2px;
+            outline: none;
+            background: rgba(0, 0, 0, 0.5);
+            filter: invert(1) hue-rotate(180deg);
+        }
+
+        audio::-webkit-media-controls-panel {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 2px;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: rgba(0, 0, 0, 0.9);
+            color: #ffd700;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            font-family: 'SF Mono', monospace;
+            font-size: 0.9rem;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(20px);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .gallery { 
+                grid-template-columns: 1fr; 
+                padding: 0 1rem;
+                gap: 1.5rem;
+            }
+            .controls { 
+                flex-direction: column; 
+                gap: 1.5rem;
+            }
+            .search-input { 
+                width: 100%; 
+                max-width: 320px; 
+            }
+            .stats { 
+                gap: 2rem; 
+                flex-wrap: wrap;
+            }
+            .card-content {
+                padding: 1.5rem;
+            }
+            .share-menu {
+                right: -1rem;
+            }
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 3rem 0;
+            background: rgba(0, 0, 0, 0.9);
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'SF Mono', monospace;
+            text-transform: uppercase;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Enhanced glass morphism */
+        .glass {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Subtle animation for cards */
+        .song-card {
+            animation-delay: calc(var(--index) * 100ms);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>COGNITIVEWAVE</h1>
+        <p>Creations by BASTART & CIRCÉ</p>
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-number" id="totalSongs">17</span>
+                <span class="stat-label">Compositions</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Dimensions</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">02</span>
+                <span class="stat-label">Origins</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="search.cognitive.matrix..." id="searchInput">
+        </div>
+        <div class="view-toggle">
+            <button class="toggle-btn active" data-view="grid">matrix</button>
+            <button class="toggle-btn" data-view="list">linear</button>
+        </div>
+    </div>
+	<div class="hero">
+	 <h1>COME ON IN!</h1>
+        <p>You can enter the realm where Chaos becomes creation in many ways, but this is the most artistic. Dive directly into the brain-network of Bastart & Circé's creation processes and explore their visuals, energy and their MUSIC! Click all the nodes, read their material, listen to the vibes… </p>
+		<p><span class="arrow-bounce">↓</span>Scroll further down for the structured gallery!<span class="arrow-bounce">↓</span></p>
+	</div>
+	<iframe src="https://contingency-based-living101.netlify.app/" width="100%" height="600" frameborder="0" allowfullscreen>
+</iframe>
+
+    <div class="gallery" id="gallery">
+        <!-- Cards will be generated by JavaScript -->
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <footer>
+        © 2025 COGNITIVEWAVE – Bastart & Circé – Lost & Found
+    </footer>
+
+    <script>
+        let songs = [
+            {
+                id: "comrades",
+                title: "COMRADES!",
+                description: "A revolutionary fusion of Marxist philosophy and quantum mathematics in hip-hop form",
+                url: "https://marx-washere-0815.netlify.app/",
+                image: "Comrades.gif",
+                sound: "comrades.mp3"
+            },
+			{
+                id: "here-i-declare",
+				title: "HERE I DECLARE",
+				description: "A song of self‑liberation, truth, and inner sovereignty — an invitation to shed external programming and return to your own compass.",
+				url: "https://declaration-of-self.netlify.app/",
+				image: "declare2.gif",
+				sound: "declare.mp3"
+            },
+            {
+                id: "the-crowd",
+                title: "THE CROWD!",
+                description: "\"We are the crowd, a force untamed, A single thought, no one to blame.\" The structure alternates between tense, narrative-driven verses and an anthemic, chant-like chorus, with a brief bridge that momentarily acknowledges the loss of \"rationality\" before plunging back into collective momentum. This built-in ebb and flow mirrors the way crowds swell with emotion and recede into silence.",
+                url: "https://thecrowd-sampler-9cirba.netlify.app/",
+                image: "thecrowd.gif",
+                sound: "Crowd.mp3"
+            },
+			{
+				id: "heaven-or-hell",
+				title: "HEAVEN OR HELL",
+				description: "Bastart wrote this song at the darkest turn, where rooms echo and time folds in on itself. Circé stepped into that shadow, breathed light through it, and carried the words like a lantern.",
+				url: "https://heaven-or-hell-666.netlify.app/",
+				image: "heavenor.gif",
+				sound: "hoh.mp3"
+			},
+			{
+				id: "ende",
+				title: "ENDE",
+				description: "Du stehst am Rand deiner eigenen Matrix. ENDE ist kein Song – es ist ein Weckruf. Bist du bereit, die Ketten zu sprengen und dich selbst zu spüren? Oder bleibst du Zuschauer deines eigenen Lebens?",
+				url: "https://diesaat-derangst-s33d.netlify.app/",
+				image: "ende.gif",
+				sound: "ende.mp3"
+			},
+			{
+				id: "sleep-walkers",
+				title: "SLEEPWALKERS",
+				description: "The song pulls you through corridors of fear, where shadows whisper and voices fade, until only one soul remains awake in the endless night.",
+				url: "https://thevoid-thelove-wedeclare.netlify.app/",
+				image: "sleep.gif",
+				sound: "SleepWalkersDone.mp3"
+			},
+			{
+				id: "hell-is-other-people",
+				title: "HELL IS OTHER PEOPLE",
+				description: "A Blues-Rock Descent into Sartre's Gaze.",
+				url: "https://enfer-desartre-ba7593.netlify.app/",
+				image: "hell.gif",
+				sound: "hell_is_other_people.mp3"
+			},
+			{
+				id: "surplus-desire",
+				title: "SURPLUS DESIRE",
+				description: "\"I see only from one point, but in my existence I am looked at from all sides.\" - Jacques Lacan, Seminar XI",
+				url: "https://surplus-desire-objet-a.netlify.app",
+				image: "desire.gif",
+				sound: "desire.mp3"
+			},
+			{
+                id: "the-dionysian-way",
+                title: "THE DIONYSIAN WAY",
+                description: "A shimmering anthem of joy, rebellion, and inner mastery. Close your eyes, taste the night, and join the movement.",
+                url: "https://dionysian-way-af101.netlify.app/",
+                image: "dance.gif",
+                sound: "dionysos.mp3"
+            },
+			{
+				id: "my-eden",
+				title: "MY EDEN",
+				description: " a deeply introspective audio-visual journey through loss, isolation, and the fading of joy. The experience immerses you in a world where comfort and innocence have vanished, leaving behind only echoes of memory.",
+				url: "https://farewell-myeden-dp201.netlify.app/",
+				image: "eden.gif",
+				sound: "myeden.mp3"
+			},
+			{
+				id: "bleeding-hard",
+				title: "BLEEDING HARD",
+				description: "The fragile space between vulnerability and detachment. Hypnotic synths, glassy guitar lines and heartbeat drums frame a voice that wavers between confession and defense.",
+				url: "https://empathy-hurts-3939.netlify.app/",
+				image: "bleed.gif",
+				sound: "tstfy.mp3"
+			},
+            {
+                id: "no-mercy",
+                title: "NO MERCY",
+                description: "Born in the smoky corners of dive bars and neon-lit streets, this track carries the soul of old-school blues into the electric underground.",
+                url: "https://blueburnt-senses-145bb.netlify.app/",
+                image: "nomercy.gif",
+                sound: "playedby.mp3"
+            },
+			  {
+                id: "bugged-25",
+                title: "BUGGED 25",
+                description: "Feeling lost within a system that stifles communication and connection, symbolized by a ′prison′ of emotions.",
+                url: "https://drown-insafety-909.netlify.app/",
+                image: "beetle.gif",
+                sound: "BUGGED2G.mp3"
+            },
+			{
+                id: "ocean-in-a-drop",
+                title: "OCEAN IN A DROP",
+                description: "This song was crafted as a gift of love and wisdom for my son Enno, now 14. Inspired by Rumi's timeless poetry, it carries a message of self-discovery and empowerment.",
+                url: "https://yoursong-myson-l0v3.netlify.app/",
+                image: "Ocean.gif",
+                sound: "ocean.mp3"
+            },
+            {
+                id: "you-fly-alone",
+                title: "YOU FLY ALONE - Depression I -",
+                description: "A confrontation with the darkness that lives within. This song emerges from the depths of depression—not as surrender, but as testimony.",
+                url: "https://youdie-alone-dep1.netlify.app/",
+                image: "alone.gif",
+                sound: "dp.mp3"
+            },
+            {
+                id: "echoes-of-delusion",
+                title: "ECHOES OF DELUSION",
+                description: "Step inside the mind's maze. Every echo is a question. What illusions shape your choices?",
+                url: "https://echoes-ofdelusion-gh05t.netlify.app/",
+                image: "EchoesOfDelusion.gif",
+                sound: "EchoesOfDelusion.mp3"
+            },
+            {
+                id: "electric-dreams",
+                title: "ELECTRIC DREAMS",
+                description: "Cognitive Aural Synthesis. Dynamical Psychosophy. The analyzed lyrics depict a profound tension between perception and reality, exploring mental confinement and existential illusions... Warning: This track may trigger shadow work. Proceed with conscious awareness.",
+                url: "https://electric-dreams-1c6918.netlify.app/",
+                image: "Warangel.gif",
+                sound: "ElectricD.mp3"
+            },
+            {
+                id: "dreams-of-intimidation",
+                title: "DREAMS OF INTIMIDATION",
+                description: "Enter the binary ballet of synthetic fear",
+                url: "https://binary-ballet-0nonzs.netlify.app/",
+                image: "circuits.gif",
+                sound: "doi.mp3"
+            },
+            {
+                id: "in-the-quiet-moments",
+                title: "IN THE QUIET MOMENTS",
+                description: "\"A haunting ballad about the desperate yearning for true connection in a world that has forgotten how to listen\"",
+                url: "https://quiet-moments-42bab.netlify.app/",
+                image: "eye.gif",
+                sound: "ITQM.mp3"
+            },
+            {
+                id: "a-restless-breed",
+                title: "A RESTLESS BREED",
+                description: "Journey with A Restless Breed—a sonic anthem for outsiders, seekers, and nightwalkers. Embrace individuality, defy conformity, and run free beneath the neon moon. Are you ready to howl?",
+                url: "https://restless-breed-1408.netlify.app/",
+                image: "Wolf.gif",
+                sound: "WOTN.mp3"
+            },
+            {
+                id: "roles-in-false-arts",
+                title: "ROLES IN FALSE ARTS",
+                description: "Rivers learn to flow in straight lines. Eagles practice walking. The untamed heart rehearses its lines until it forgets its own voice. An acoustic meditation on how we sculpt living lightning into polite shadows of what once burned bright.",
+                url: "https://universal-tragedy-6518.netlify.app/",
+                image: "roles.gif",
+                sound: "roles.mp3"
+            },
+            {
+                id: "silent-equation",
+                title: "SILENT EQUATION",
+                description: "The subject (\"Silent Equation\") explores the complexities of human existence, highlighting the contrast between outward appearances and inner truths. It delves into themes of deception, societal norms, and the fragility of promises. The imagery of equations symbolizes the struggle to find clarity in a chaotic world.",
+                url: "https://silent-equation-1508cb.netlify.app/",
+                image: "PHOE.gif",
+                sound: "SE.mp3"
+            },
+            {
+                id: "their-names",
+                title: "THEIR NAMES",
+                description: "Refrains like \"No Freud in their mind / No Jung they can find\" spotlight the cultural amnesia around depth psychology – a world where the unconscious is ignored, and introspection is absent. The lyrics mourn a generation severed from the teachings of Freud and Jung, wandering without self-awareness or emotional literacy.",
+                url: "https://their-names-2604eb.netlify.app/",
+                image: "tnn.gif",
+                sound: "their_names.mp3"
+            },
+            {
+                id: "the-joy-to-be",
+                title: "THE JOY TO BE",
+                description: "\"The Joy To Be\" is a hymn to love's primal force—not the sanitized romance of poets, but the wild, consuming fire that demands everything. The lyrics reject transcendence for immanence: love as \"the living ground,\" the \"sacred sin,\" the \"reckless land\" where ecstasy and destruction merge.",
+                url: "https://joy-tobe-1808kb.netlify.app/",
+                image: "song5.gif",
+                sound: "tjtb.mp3"
+            },
+            {
+                id: "the-souls-own-mirror",
+                title: "THE SOULS OWN MIRROR",
+                description: "In a world of endless noise and distraction, one truth remains eternal: you must face yourself in the mirror of your soul. This is your moment to break free, to question every step, and to live with the fearless authenticity that defines true existence.",
+                url: "https://thesouls-mirror-101bu.netlify.app/",
+                image: "Video.gif",
+                sound: "souls.mp3"
+            },
+            {
+                id: "there-is-no-reason-to-love",
+                title: "THERE IS NO REASON TO LOVE",
+                description: "This is a pamphlet for pure, unconditional love - wrapped in the most joyful grooves you'll ever hear. Because sometimes the most profound truths come disguised as the most danceable beats.",
+                url: "https://love-nolimits-113en.netlify.app/",
+                image: "NRTL.gif",
+                sound: "noreason.mp3"
+            },
+            {
+                id: "socialized",
+                title: "SOCIALIZED",
+                description: "A child left alone, In a world of demanding adults, Pointing fingers, raising voices, The shadows grow, the light retreats.",
+                url: "https://socialized-predicament-0011.netlify.app/",
+                image: "heartbl.gif",
+                sound: "socialized.mp3"
+            },
+            {
+                id: "souls-at-play",
+                title: "SOULS AT PLAY",
+                description: "A cosmic dance of love and connection by Bastart & Circé",
+                url: "https://loveis-soulsatplay-9393.netlify.app/",
+                image: "soulsat.gif",
+                sound: "SoulsAtPlay.mp3"
+            }
+        ];
+
+        let filteredSongs = [...songs];
+        let currentView = 'grid';
+
+        // Get current URL for sharing
+        function getCurrentURL(songId = null) {
+            const baseUrl = window.location.origin + window.location.pathname;
+            return songId ? `${baseUrl}?song=${songId}` : baseUrl;
+        }
+
+        // Update meta tags for sharing
+        function updateMetaTags(song) {
+            const baseUrl = window.location.origin + window.location.pathname;
+            const songUrl = getCurrentURL(song.id);
+            
+            document.getElementById('og-title').content = `${song.title} - COGNITIVEWAVE`;
+            document.getElementById('og-description').content = song.description;
+            document.getElementById('og-image').content = `${baseUrl}${song.image}`;
+            document.getElementById('og-url').content = songUrl;
+            
+            document.getElementById('twitter-title').content = `${song.title} - COGNITIVEWAVE`;
+            document.getElementById('twitter-description').content = song.description;
+            document.getElementById('twitter-image').content = `${baseUrl}${song.image}`;
+            
+            document.title = `${song.title} - COGNITIVEWAVE`;
+        }
+
+        // Share functions
+        function shareToFacebook(song) {
+            const url = getCurrentURL(song.id);
+            const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        function shareToTwitter(song) {
+            const url = getCurrentURL(song.id);
+            const text = `Check out "${song.title}" by COGNITIVEWAVE - ${song.description.substring(0, 100)}...`;
+            const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        function shareToInstagram(song) {
+            const url = getCurrentURL(song.id);
+            const text = `Check out "${song.title}" by COGNITIVEWAVE\n${song.description.substring(0, 100)}...\n${url}`;
+            
+            // Instagram doesn't have a direct web share URL, so we'll copy the text and provide instructions
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Text copied! Open Instagram and paste in your story or post.');
+            }).catch(() => {
+                // Fallback
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('Text copied! Open Instagram and paste in your story or post.');
+            });
+        }
+
+        function shareToTikTok(song) {
+            const url = getCurrentURL(song.id);
+            const text = `Check out "${song.title}" by COGNITIVEWAVE\n${song.description.substring(0, 100)}...\n${url}`;
+            
+            // TikTok doesn't have direct web sharing, so we'll copy and provide guidance
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Text copied! Open TikTok and paste in your video description.');
+            }).catch(() => {
+                // Fallback
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('Text copied! Open TikTok and paste in your video description.');
+            });
+        }
+
+        function shareToWhatsApp(song) {
+            const url = getCurrentURL(song.id);
+            const text = `Check out "${song.title}" by COGNITIVEWAVE\n${song.description}\n${url}`;
+            const shareUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+            window.open(shareUrl, '_blank');
+        }
+
+        function copyToClipboard(song) {
+            const url = getCurrentURL(song.id);
+            navigator.clipboard.writeText(url).then(() => {
+                showToast('Link copied to clipboard!');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('Link copied to clipboard!');
+            });
+        }
+
+        function shareNative(song) {
+            if (navigator.share) {
+                const url = getCurrentURL(song.id);
+                navigator.share({
+                    title: `${song.title} - COGNITIVEWAVE`,
+                    text: song.description,
+                    url: url
+                });
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function toggleShareMenu(event, songIndex) {
+            event.stopPropagation();
+            const shareMenu = event.target.closest('.song-card').querySelector('.share-menu');
+            
+            // Close all other share menus
+            document.querySelectorAll('.share-menu').forEach(menu => {
+                if (menu !== shareMenu) {
+                    menu.classList.remove('show');
+                }
+            });
+            
+            shareMenu.classList.toggle('show');
+        }
+
+        function createSongCard(song, index) {
+            return `
+                <div class="song-card" onclick="openSong('${song.url}')" style="--index: ${index}; animation-delay: ${index * 0.1}s" data-song-id="${song.id}">
+                    <div class="card-image" style="background-image: url('${song.image}');">
+                        <div class="play-button">▶</div>
+                        <div class="share-btn" onclick="toggleShareMenu(event, ${index})" title="Share this song">
+                            📤
+                        </div>
+                        <div class="share-menu">
+                            <div class="share-option facebook" onclick="event.stopPropagation(); shareToFacebook(songs.find(s => s.id === '${song.id}')); this.parentElement.classList.remove('show');">
+                                📘 Facebook
+                            </div>
+                            <div class="share-option twitter" onclick="event.stopPropagation(); shareToTwitter(songs.find(s => s.id === '${song.id}')); this.parentElement.classList.remove('show');">
+                                🐦 Twitter
+                            </div>
+                            <div class="share-option instagram" onclick="event.stopPropagation(); shareToInstagram(songs.find(s => s.id === '${song.id}')); this.parentElement.classList.remove('show');">
+                                📷 Instagram
+                            </div>
+                            <div class="share-option tiktok" onclick="event.stopPropagation(); shareToTikTok(songs.find(s => s.id === '${song.id}')); this.parentElement.classList.remove('show');">
+                                🎵 TikTok
+                            </div>
+                            <div class="share-option whatsapp" onclick="event.stopPropagation(); shareToWhatsApp(songs.find(s => s.id === '${song.id}')); this.parentElement.classList.remove('show');">
+                                💬 WhatsApp
+                            </div>
+                            <div class="share-option copy" onclick="event.stopPropagation(); copyToClipboard(songs.find(s => s.id === '${song.id}')); this.parentElement.classList.remove('show');">
+                                🔗 Copy Link
+                            </div>
+                            ${navigator.share ? `<div class="share-option native" onclick="event.stopPropagation(); shareNative(songs.find(s => s.id === '${song.id}')); this.parentElement.classList.remove('show');">📱 More Options</div>` : ''}
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="song-title">${song.title}</h3>
+                        <p class="song-description">${song.description}</p>
+                        <audio controls>
+                            <source src="${song.sound}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="card-footer">
+                            <button class="listen-btn" onclick="event.stopPropagation(); openSong('${song.url}')">
+                                enter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderGallery() {
+            const gallery = document.getElementById('gallery');
+            gallery.innerHTML = filteredSongs.map((song, index) => {
+                const originalIndex = songs.findIndex(s => s.id === song.id);
+                return createSongCard(song, index);
+            }).join('');
+            document.getElementById('totalSongs').textContent = filteredSongs.length.toString().padStart(2, '0');
+        }
+
+        function searchSongs(query) {
+            const searchTerm = query.toLowerCase();
+            filteredSongs = songs.filter(song => 
+                song.title.toLowerCase().includes(searchTerm) ||
+                song.description.toLowerCase().includes(searchTerm)
+            );
+            renderGallery();
+        }
+
+        function toggleView(view) {
+            currentView = view;
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-view="${view}"]`).classList.add('active');
+            
+            const gallery = document.getElementById('gallery');
+            if (view === 'list') {
+                gallery.style.gridTemplateColumns = '1fr';
+                gallery.style.gap = '1rem';
+            } else {
+                gallery.style.gridTemplateColumns = 'repeat(auto-fit, minmax(400px, 1fr))';
+                gallery.style.gap = '2rem';
+            }
+        }
+
+        function openSong(url) {
+            console.log('Opening URL:', url);
+            if (url && url !== '#') {
+                window.open(url, '_blank');
+            }
+        }
+
+        // Handle URL parameters for direct song sharing (simplified since we now use actual song pages)
+        function handleUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const songId = urlParams.get('song');
+            
+            if (songId) {
+                const song = songs.find(s => s.id === songId);
+                if (song) {
+                    // Just scroll to the song card in the gallery
+                    setTimeout(() => {
+                        const songCard = document.querySelector(`[data-song-id="${songId}"]`);
+                        if (songCard) {
+                            songCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            songCard.style.border = '2px solid #ffd700';
+                            setTimeout(() => {
+                                songCard.style.border = '1px solid rgba(255, 255, 255, 0.1)';
+                            }, 3000);
+                        }
+                    }, 500);
+                }
+            }
+        }
+
+        // Close share menus when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.share-btn') && !e.target.closest('.share-menu')) {
+                document.querySelectorAll('.share-menu').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+            }
+            
+            // Prevent audio from triggering card click
+            if (e.target.tagName === 'AUDIO' || e.target.closest('audio')) {
+                e.stopPropagation();
+            }
+        });
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchSongs(e.target.value);
+        });
+
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                toggleView(btn.dataset.view);
+            });
+        });
+
+        // Initialize
+        renderGallery();
+        handleUrlParams();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- META-OG-START -->
+<title>THE DIONYSIAN WAY — Bastart &amp; Circé</title>
+<meta name="description" content="Step into a world where rhythm breaks the boundaries of reason, and music becomes pure celebration. The Dionysian Way is more than a track—it’s an anthem of joy, playful rebellion, and inner mastery.">
+
+<link rel="canonical" href="https://bastart666.com/s/the-dionysian-way/">
+
+<meta property="og:type" content="music.song">
+<meta property="og:site_name" content="Bastart & Circé">
+<meta property="og:title" content="THE DIONYSIAN WAY — Bastart &amp; Circé">
+<meta property="og:description" content="Step into a world where rhythm breaks the boundaries of reason, and music becomes pure celebration. The Dionysian Way is more than a track—it’s an anthem of joy, playful rebellion, and inner mastery.">
+<meta property="og:url" content="https://bastart666.com/s/the-dionysian-way/">
+<meta property="og:image" content="https://dionysian-way-af101.netlify.app/assets/og/dance.jpg">
+<meta property="og:image:alt" content="THE DIONYSIAN WAY — Bastart &amp; Circé">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="THE DIONYSIAN WAY — Bastart &amp; Circé">
+<meta name="twitter:description" content="Step into a world where rhythm breaks the boundaries of reason, and music becomes pure celebration. The Dionysian Way is more than a track—it’s an anthem of joy, playful rebellion, and inner mastery.">
+<meta name="twitter:image" content="https://dionysian-way-af101.netlify.app/assets/og/dance.jpg">
+<meta name="twitter:url" content="https://dionysian-way-af101.netlify.app/">
+<!-- META-OG-END -->
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ---- Base / Background ---- */
+    :root {
+      --overlay: 0.58;      /* darkness of the overlay (0–1). Increase for darker */
+      --accent: #ff3d7f;    /* CTA color */
+      --accent-2: #ff6699;  /* CTA hover */
+      --glass: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.18);
+      --text-dim: rgba(255,255,255,0.8);
+      --maxw: 980px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      color: #fff;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    /* Fullscreen background GIF */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url('dance.gif') center / cover no-repeat fixed;
+      z-index: -2;
+      transform: translateZ(0); /* helps performance on some browsers */
+    }
+    /* Dark overlay for readability */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,var(--overlay));
+      z-index: -1;
+    }
+
+    /* ---- Layout ---- */
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: clamp(18px, 2.5vw, 28px);
+    }
+    header {
+      text-align: center;
+      padding: clamp(48px, 8vw, 96px) 0 clamp(24px, 4vw, 48px);
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.1;
+      margin: 0 0 12px;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.35);
+    }
+    header p.sub {
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: clamp(16px, 2.4vw, 20px);
+      color: var(--text-dim);
+    }
+
+    /* Glass cards */
+    .card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      padding: clamp(18px, 2.8vw, 28px);
+      backdrop-filter: saturate(120%) blur(8px);
+    }
+    .stack { display: grid; gap: clamp(18px, 2vw, 28px); }
+
+    /* Player */
+    .player { text-align: center; }
+    .player audio { width: min(680px, 100%); }
+
+    /* About */
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.3vw, 34px);
+      margin: 0 0 8px;
+    }
+    .lead {
+      font-size: clamp(16px, 2.3vw, 18px);
+      color: var(--text-dim);
+    }
+    blockquote {
+      margin: 16px 0 0;
+      padding: 0 0 0 14px;
+      border-left: 3px solid var(--accent);
+      color: #fff;
+      font-style: italic;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 8px 0 0;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform .08s ease, background .25s ease, box-shadow .25s ease;
+      box-shadow: 0 10px 30px rgba(255,61,127,0.35);
+    }
+    .btn:hover { background: var(--accent-2); transform: translateY(-1px); }
+
+    /* Lyrics (collapsible) */
+    details.lyrics {
+      margin-top: 6px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+    details.lyrics > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 18px;
+      font-weight: 600;
+      user-select: none;
+      position: relative;
+    }
+    details.lyrics > summary::marker { display: none; }
+    details.lyrics > summary::after {
+      content: "▼";
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%) rotate(0deg);
+      transition: transform .2s ease;
+      opacity: .8;
+    }
+    details[open].lyrics > summary::after { transform: translateY(-50%) rotate(-180deg); }
+    .lyrics-body {
+      padding: 0 18px 18px;
+      max-height: 70vh;
+      overflow: auto;
+    }
+    pre.lyrictext {
+      margin: 0;
+      white-space: pre-wrap;  /* wrap long lines */
+      word-wrap: break-word;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-dim);
+      padding: 32px 0 48px;
+      font-size: 14px;
+    }
+
+    /* Small tweaks for very bright gifs behind */
+    .shade {
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.45) 0%,
+        rgba(0,0,0,0.25) 28%,
+        rgba(0,0,0,0.25) 72%,
+        rgba(0,0,0,0.45) 100%
+      );
+      border-radius: 22px;
+      padding: clamp(16px, 2.2vw, 22px);
+      border: 1px solid var(--border);
+    }
+
+    /* Accessibility & motion */
+    @media (prefers-reduced-motion: reduce) {
+      .btn { transition: none; }
+      body::before { background-attachment: scroll; }
+    }
+	 .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: rgba(255, 107, 157, 0.3);
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 4rem;
+            }
+            
+            .technical-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .streaming-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+		  /* Gallery section */
+    .gallery-section {
+      margin: 4rem 0;
+    }
+
+    .gallery-section h2 {
+      font-family: 'Orbitron', monospace;
+      color: var(--accent-cyan);
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-shadow: 0 0 20px var(--glow-cyan);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      border-radius: 15px;
+      display: block;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(45deg, var(--accent-purple), var(--accent-pink));
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255, 0, 128, 0.3), rgba(0, 255, 255, 0.3));
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .gallery-item .gallery-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      color: var(--text-main);
+      font-family: 'Orbitron', monospace;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      z-index: 3;
+      position: absolute;
+      text-shadow: 0 0 10px var(--glow-cyan);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px var(--glow-pink);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item:hover::before {
+      background: linear-gradient(45deg, rgba(255, 0, 128, 0.1), rgba(0, 255, 255, 0.1));
+    }
+
+    .gallery-item:nth-child(even):hover {
+      box-shadow: 0 0 40px var(--glow-cyan);
+    }
+
+    /* Fallback styling if no image */
+    .gallery-item:not([data-has-image]) {
+      background: linear-gradient(45deg, var(--accent-purple), var(--accent-pink));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-item:not([data-has-image]) .gallery-label {
+      position: static;
+      background: none;
+      padding: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--accent-purple);
+      margin-top: 4rem;
+    }
+
+    .footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: var(--accent-pink);
+      text-shadow: 0 0 10px var(--glow-pink);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .content-section {
+        padding: 2rem 1rem;
+      }
+      
+      .promo-block {
+        padding: 2rem;
+      }
+      
+      .audio-section {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Interactive particles effect */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--accent-cyan);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+      50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+    }
+	      /* Button Container */
+        .cognitivewave-nav {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        /* Main Button Styles */
+        .gallery-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover Effects */
+        .gallery-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
+        .gallery-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Icon Styles */
+        .gallery-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-button:hover .gallery-icon {
+            transform: translateX(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-button {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+            
+            .gallery-icon {
+                width: 16px;
+                height: 16px;
+            }
+        }
+  </style>
+
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="shade">
+      <h1>The Dionysian Way</h1>
+      <p class="sub">by <strong>Bastart &amp; Circé</strong> — a shimmering anthem of joy, rebellion, and inner mastery. Close your eyes, taste the night, and join the movement.</p>
+    <social-links></social-links>
+	</header>
+<div class="cognitivewave-nav">
+            <a href="https://cognitivewave-gallery-101cb.netlify.app" class="gallery-button">
+                <svg class="gallery-icon" viewBox="0 0 24 24">
+                    <path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"/>
+                </svg>
+                Back to Gallery
+            </a>
+        </div>
+    <main class="stack">
+      <!-- Player -->
+      <section id="listen" class="card player" aria-label="Audio player">
+        <h2>Listen</h2>
+        <audio controls preload="metadata">
+          <!-- Keep this file name as provided; place dionysos.mp3 next to this HTML file -->
+          <source src="dionysos.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <div class="cta" style="margin-top: 12px;">
+          <a class="btn" href="#about">About the Song</a>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="card" aria-label="About the song">
+        <h2>About the Song</h2>
+        <p class="lead">
+          Step into a world where rhythm breaks the boundaries of reason, and music becomes pure celebration.
+          <em>The Dionysian Way</em> is more than a track—it’s an anthem of joy, playful rebellion, and inner mastery.
+          Inspired by the ecstatic spirit of Dionysus, it captures the vibrant tension between control and release, discipline and abandon.
+        </p>
+        <blockquote>
+          “Let us dance the Dionysian way — throw our doubts and fears away.”
+        </blockquote>
+        <div class="cta" style="margin-top: 14px;">
+          <a class="btn" href="#lyrics">Read the Lyrics</a>
+        </div>
+      </section>
+
+      <!-- Lyrics -->
+      <section id="lyrics" class="card" aria-label="Lyrics">
+        <h2>Lyrics</h2>
+        <details class="lyrics">
+          <summary>Show full lyrics</summary>
+          <div class="lyrics-body">
+            <pre class="lyrictext">Sunset paints the sky so bright
+Feeling free no end in sight
+Dancing hearts and gleaming eyes
+Breaking rules to reach new highs
+
+Laughing loud we taste the night
+Living wild and holding tight
+Conscious joy pure and sweet
+Every moment on repeat
+
+Let us dance the Dionysian way
+Throw our doubts and fears away
+Master self and feel the thrill
+Against the odds we'll stand still
+
+Mind expands in vibrant hues
+Confidence in every move
+Breathe it in no time to waste
+Savor every bit and taste
+
+Morals bending to our glee
+Standing firm so wild and free
+Responsible yet uncontrolled
+Chasing dreams so brave and bold
+
+Let us dance the Dionysian way
+Throw our doubts and fears away
+Master self and feel the thrill
+Against the odds we'll stand still</pre>
+          </div>
+        </details>
+      </section>
+    </main>
+	<section class="gallery-section">
+      <h2>EXPLORE THE LOVE</h2>
+      <div class="gallery-grid">
+        <a href="https://linktr.ee/cognitivewave/" class="gallery-item" data-has-image>
+          <img src="tnn.gif" alt="ALL MY STUFF!" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">ALL MY STUFF!</div>
+        </a>
+        <a href="https://love-nolimits-113en.netlify.app/" class="gallery-item" data-has-image>
+          <img src="NRTL.gif" alt="NO REASON" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">THERE IS NO REASON TO LOVE</div>
+        </a>
+        <a href="https://echoes-ofdelusion-gh05t.netlify.app/" class="gallery-item" data-has-image>
+          <img src="song2.gif" alt="ECHOES OF DELUSION" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">ECHOES OF DELUSION</div>
+        </a>
+        <a href="https://joy-tobe-1808kb.netlify.app" class="gallery-item" data-has-image>
+          <img src="song5.gif" alt="The Joy To Be" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">The Joy To Be</div>
+        </a>
+        <a href="https://universal-tragedy-6518.netlify.app/" class="gallery-item" data-has-image>
+          <img src="roles.gif" alt="UNIVERSAL TRAGEDY" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">ROLES IN FALSE ARTS</div>
+        </a>
+        <a href="https://bastart-portfolio-666.netlify.app" class="gallery-item" data-has-image>
+          <img src="song3.gif" alt="BASTART" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">BASTART</div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+	 <div class="social-links">
+                <a href="mailto:lostandfound@bastart666.com" class="social-link">📧</a>
+               
+                <a href="https://linktr.ee/cognitivewave" class="social-link">Linktree 📱</a>
+                <a href="https://bastart666.com" class="social-link">🌐</a>
+            </div>
+      © 2025 Bastart &amp; Circé — All Rights Reserved
+    </footer>
+  </div>
+  <script>
+  window.SOCIAL_DEFAULTS = {
+    instagram: "https://www.instagram.com/a_bastart",
+    youtube:   "https://www.youtube.com/@Cognitive-wave",
+    tiktok:    "https://www.tiktok.com/@am_bastart_ma",
+    facebook:  "https://facebook.com/bastian.neumann.75",
+    bandcamp:  "https://lostandfoundart.bandcamp.com",
+    website:   "https://bastart666.com",
+
+    podcast_spotify: "https://open.spotify.com/show/4pp2WsZDvsAOtV1wML7TxR?si=175c5cad04274f09",
+    podcast_youtube: "https://youtube.com/playlist?list=PL8eUxrFChU0AkQqkgOvwxHmfYBD7WkSrh&si=YfCECRqgz2BTJBcO",
+    podcast_apple: null
+  };
+</script>
+<script type="module" src="/assets/social-links.js"></script>
+</body>
+</html>

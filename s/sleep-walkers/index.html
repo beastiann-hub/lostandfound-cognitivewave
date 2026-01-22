@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- META-OG-START -->
+<title>ENDE — Bastart &amp; Circé</title>
+<meta name="description" content="Du stehst am Rand deiner eigenen Matrix. ENDE ist kein Song – es ist ein Weckruf. Bist du bereit, die Ketten zu sprengen und dich selbst zu spüren?">
+
+<link rel="canonical" href="https://bastart666.com/s/sleep-walkers/">
+
+<meta property="og:type" content="music.song">
+<meta property="og:site_name" content="Bastart & Circé">
+<meta property="og:title" content="ENDE — Bastart &amp; Circé">
+<meta property="og:description" content="Du stehst am Rand deiner eigenen Matrix. ENDE ist kein Song – es ist ein Weckruf. Bist du bereit, die Ketten zu sprengen und dich selbst zu spüren?">
+<meta property="og:url" content="https://bastart666.com/s/sleep-walkers/">
+<meta property="og:image" content="https://diesaat-derangst-s33d.netlify.app/assets/og/ende.jpg">
+<meta property="og:image:alt" content="ENDE — Bastart &amp; Circé">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ENDE — Bastart &amp; Circé">
+<meta name="twitter:description" content="Du stehst am Rand deiner eigenen Matrix. ENDE ist kein Song – es ist ein Weckruf. Bist du bereit, die Ketten zu sprengen und dich selbst zu spüren?">
+<meta name="twitter:image" content="https://diesaat-derangst-s33d.netlify.app/assets/og/ende.jpg">
+<meta name="twitter:url" content="https://diesaat-derangst-s33d.netlify.app/">
+<!-- META-OG-END -->
+
+  
+  
+
+
+  
+  
+
+
+    
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #0a0a12;
+            --darker-bg: #050508;
+            --text-color: #e0e0e0;
+            --accent-color: #00ff41;
+            --highlight-color: #39ff14;
+            --neon-green: #00ff41;
+            --neon-lime: #39ff14;
+            --secondary-color: #1a3d1a;
+            --glitch-color-1: #ff2968;
+            --glitch-color-2: #35f4ff;
+            --circuit-green: #00cc33;
+            --matrix-green: #00ff00;
+        }
+        
+        #pathCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 255, 65, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 85% 30%, rgba(0, 204, 51, 0.1) 0%, transparent 20%),
+                linear-gradient(45deg, transparent 49%, rgba(0, 255, 65, 0.05) 50%, transparent 51%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 4rem 0 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 6rem;
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            background: linear-gradient(45deg, var(--neon-green), var(--neon-lime));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+        
+        .subtitle {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            letter-spacing: 0.3em;
+        }
+        
+        h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: #a0c0a0;
+        }
+        
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            max-width: 900px;
+            padding: 3rem;
+            background: rgba(10, 10, 18, 0.8);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            border: 2px solid rgba(0, 255, 65, 0.3);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+        
+        .philosophical-quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--neon-lime);
+            margin: 2rem 0;
+            padding: 1rem;
+            border-left: 3px solid var(--neon-green);
+            background: rgba(0, 255, 65, 0.05);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: transparent;
+            color: var(--neon-green);
+            border: 2px solid var(--neon-green);
+            border-radius: 30px;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+        
+        .cta-button:hover {
+            background: rgba(0, 255, 65, 0.1);
+            box-shadow: 0 0 25px rgba(0, 255, 65, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .song-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 5rem 0;
+        }
+        
+        .info-card {
+            background: rgba(0, 40, 20, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 255, 65, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-green), var(--neon-lime), var(--neon-green));
+        }
+        
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 255, 65, 0.2);
+        }
+        
+        .info-card h3 {
+            color: var(--neon-lime);
+            margin-top: 0;
+            border-bottom: 1px solid rgba(0, 255, 65, 0.4);
+            padding-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tag {
+            background: rgba(0, 255, 65, 0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 255, 65, 0.4);
+            font-family: 'Share Tech Mono', monospace;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background: rgba(0, 255, 65, 0.25);
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+        }
+        
+        .cover-section {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 2rem;
+        }
+        
+        .cover-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+            margin-bottom: 1rem;
+        }
+        
+        .lyrics-section {
+            margin: 5rem 0;
+            background: rgba(5, 5, 8, 0.9);
+            padding: 3rem;
+            border-radius: 15px;
+            position: relative;
+            border: 2px solid rgba(0, 255, 65, 0.2);
+            overflow: hidden;
+        }
+        
+        .lyrics-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 65, 0.05), transparent);
+            pointer-events: none;
+        }
+        
+        .lyrics-section h3 {
+            color: var(--neon-green);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .lyrics {
+            white-space: pre-line;
+            line-height: 2;
+            font-style: italic;
+            color: #c0e0c0;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 1rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+        }
+        
+        .lyrics::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .lyrics::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 10px;
+        }
+        
+        .interactive-section {
+            margin: 6rem 0;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(0, 20, 10, 0.5);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 65, 0.3);
+        }
+        
+        .interactive-section h3 {
+            color: var(--neon-lime);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .interactive-section p {
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            color: #a0c0a0;
+        }
+        
+        .simulation-container {
+            position: relative;
+            height: 500px;
+            margin: 3rem auto;
+            max-width: 1000px;
+            border: 2px solid rgba(0, 255, 65, 0.4);
+            border-radius: 15px;
+            overflow: hidden;
+            background: rgba(5, 15, 8, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .life-paths {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .terminal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        
+        .terminal-overlay.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .terminal-message {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--glitch-color-1);
+            font-size: 2rem;
+            text-shadow: 0 0 15px rgba(255, 85, 85, 0.8);
+            text-align: center;
+            animation: glitch-text 0.5s infinite;
+        }
+        
+        @keyframes glitch-text {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+        
+        .controls {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            background: transparent;
+            color: var(--neon-green);
+            border: 2px solid var(--neon-green);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        button:hover {
+            background: rgba(0, 255, 65, 0.1);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        button:hover::before {
+            left: 100%;
+        }
+        
+        .philosophical-reflection {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(0, 40, 20, 0.3), rgba(0, 20, 10, 0.5));
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 65, 0.2);
+            text-align: center;
+        }
+        
+        .philosophical-reflection h3 {
+            color: var(--neon-lime);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .philosophical-reflection p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .play-section {
+            text-align: center;
+            margin: 5rem 0;
+            padding: 4rem 2rem;
+            background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+            border-radius: 20px;
+        }
+        
+        .play-btn {
+            display: inline-block;
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(45deg, var(--neon-green), var(--neon-lime));
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 0 40px rgba(0, 255, 65, 0.6);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 60px rgba(0, 255, 65, 0.8);
+        }
+        
+        .play-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-30%, -50%);
+            border-style: solid;
+            border-width: 15px 0 15px 25px;
+            border-color: transparent transparent transparent var(--dark-bg);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            margin-top: 5rem;
+            border-top: 2px solid rgba(0, 255, 65, 0.3);
+            color: #666;
+            font-size: 1rem;
+            background: rgba(0, 20, 10, 0.3);
+        }
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 255, 65, 0.4);
+            pointer-events: none;
+        }
+        
+        .glitch-text {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--glitch-color-1);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -2px 0 var(--glitch-color-2);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim {
+            0% { clip: rect(42px, 9999px, 44px, 0); }
+            5% { clip: rect(12px, 9999px, 59px, 0); }
+            10% { clip: rect(48px, 9999px, 29px, 0); }
+            15% { clip: rect(42px, 9999px, 73px, 0); }
+            20% { clip: rect(63px, 9999px, 27px, 0); }
+            25% { clip: rect(34px, 9999px, 55px, 0); }
+            30% { clip: rect(86px, 9999px, 73px, 0); }
+            35% { clip: rect(20px, 9999px, 20px, 0); }
+            40% { clip: rect(26px, 9999px, 60px, 0); }
+            45% { clip: rect(25px, 9999px, 66px, 0); }
+            50% { clip: rect(57px, 9999px, 98px, 0); }
+            55% { clip: rect(5px, 9999px, 46px, 0); }
+            60% { clip: rect(82px, 9999px, 31px, 0); }
+            65% { clip: rect(54px, 9999px, 27px, 0); }
+            70% { clip: rect(28px, 9999px, 99px, 0); }
+            75% { clip: rect(45px, 9999px, 69px, 0); }
+            80% { clip: rect(23px, 9999px, 85px, 0); }
+            85% { clip: rect(54px, 9999px, 84px, 0); }
+            90% { clip: rect(45px, 9999px, 47px, 0); }
+            95% { clip: rect(24px, 9999px, 23px, 0); }
+            100% { clip: rect(32px, 9999px, 92px, 0); }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            5% { clip: rect(52px, 9999px, 74px, 0); }
+            10% { clip: rect(79px, 9999px, 85px, 0); }
+            15% { clip: rect(75px, 9999px, 5px, 0); }
+            20% { clip: rect(67px, 9999px, 61px, 0); }
+            25% { clip: rect(14px, 9999px, 79px, 0); }
+            30% { clip: rect(1px, 9999px, 66px, 0); }
+            35% { clip: rect(86px, 9999px, 30px, 0); }
+            40% { clip: rect(23px, 9999px, 98px, 0); }
+            45% { clip: rect(85px, 9999px, 72px, 0); }
+            50% { clip: rect(71px, 9999px, 75px, 0); }
+            55% { clip: rect(2px, 9999px, 48px, 0); }
+            60% { clip: rect(80px, 9999px, 87px, 0); }
+            65% { clip: rect(84px, 9999px, 25px, 0); }
+            70% { clip: rect(84px, 9999px, 38px, 0); }
+            75% { clip: rect(92px, 9999px, 51px, 0); }
+            80% { clip: rect(98px, 9999px, 35px, 0); }
+            85% { clip: rect(40px, 9999px, 80px, 0); }
+            90% { clip: rect(62px, 9999px, 58px, 0); }
+            95% { clip: rect(44px, 9999px, 92px, 0); }
+            100% { clip: rect(54px, 9999px, 98px, 0); }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            .song-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content {
+                padding: 2rem;
+            }
+            
+            .simulation-container {
+                height: 350px;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cover-image {
+                width: 250px;
+                height: 250px;
+            }
+        }
+		/* Gallery section */
+    .gallery-section {
+      margin: 4rem 0;
+    }
+
+    .gallery-section h2 {
+      font-family: 'Orbitron', monospace;
+      color: var(--accent-cyan);
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-shadow: 0 0 20px var(--glow-cyan);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      border-radius: 15px;
+      display: block;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(45deg, var(--accent-purple), var(--accent-pink));
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255, 0, 128, 0.3), rgba(0, 255, 255, 0.3));
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .gallery-item .gallery-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      color: var(--text-main);
+      font-family: 'Orbitron', monospace;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      z-index: 3;
+      position: absolute;
+      text-shadow: 0 0 10px var(--glow-cyan);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px var(--glow-pink);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item:hover::before {
+      background: linear-gradient(45deg, rgba(255, 0, 128, 0.1), rgba(0, 255, 255, 0.1));
+    }
+
+    .gallery-item:nth-child(even):hover {
+      box-shadow: 0 0 40px var(--glow-cyan);
+    }
+
+    /* Fallback styling if no image */
+    .gallery-item:not([data-has-image]) {
+      background: linear-gradient(45deg, var(--accent-purple), var(--accent-pink));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-item:not([data-has-image]) .gallery-label {
+      position: static;
+      background: none;
+      padding: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--accent-purple);
+      margin-top: 4rem;
+    }
+
+    .footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: var(--accent-pink);
+      text-shadow: 0 0 10px var(--glow-pink);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .content-section {
+        padding: 2rem 1rem;
+      }
+      
+      .promo-block {
+        padding: 2rem;
+      }
+      
+      .audio-section {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Interactive particles effect */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--accent-cyan);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+      50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+    }
+	/* Button Container */
+        .cognitivewave-nav {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        /* Main Button Styles */
+        .gallery-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover Effects */
+        .gallery-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
+        .gallery-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Icon Styles */
+        .gallery-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-button:hover .gallery-icon {
+            transform: translateX(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-button {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+            
+            .gallery-icon {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="glitch-text" data-text="ENDE">ENDE</h1>
+            <div class="subtitle">apparatus mundi</div>
+            <h2>by Bastart</h2>
+        </header>
+<social-links></social-links>
+
+        <div class="play-section">
+            <div class="play-btn" id="playButton"></div>
+            <audio id="audioPlayer" preload="auto">
+                <source src="ende.mp3" type="audio/mpeg">
+                <source src="ende.ogg" type="audio/ogg">
+                <source src="ende.wav" type="audio/wav">
+                Dein Browser unterstützt das Audio-Element nicht.
+            </audio>
+            <p>PREVIEW <br><span style="color:var(--neon-green)">Lebst du – oder wirst du gelebt?</span></p>
+        </div>
+		<div class="cognitivewave-nav">
+            <a href="https://cognitivewave-gallery-101cb.netlify.app" class="gallery-button">
+                <svg class="gallery-icon" viewBox="0 0 24 24">
+                    <path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"/>
+                </svg>
+                Back to Gallery
+            </a>
+        </div>
+
+        <section class="hero-section">
+            <div class="hero-content">
+                <p>Du stehst am Rand deiner eigenen Matrix. "ENDE" ist kein Song – es ist ein Weckruf. Bist du bereit, die Ketten zu sprengen und dich selbst zu spüren? Oder bleibst du Zuschauer deines eigenen Lebens?</p>
+                <div class="philosophical-quote">
+                    "Die Ressource ist dein eigenes Fleisch, der Traum vom Leben als dein eigenes Reich..."
+                </div>
+                <a href="#simulation" class="cta-button">Erwache aus der Simulation</a>
+            </div>
+        </section>
+
+        <div class="cover-section">
+            <img src="ende.gif" alt="ENDE Cover" class="cover-image">
+        </div>
+
+        <div class="song-info">
+            <div class="info-card">
+                <h3>Die Leere im Spiegel</h3>
+                <p>Kennst du das Gefühl, wenn du morgens in den Spiegel blickst und ein Fremder zurückstarrt? "ENDE" ist der Moment, wo die Maske fällt. Wo du erkennst, dass du jahrelang nicht gelebt, sondern funktioniert hast. Der Song ist ein Schrei aus der Seele - der letzte verzweifelte Versuch, das wahre Ich zu befreien, bevor es zu spät ist.</p>
+                <div class="tags">
+                    <span class="tag">Selbsterkenntnis</span>
+                    <span class="tag">Existenzkrise</span>
+                    <span class="tag">Fremdbestimmung</span>
+                    <span class="tag">Authentizität</span>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <h3>Klänge der Auflösung</h3>
+                <p>Die Musik beginnt wie ein pulsierender Strom - hypnotisch, beruhigend, fast betäubend. Doch dann bricht das Chaos herein. "Rewind!" - und plötzlich bricht alles weg. Die elektronischen Klänge werden zu Schreien, der Beat zu Herzschlägen eines sterbenden Systems. Es ist der Sound des Erwachens - schmerzhaft, aber befreiend.</p>
+                <div class="tags">
+                    <span class="tag">Electronic Meditation</span>
+                    <span class="tag">Chaotisches Finale</span>
+                    <span class="tag">Bewusstseinsstrom</span>
+                    <span class="tag">123 BPM Herzschlag</span>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <h3>Der Moment der Wahrheit</h3>
+                <p>Was passiert, wenn die Simulation abgebrochen wird? Wenn die "Wait!"-Rufe verhallen und nur noch die nackte Wahrheit bleibt? Der Song führt dich durch die Phasen der Verleugnung bis zur brutalen Akzeptanz. Am Ende stehst du vor der wichtigsten Entscheidung: Weiterschlafen oder endlich leben?</p>
+                <div class="tags">
+                    <span class="tag">Lebensrevue</span>
+                    <span class="tag">Verzweiflung</span>
+                    <span class="tag">Erkenntnis</span>
+                    <span class="tag">Neuanfang</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="philosophical-reflection">
+            <h3>Der apparatus mundi</h3>
+            <p>"Die Angst, die dir so tief ins Hirn eingepflanzt - die Saat sie fällt aus deiner eigenen Hand."</p>
+            
+        </div>
+
+        <div class="interactive-section" id="simulation">
+            <h3>Matrix der Entscheidungen</h3>
+            <p>Wähle. Scheitere. Erwache. Jeder Klick ein Schritt raus aus der Komfortzone - oder tiefer hinein.</p>
+            <div class="simulation-container" id="simulationContainer">
+                <div class="life-paths" id="lifePaths">
+                    <canvas id="pathCanvas"></canvas>
+                </div>
+                <div class="terminal-overlay" id="terminalOverlay">
+                    <div class="terminal-message">
+                        SIMULATION TERMINATED<br>
+                        >> WAIT!<< <br>
+                        <small style="opacity: 0.7; font-size: 0.8em;">War das DEIN Leben?</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="leftBtn">↙ Anpassung</button>
+                <button id="rightBtn">Rebellion ↗</button>
+                <button id="resetBtn">⟲ REWIND!</button>
+            </div>
+        </div>
+
+        <div class="lyrics-section">
+            <h3>Worte des Schreckens</h3>
+            <div class="lyrics">
+Wo ist mein Leben?
+Ich weiß nicht, was ich will
+Und was ich wollt' war immer nur ein Gefühl
+Doch dieses Fühlen bringt mich um den Verstand,
+obwohl es fremd ist und dem Fleisch nicht bekannt
+
+Wer sagt mir was ich soll
+und was ich begehr'?
+So viele Jahre, wer holt sie wieder her?
+Damit ich mir die Fragen stellen kann,
+Die allein ich selbst beantworten kann
+
+wenn ich gewußt' hätt' wenn oh wenn ich getan
+was ich mich nie getraut weil ich nie begann
+mich selbst zu fühlen und mich selbst zu versteh'n
+das Kind in mir nicht mehr als Kind anzuseh'n
+
+Nun ist es an der Zeit auf Suche zu gehen
+nach Zielobjekten die die Taten gesteh'n
+die mir der Geist einhaucht in heiligem Fleh'n
+Ein Opfer darzubringen, Rache zu nehmen
+So wird aus Angst und Wut mein neues Gesetz
+mein Lebenswerk das alle Bilder zerfetzt
+die Rachsucht treibt die hohle Existenz
+während das Feuer meinen Körper verbrennt
+
+die Ressource ist dein eigenes Fleisch
+der Traum vom leben als dein eigenes reich
+du glaubst du strebst dabei ist dir längst bekannt
+der Dämon zerrt die Kette an deiner Hand
+du warst du nie Opfer, warst niemals verlor'n,
+denn du bist frei und ungezwungen gebor'n
+die Angst die dir so tief ins Hirn eingepflanzt
+die Saat sie fällt aus deiner eigenen Hand
+
+Simulation Terminated - (Wait!)
+Simulation Terminated - (Wait!)
+Simulation Terminated - (Wait!)
+            </div>
+        </div>
+		
+		  <section class="gallery-section">
+      <h2>Explore More of Bastart & Circé</h2>
+      <div class="gallery-grid">
+        <a href="https://thevoid-thelove-wedeclare.netlify.app/" class="gallery-item" data-has-image>
+          <img src="sleep.gif" alt="Dive" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">SLEEPWALKERS</div>
+        </a>
+        <a href="https://bastart-portfolio-666.netlify.app" class="gallery-item" data-has-image>
+          <img src="hell.gif" alt="Videos" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">HELL IS OTHER PEOPLE</div>
+        </a>
+        <a href="https://electric-dreams-1c6918.netlify.app" class="gallery-item" data-has-image>
+          <img src="ED.gif" alt="Electric Dreams" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">PSYCHOSOPHY</div>
+        </a>
+        <a href="https://their-names-2604eb.netlify.app" class="gallery-item" data-has-image>
+          <img src="tnn.gif" alt="Their Names" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">Their Names</div>
+        </a>
+        <a href="https://thecrowd-sampler-9cirba.netlify.app" class="gallery-item" data-has-image>
+          <img src="thecrowd.gif" alt="TC" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">The Crowd! Interactive Sampler</div>
+        </a>
+        <a href="https://binary-ballet-0nonzs.netlify.app/" class="gallery-item" data-has-image>
+          <img src="movement_-maze.gif" alt="Intimidation" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">Intimidation</div>
+        </a>
+      </div>
+    </section>
+
+        <footer>
+            <p>ENDE - apparatus mundi | by Bastart | © 2025</p>
+            <p style="margin-top: 1rem; font-style: italic; color: var(--neon-green);">
+                "Die Angst, die dir so tief ins Hirn eingepflanzt - die Saat sie fällt aus deiner eigenen Hand."
+            </p>
+        </footer>
+    </div>
+<script>
+  window.SOCIAL_DEFAULTS = {
+    instagram: "https://www.instagram.com/a_bastart",
+    youtube:   "https://www.youtube.com/@Cognitive-wave",
+    tiktok:    "https://www.tiktok.com/@am_bastart_ma",
+    facebook:  "https://facebook.com/bastian.neumann.75",
+    bandcamp:  "https://lostandfoundart.bandcamp.com",
+    website:   "https://bastart666.com",
+
+    podcast_spotify: "https://open.spotify.com/show/4pp2WsZDvsAOtV1wML7TxR?si=175c5cad04274f09",
+    podcast_youtube: "https://youtube.com/playlist?list=PL8eUxrFChU0AkQqkgOvwxHmfYBD7WkSrh&si=YfCECRqgz2BTJBcO",
+    podcast_apple: null
+  };
+</script>
+<script type="module" src="/assets/social-links.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Element-Referenzen
+            const simulationContainer = document.getElementById('simulationContainer');
+            const lifePaths = document.getElementById('lifePaths');
+            const canvas = document.getElementById('pathCanvas');
+            const leftBtn = document.getElementById('leftBtn');
+            const rightBtn = document.getElementById('rightBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const terminalOverlay = document.getElementById('terminalOverlay');
+            const playButton = document.getElementById('playButton');
+            const audioPlayer = document.getElementById('audioPlayer');
+            const particlesContainer = document.getElementById('particles');
+            
+            // Canvas-Variablen
+            let ctx = null;
+            let animationId;
+            let currentLevel = 0;
+            let maxLevels = 4;
+            let pathHistory = [];
+            let particles = [];
+            let pathPoints = [];
+            
+            const lifeChoices = [
+                {
+                    left: { text: "Sicherheit wählen", consequence: "comfort" },
+                    right: { text: "Risiko eingehen", consequence: "growth" }
+                },
+                {
+                    left: { text: "Angepasst leben", consequence: "conformity" },
+                    right: { text: "Eigenen Weg gehen", consequence: "authenticity" }
+                },
+                {
+                    left: { text: "Schweigen bewahren", consequence: "silence" },
+                    right: { text: "Wahrheit sprechen", consequence: "rebellion" }
+                },
+                {
+                    left: { text: "Träumen bleiben", consequence: "illusion" },
+                    right: { text: "Erwachen wagen", consequence: "awakening" }
+                }
+            ];
+            
+            // Audio-Player Setup
+            function setupAudioPlayer() {
+                if (!audioPlayer) return;
+                
+                audioPlayer.volume = 0.7;
+                audioPlayer.preload = "auto";
+                
+                // Fallback wenn ende.mp3 nicht existiert
+                audioPlayer.addEventListener('error', function() {
+                    console.log('Audio file not found, using placeholder');
+                    playButton.style.opacity = '0.5';
+                    playButton.style.cursor = 'default';
+                });
+                
+                audioPlayer.addEventListener('canplaythrough', function() {
+                    playButton.style.opacity = '1';
+                    playButton.style.cursor = 'pointer';
+                });
+            }
+            
+            // Canvas-Initialisierung
+            function initCanvas() {
+                if (!canvas) return false;
+                
+                try {
+                    ctx = canvas.getContext('2d');
+                    resizeCanvas();
+                    return true;
+                } catch (e) {
+                    console.error('Canvas initialization failed:', e);
+                    return false;
+                }
+            }
+            
+            // Canvas-Größe anpassen
+            function resizeCanvas() {
+                if (!canvas || !ctx) return;
+                
+                const container = canvas.parentElement;
+                const rect = container.getBoundingClientRect();
+                
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+            }
+            
+            // Partikel-Klasse
+            class PathParticle {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                    this.vx = (Math.random() - 0.5) * 4;
+                    this.vy = (Math.random() - 0.5) * 4;
+                    this.life = 1.0;
+                    this.decay = Math.random() * 0.02 + 0.01;
+                    this.size = Math.random() * 4 + 2;
+                }
+                
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.life -= this.decay;
+                    this.vx *= 0.98;
+                    this.vy *= 0.98;
+                }
+                
+                draw() {
+                    if (!ctx) return;
+                    
+                    ctx.save();
+                    ctx.globalAlpha = this.life;
+                    ctx.fillStyle = '#00ff41';
+                    ctx.shadowBlur = 15;
+                    ctx.shadowColor = '#00ff41';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+            
+            // Simulation zurücksetzen
+            function resetSimulation() {
+                currentLevel = 0;
+                pathHistory = [];
+                particles = [];
+                pathPoints = [];
+                terminalOverlay.classList.remove('visible');
+                
+                if (ctx) {
+                    initCanvasSimulation();
+                } else {
+                    // Fallback für Browser ohne Canvas-Unterstützung
+                    lifePaths.innerHTML = '<div style="color: #00ff41; text-align: center; padding: 2rem; font-family: \'Share Tech Mono\', monospace;">Deine Reise beginnt...<br>Nutze die Buttons zur Navigation.</div>';
+                }
+            }
+            
+            // Canvas-Simulation starten
+            function initCanvasSimulation() {
+                if (!ctx || !canvas) return;
+                
+                pathPoints = [];
+                particles = [];
+                
+                // Startpunkt
+                pathPoints.push({
+                    x: canvas.width * 0.1,
+                    y: canvas.height * 0.5,
+                    type: 'start'
+                });
+                
+                generateLevel();
+                if (animationId) cancelAnimationFrame(animationId);
+                animate();
+            }
+            
+            // Level generieren
+            function generateLevel() {
+                if (currentLevel >= maxLevels || !ctx || !canvas) return;
+                
+                const levelProgress = currentLevel / maxLevels;
+                const x = canvas.width * (0.15 + levelProgress * 0.6);
+                const centerY = canvas.height * 0.5;
+                const spread = canvas.height * 0.25;
+                
+                // Entscheidungspunkt
+                pathPoints.push({
+                    x: x,
+                    y: centerY,
+                    type: 'decision',
+                    level: currentLevel,
+                    active: true
+                });
+                
+                // Wahlmöglichkeiten
+                pathPoints.push({
+                    x: x + canvas.width * 0.15,
+                    y: centerY - spread,
+                    type: 'choice',
+                    choice: 'left',
+                    level: currentLevel,
+                    text: lifeChoices[currentLevel].left.text,
+                    clickable: true
+                });
+                
+                pathPoints.push({
+                    x: x + canvas.width * 0.15,
+                    y: centerY + spread,
+                    type: 'choice',
+                    choice: 'right',
+                    level: currentLevel,
+                    text: lifeChoices[currentLevel].right.text,
+                    clickable: true
+                });
+            }
+            
+            // Animation
+            function animate() {
+                if (!ctx || !canvas) return;
+                
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Hintergrund-Gitter
+                drawGrid();
+                
+                // Pfade zeichnen
+                drawPaths();
+                
+                // Punkte zeichnen
+                drawPoints();
+                
+                // Partikel updaten
+                particles = particles.filter(particle => {
+                    particle.update();
+                    particle.draw();
+                    return particle.life > 0;
+                });
+                
+                // Glitch-Effekt
+                if (Math.random() < 0.003) {
+                    addGlitchEffect();
+                }
+                
+                animationId = requestAnimationFrame(animate);
+            }
+            
+            // Gitter zeichnen
+            function drawGrid() {
+                if (!ctx) return;
+                
+                ctx.save();
+                ctx.strokeStyle = 'rgba(0, 255, 65, 0.1)';
+                ctx.lineWidth = 1;
+                ctx.setLineDash([2, 8]);
+                
+                const gridSize = 40;
+                for (let x = 0; x < canvas.width; x += gridSize) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, canvas.height);
+                    ctx.stroke();
+                }
+                
+                for (let y = 0; y < canvas.height; y += gridSize) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(canvas.width, y);
+                    ctx.stroke();
+                }
+                ctx.restore();
+            }
+            
+            // Pfade zeichnen
+            function drawPaths() {
+                if (!ctx) return;
+                
+                ctx.save();
+                ctx.strokeStyle = '#00ff41';
+                ctx.lineWidth = 3;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = '#00ff41';
+                ctx.setLineDash([]);
+                
+                // Verbindungen zeichnen
+                for (let i = 0; i < currentLevel; i++) {
+                    const decision = pathPoints.find(p => p.type === 'decision' && p.level === i);
+                    const choices = pathPoints.filter(p => p.type === 'choice' && p.level === i);
+                    
+                    if (decision && choices.length > 0) {
+                        choices.forEach(choice => {
+                            ctx.globalAlpha = 0.3;
+                            
+                            if (i < pathHistory.length) {
+                                const chosenPath = pathHistory[i];
+                                if ((chosenPath === 'left' && choice.choice === 'left') ||
+                                    (chosenPath === 'right' && choice.choice === 'right')) {
+                                    ctx.globalAlpha = 1.0;
+                                    ctx.lineWidth = 5;
+                                }
+                            }
+                            
+                            ctx.beginPath();
+                            ctx.moveTo(decision.x, decision.y);
+                            ctx.lineTo(choice.x, choice.y);
+                            ctx.stroke();
+                            ctx.lineWidth = 3;
+                        });
+                    }
+                }
+                
+                // Aktuelle Verbindungen
+                if (currentLevel < maxLevels) {
+                    const decision = pathPoints.find(p => p.type === 'decision' && p.level === currentLevel);
+                    const choices = pathPoints.filter(p => p.type === 'choice' && p.level === currentLevel);
+                    
+                    if (decision && choices.length > 0) {
+                        ctx.globalAlpha = 0.6;
+                        ctx.lineWidth = 2;
+                        choices.forEach(choice => {
+                            ctx.beginPath();
+                            ctx.moveTo(decision.x, decision.y);
+                            ctx.lineTo(choice.x, choice.y);
+                            ctx.stroke();
+                        });
+                    }
+                }
+                
+                ctx.restore();
+            }
+            
+            // Punkte zeichnen
+            function drawPoints() {
+                if (!ctx) return;
+                
+                pathPoints.forEach(point => {
+                    ctx.save();
+                    
+                    let radius = 8;
+                    let fillStyle = '#00cc33';
+                    let alpha = 0.8;
+                    
+                    if (point.type === 'start') {
+                        fillStyle = '#39ff14';
+                        radius = 10;
+                    } else if (point.active || point.clickable) {
+                        fillStyle = '#00ff41';
+                        radius = 12;
+                        alpha = 1.0;
+                        
+                        // Pulsieren
+                        const pulse = Math.sin(Date.now() * 0.005) * 0.3 + 0.7;
+                        radius *= pulse;
+                    }
+                    
+                    // Punkt zeichnen
+                    ctx.globalAlpha = alpha;
+                    ctx.fillStyle = fillStyle;
+                    ctx.shadowBlur = 20;
+                    ctx.shadowColor = fillStyle;
+                    
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    
+                    // Text für Wahlmöglichkeiten
+                    if (point.type === 'choice' && point.text && point.level === currentLevel) {
+                        ctx.fillStyle = '#39ff14';
+                        ctx.shadowBlur = 5;
+                        ctx.font = '12px "Share Tech Mono"';
+                        ctx.textAlign = 'center';
+                        ctx.globalAlpha = 0.9;
+                        
+                        const textY = point.y + (point.choice === 'left' ? -30 : 40);
+                        ctx.fillText(point.text, point.x, textY);
+                    }
+                    
+                    ctx.restore();
+                });
+                
+                // Level-Anzeige
+                if (currentLevel < maxLevels) {
+                    ctx.save();
+                    ctx.fillStyle = '#00ff41';
+                    ctx.font = '16px "Orbitron"';
+                    ctx.textAlign = 'center';
+                    ctx.globalAlpha = 0.8;
+                    ctx.fillText(`Lebensphase ${currentLevel + 1}`, canvas.width / 2, 30);
+                    ctx.restore();
+                }
+            }
+            
+            // Glitch-Effekt
+            function addGlitchEffect() {
+                if (!ctx) return;
+                
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const data = imageData.data;
+                
+                for (let i = 0; i < data.length; i += 4) {
+                    if (Math.random() < 0.01) {
+                        data[i] = Math.min(255, data[i] + Math.random() * 100);
+                        data[i + 1] = Math.min(255, data[i + 1] + Math.random() * 50);
+                    }
+                }
+                
+                ctx.putImageData(imageData, 0, 0);
+            }
+            
+            // Entscheidungen
+            function goLeft() {
+                if (currentLevel < maxLevels) {
+                    pathHistory.push('left');
+                    
+                    const leftPoint = pathPoints.find(p => p.type === 'choice' && p.choice === 'left' && p.level === currentLevel);
+                    if (leftPoint) {
+                        for (let i = 0; i < 20; i++) {
+                            particles.push(new PathParticle(leftPoint.x, leftPoint.y));
+                        }
+                    }
+                    
+                    currentLevel++;
+                    
+                    if (currentLevel < maxLevels) {
+                        setTimeout(() => generateLevel(), 500);
+                    } else {
+                        showFinalReflection();
+                    }
+                }
+            }
+            
+            function goRight() {
+                if (currentLevel < maxLevels) {
+                    pathHistory.push('right');
+                    
+                    const rightPoint = pathPoints.find(p => p.type === 'choice' && p.choice === 'right' && p.level === currentLevel);
+                    if (rightPoint) {
+                        for (let i = 0; i < 20; i++) {
+                            particles.push(new PathParticle(rightPoint.x, rightPoint.y));
+                        }
+                    }
+                    
+                    currentLevel++;
+                    
+                    if (currentLevel < maxLevels) {
+                        setTimeout(() => generateLevel(), 500);
+                    } else {
+                        showFinalReflection();
+                    }
+                }
+            }
+            
+            // Finale Reflexion
+            function showFinalReflection() {
+                pathPoints.forEach(point => {
+                    if (point.clickable) point.clickable = false;
+                    if (point.active) point.active = false;
+                });
+                
+                setTimeout(() => {
+                    terminalOverlay.classList.add('visible');
+                    setTimeout(() => {
+                        terminalOverlay.classList.remove('visible');
+                    }, 4000);
+                }, 2000);
+            }
+            
+            // Partikel-Hintergrund
+            function createParticles() {
+                const particlesCount = 60;
+                
+                for (let i = 0; i < particlesCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    const size = Math.random() * 3 + 1;
+                    const posX = Math.random() * 100;
+                    const posY = Math.random() * 100;
+                    const delay = Math.random() * 8;
+                    const duration = Math.random() * 12 + 8;
+                    
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.left = `${posX}%`;
+                    particle.style.top = `${posY}%`;
+                    particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite alternate`;
+                    particle.style.opacity = Math.random() * 0.5 + 0.1;
+                    
+                    particlesContainer.appendChild(particle);
+                }
+                
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes float {
+                        0% { transform: translate(0, 0) rotate(0deg); opacity: 0.1; }
+                        25% { transform: translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px) rotate(90deg); opacity: 0.4; }
+                        50% { transform: translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px) rotate(180deg); opacity: 0.6; }
+                        75% { transform: translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px) rotate(270deg); opacity: 0.3; }
+                        100% { transform: translate(${Math.random() * 40 - 20}px, ${Math.random() * 40 - 20}px) rotate(360deg); opacity: 0.1; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // Event-Listener
+            leftBtn.addEventListener('click', goLeft);
+            rightBtn.addEventListener('click', goRight);
+            resetBtn.addEventListener('click', resetSimulation);
+            
+            // Canvas-Klick-Handler
+            if (canvas) {
+                canvas.addEventListener('click', function(e) {
+                    if (!ctx) return;
+                    
+                    const rect = canvas.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    pathPoints.forEach(point => {
+                        if (point.clickable && point.level === currentLevel) {
+                            const distance = Math.sqrt(Math.pow(x - point.x, 2) + Math.pow(y - point.y, 2));
+                            if (distance < 25) {
+                                if (point.choice === 'left') {
+                                    goLeft();
+                                } else {
+                                    goRight();
+                                }
+                            }
+                        }
+                    });
+                });
+            }
+            
+            // Tastatur-Steuerung
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
+                    goLeft();
+                } else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
+                    goRight();
+                } else if (e.key === 'r' || e.key === 'R') {
+                    resetSimulation();
+                }
+            });
+            
+            // Play-Button
+            playButton.addEventListener('click', function() {
+                if (audioPlayer && !audioPlayer.error) {
+                    if (audioPlayer.paused) {
+                        audioPlayer.play().catch(() => {
+                            showAudioAlert();
+                        });
+                        playButton.style.background = 'linear-gradient(45deg, #ff2968, #35f4ff)';
+                    } else {
+                        audioPlayer.pause();
+                        playButton.style.background = 'linear-gradient(45deg, var(--neon-green), var(--neon-lime))';
+                    }
+                } else {
+                    showAudioAlert();
+                }
+                
+                // Button-Animationen
+                playButton.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    playButton.style.transform = 'scale(1.1)';
+                }, 100);
+                setTimeout(() => {
+                    playButton.style.transform = 'scale(1)';
+                }, 300);
+            });
+            
+            function showAudioAlert() {
+                alert('🎵 "ENDE" wird abgespielt...\n\n"Wo ist mein Leben? Ich weiß nicht, was ich will..."\n\nEine Reise durch die Matrix des Bewusstseins.\n\n(Audio-Datei nicht gefunden - bitte "ende.mp3" im gleichen Ordner platzieren)');
+            }
+            
+            // CTA-Button
+            document.querySelector('.cta-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('#simulation').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            });
+            
+            // Hover-Effekte für Info-Karten
+            document.querySelectorAll('.info-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.borderColor = 'rgba(0, 255, 65, 0.6)';
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.borderColor = 'rgba(0, 255, 65, 0.3)';
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Resize-Handler
+            window.addEventListener('resize', function() {
+                if (canvas && ctx) {
+                    resizeCanvas();
+                }
+            });
+            
+            // Initialisierung
+            setupAudioPlayer();
+            createParticles();
+            
+            // Canvas-Setup mit Verzögerung
+            setTimeout(() => {
+                if (initCanvas()) {
+                    initCanvasSimulation();
+                } else {
+                    // Fallback ohne Canvas
+                    lifePaths.innerHTML = '<div style="color: #00ff41; text-align: center; padding: 2rem; font-family: \'Share Tech Mono\', monospace;">Canvas wird geladen...<br>Nutze die Buttons zur Navigation.</div>';
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>

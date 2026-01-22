@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- META-OG-START -->
+<title>YOU&#x27;RE BLEEDING HARD — Bastart &amp; Circé</title>
+<meta name="description" content="&#x27;No bleeding heart&#x27; signifies a desire to avoid pain and emotional turmoil—reflecting a state of numbness.">
+
+<link rel="canonical" href="https://bastart666.com/s/echoes-of-delusion/">
+
+<meta property="og:type" content="music.song">
+<meta property="og:site_name" content="Bastart & Circé">
+<meta property="og:title" content="YOU&#x27;RE BLEEDING HARD — Bastart &amp; Circé">
+<meta property="og:description" content="&#x27;No bleeding heart&#x27; signifies a desire to avoid pain and emotional turmoil—reflecting a state of numbness.">
+<meta property="og:url" content="https://bastart666.com/s/echoes-of-delusion/">
+<meta property="og:image" content="https://empathy-hurts-3939.netlify.app/assets/og/bleedinghard1.jpg">
+<meta property="og:image:alt" content="YOU&#x27;RE BLEEDING HARD — Bastart &amp; Circé">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="YOU&#x27;RE BLEEDING HARD — Bastart &amp; Circé">
+<meta name="twitter:description" content="&#x27;No bleeding heart&#x27; signifies a desire to avoid pain and emotional turmoil—reflecting a state of numbness.">
+<meta name="twitter:image" content="https://empathy-hurts-3939.netlify.app/assets/og/bleedinghard1.jpg">
+<meta name="twitter:url" content="https://empathy-hurts-3939.netlify.app/">
+<!-- META-OG-END -->
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+  
+
+  <!-- SEO / Social -->
+  
+  
+  
+  
+  
+  
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --bg-2: #121212;
+      --fg: #e9e9e9;
+      --muted: #a9a9a9;
+      --accent: #e0575a; /* deep blood red */
+      --accent-2: #6c1013; /* shadow red */
+      --card: #111;
+      --radius: 18px;
+      --shadow: 0 12px 40px rgba(0,0,0,.45);
+      --maxw: 980px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+      background: radial-gradient(60% 100% at 50% 0%, #141414 0, var(--bg) 60%);
+      color: var(--fg);
+      letter-spacing:.15px;
+    }
+    a { color: var(--fg); text-decoration: none; }
+    a:focus-visible, button:focus-visible, audio:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: url('bleed.gif') center/cover no-repeat fixed;
+      filter: saturate(.8) contrast(1) brightness(.7);
+      transform: scale(1.02);
+      z-index: -2;
+    }
+    .hero::after {
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(60% 60% at 50% 40%, rgba(0,0,0,.0), rgba(0,0,0,.7) 60%, rgba(0,0,0,.95));
+      z-index: -1;
+    }
+    .wrap { width: min(96%, var(--maxw)); margin-inline: auto; }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border: 1px solid rgba(255,255,255,.06);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow: hidden;
+      backdrop-filter: blur(3px) saturate(120%);
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
+      padding: 28px;
+      align-items: center;
+    }
+    .cover {
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .title {
+      margin: 0 0 8px 0;
+      font-size: clamp(2rem, 3.2vw + 1rem, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: .5px;
+    }
+    .subtitle { margin: 0; color: var(--muted); font-size: 1.05rem; }
+    .tags {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;
+    }
+    .tag {
+      font-size: .85rem; color: #f0f0f0;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      padding: 6px 10px; border-radius: 999px;
+    }
+    .listen {
+      padding: 20px 28px 32px 28px;
+      display: grid; gap: 18px;
+    }
+    audio { width: 100%; border-radius: 10px; }
+    .buttons {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: #161616;
+      border: 1px solid rgba(255,255,255,.06);
+      transition: transform .12s ease;
+    }
+    .btn:hover {
+      transform: translateY(-1.5px);
+      border-color: rgba(255,255,255,.18);
+      background: #1b1b1b;
+    }
+    .btn svg { width: 22px; height: 22px; }
+    .section { padding: 56px 0; }
+    .grid { display: grid; gap: 26px; grid-template-columns: 2.1fr 1fr; }
+    .panel {
+      padding: 26px;
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius);
+      background: #101010;
+      box-shadow: var(--shadow);
+    }
+    h2 { margin: 0 0 12px 0; font-size: 1.7rem; color: #fff; }
+    p { color: #d9d9d9; margin: 0 0 12px 0;}
+    .meta { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px 18px; }
+    .meta div { background:#0f0f0f; border:1px solid rgba(255,255,255,.06); padding:10px 12px; border-radius:10px;}
+    details { background:#0f0f0f; border:1px solid rgba(255,255,255,.06); border-radius: 12px; padding: 14px; }
+    details summary { cursor: pointer; color:#fff; font-weight:600; }
+    .lyrics { white-space: pre-wrap; color:#dcdcdc; margin-top:10px; }
+    footer { padding: 26px; color: var(--muted); border-top: 1px solid rgba(255,255,255,.06); background: #0d0d0d; text-align: center; }
+    @media (max-width: 800px){ .header { grid-template-columns: 1fr; text-align: center; } .grid { grid-template-columns: 1fr; } }
+	
+				  /* Gallery section */
+    .gallery-section {
+      margin: 4rem 0;
+    }
+
+    .gallery-section h2 {
+      font-family: 'Georgia', cursive;
+      color: var(--text-light);
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      text-shadow: 3px 3px 6px var(--chocolate);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      border-radius: 20px;
+      display: block;
+      text-decoration: none;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(45deg, var(--soul-orange), var(--disco-pink));
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(0, 0, 128, 0.3), rgba(0, 255, 255, 0.3));
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .gallery-item .gallery-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(60, 24, 16, 0.9));
+      color: var(--text-light);
+      font-family: 'Righteous', cursive;
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      z-index: 3;
+      text-shadow: 2px 2px 4px var(--chocolate);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 20px 50px var(--shadow-warm);
+    }
+
+    .gallery-item:nth-child(even):hover {
+      transform: scale(1.08) rotate(2deg);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item:hover::before {
+      background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(50, 205, 50, 0.2));
+    }
+	/* Button Container */
+        .cognitivewave-nav {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        /* Main Button Styles */
+        .gallery-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover Effects */
+        .gallery-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
+        .gallery-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Icon Styles */
+        .gallery-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-button:hover .gallery-icon {
+            transform: translateX(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-button {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+            
+            .gallery-icon {
+                width: 16px;
+                height: 16px;
+            }
+        }
+		
+		/* ——— Social buttons (scoped) ——— */
+.social-block .social-buttons,
+.social-block .social-buttons-compact {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* full buttons (if you need them elsewhere) */
+.social-block .social-buttons { gap: 25px; justify-content: center; }
+
+.social-block .social-btn {
+  position: relative;
+  width: 180px; height: 60px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; text-decoration: none; color: #fff; font-weight: 600; font-size: 16px;
+  border-radius: 30px; overflow: hidden; transition: all .3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,.2);
+}
+.social-block .social-btn::before { content:""; position:absolute; inset:0; left:-100%;
+  background: rgba(255,255,255,.2); transition: left .5s ease; }
+.social-block .social-btn:hover::before { left:100%; }
+.social-block .social-btn:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,.3); }
+.social-block .social-btn svg { width:28px; height:28px; fill:#fff; z-index:1; }
+.social-block .social-btn span { z-index:1; }
+
+/* compact circle icons (good for header) */
+.social-block .social-icon-btn {
+  width: 40px; height: 40px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%; text-decoration:none; transition:all .3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,.2);
+}
+.social-block .social-icon-btn:hover { transform: translateY(-4px) rotate(360deg);
+  box-shadow: 0 8px 25px rgba(0,0,0,.3); }
+.social-block .social-icon-btn svg { width:22px; height:22px; fill:#fff; }
+
+/* brand backgrounds */
+.social-block .instagram { background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+.social-block .youtube   { background: linear-gradient(45deg,#FF0000,#cc0000); }
+.social-block .tiktok    { background: linear-gradient(45deg,#000000,#25F4EE,#FE2C55); }
+.social-block .facebook  { background: linear-gradient(45deg,#1877f2,#0d5dbd); }
+.social-block .bandcamp  { background: linear-gradient(45deg,#1da0c3,#179fb3); }
+.social-block .website   { background: linear-gradient(45deg,#8b5cf6,#6d28d9); }
+
+  </style>
+  
+
+
+<link rel="canonical" href="https://empathy-hurts-3939.netlify.app/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+  <main class="hero">
+    <div class="wrap card">
+      <div class="header">
+        <img src="bleedinghard1.jpg" class="cover" alt="Cover art for You're Bleeding Hard" />
+        <div>
+		<div class="cognitivewave-nav">
+            <a href="https://cognitivewave-gallery-101cb.netlify.app" class="gallery-button">
+                <svg class="gallery-icon" viewBox="0 0 24 24">
+                    <path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"/>
+                </svg>
+                Back to Gallery
+            </a>
+        </div>
+          <h1 class="title">You're Bleeding Hard</h1>
+          <p class="subtitle">Bastart &amp; Circé</p>
+          <div class="tags">
+            <span class="tag">Chillwave</span>
+            <span class="tag">Dream Pop</span>
+            <span class="tag">Synth • Rock</span>
+            <span class="tag">Melancholic</span>
+            <span class="tag">117 BPM • G Maj</span>
+          </div>
+
+  <!-- instagram -->
+<social-links></social-links>
+
+
+  
+        </div>
+      
+
+      <div class="listen">
+        <audio controls>
+          <source src="tstfy.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <div class="buttons">
+          <a class="btn" href="https://open.spotify.com/intl-de/track/3oNol4HCjjVU8JUgkiW2he?si=fa928c104b58464a" target="_blank">Spotify</a>
+          <a class="btn" href="https://music.apple.com/us/album/youre-bleeding-hard-feat-circ%C3%A9-single/1812750135?uo=4&app=music&at=1001lry3&ct=dashboard" target="_blank">Apple Music</a>
+          <a class="btn" href="https://music.youtube.com/watch?v=Zq3S5hV8lEM&si=aa9nBchvVU8m4iFd" target="_blank">YouTube</a>
+          
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="wrap section">
+    <div class="grid">
+      <article class="panel">
+        <h2>About the Song</h2>
+        <p><em>You’re Bleeding Hard</em> lives in the fragile space between vulnerability and detachment. Hypnotic synths, glassy guitar lines and heartbeat drums frame a voice that wavers between confession and defense.</p>
+        <p>Shaded by chillwave textures and dream-pop atmosphere, the track turns melancholy into something quietly luminous — the sound of holding yourself together when everything inside wants to fall apart.</p>
+      </article>
+      <aside class="panel">
+        <h2>Facts &amp; Feel</h2>
+        <div class="meta">
+          <div><strong>Genres</strong><br/>Chillwave, Dream Pop, Synth • Rock</div>
+          <div><strong>Mood</strong><br/>Melancholic, Reflective, Intimate</div>
+          <div><strong>Tempo / Key</strong><br/>117 BPM • G Major</div>
+          <div><strong>Vocals</strong><br/>Low–mid register, breathy</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="panel">
+      <details>
+        <summary>Read Lyrics</summary>
+        <div class="lyrics">
+No bleeding heart
+No bleeding heart
+I’m numb to the part
+Where love falls apart
+
+You’re bleeding hard
+I’m keeping guard
+I want to live in love
+But I can’t take the scars
+
+Forgive me now
+For turning cold
+Shame in my chest
+That I can’t hold
+
+No bleeding heart
+No bleeding heart
+I’m losing the art
+Of feeling at all
+        </div>
+      </details>
+    </div>
+  </section>
+  <section class="gallery-section">
+      <h2>EXPLORE BASTART & CIRCÉ</h2>
+      <div class="gallery-grid">
+        <a href="https://linktr.ee/cognitivewave/" class="gallery-item" data-has-image>
+          <img src="tnn.gif" alt="ALL MY STUFF!" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">ALL MY STUFF!</div>
+        </a>
+        <a href="https://farewell-myeden-dp201.netlify.app/" class="gallery-item" data-has-image>
+          <img src="eden.gif" alt="MY EDEN" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">MY EDEN (Depression II)</div>
+        </a>
+        <a href="https://echoes-ofdelusion-gh05t.netlify.app/" class="gallery-item" data-has-image>
+          <img src="Video.gif" alt="ECHOES OF DELUSION" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">ECHOES OF DELUSION</div>
+        </a>
+        <a href="https://yoursong-myson-l0v3.netlify.app/" class="gallery-item" data-has-image>
+          <img src="Ocean.gif" alt="OCEAN IN A DROP" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">OCEAN IN A DROP</div>
+        </a>
+        <a href="https://enfer-desartre-ba7593.netlify.app/" class="gallery-item" data-has-image>
+          <img src="hell.gif" alt="HELL IS OTHER PEOPLE" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">HELL IS OTHER PEOPLE</div>
+        </a>
+        <a href="https://bastart-portfolio-666.netlify.app" class="gallery-item" data-has-image>
+          <img src="PHOE.gif" alt="BASTART" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">PORTFOLIO</div>
+        </a>
+      </div>
+    </section>
+
+  <footer>
+    &copy; <span id="year"></span> Bastart &amp; Circé. All rights reserved.
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+  window.SOCIAL_DEFAULTS = {
+    instagram: "https://www.instagram.com/a_bastart",
+    youtube:   "https://www.youtube.com/@Cognitive-wave",
+    tiktok:    "https://www.tiktok.com/@am_bastart_ma",
+    facebook:  "https://facebook.com/bastian.neumann.75",
+    bandcamp:  "https://lostandfoundart.bandcamp.com",
+    website:   "https://bastart666.com",
+
+    podcast_spotify: "https://open.spotify.com/show/4pp2WsZDvsAOtV1wML7TxR?si=175c5cad04274f09",
+    podcast_youtube: "https://youtube.com/playlist?list=PL8eUxrFChU0AkQqkgOvwxHmfYBD7WkSrh&si=YfCECRqgz2BTJBcO",
+    podcast_apple: null
+  };
+</script>
+<script type="module" src="/assets/social-links.js"></script>
+
+</body>
+</html>

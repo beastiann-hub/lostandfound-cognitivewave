@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comrades! - Bastart & Circé</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .particle-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .equation {
+            position: absolute;
+            font-family: 'JetBrains Mono', monospace;
+            color: #ff4444;
+            opacity: 0.1;
+            font-size: 14px;
+            animation: drift 20s linear infinite;
+            user-select: none;
+        }
+        
+        @keyframes drift {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            to {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(255, 68, 68, 0.1) 0%, transparent 70%);
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+        }
+        
+        .artists {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            color: #ff4444;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .title {
+            font-size: clamp(4rem, 12vw, 12rem);
+            font-weight: 900;
+            line-height: 0.8;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #ff4444 50%, #000000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 100px rgba(255, 68, 68, 0.3);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #cccccc;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .play-button {
+            background: linear-gradient(45deg, #ff4444, #cc0000);
+            border: none;
+            color: white;
+            padding: 1.5rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 68, 68, 0.4);
+        }
+        
+        .play-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .play-button:hover::before {
+            left: 100%;
+        }
+        
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff, #ff4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .analysis-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 68, 68, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .analysis-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #ff4444, transparent, #ff4444);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .analysis-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 68, 68, 0.5);
+            box-shadow: 0 20px 40px rgba(255, 68, 68, 0.1);
+        }
+        
+        .analysis-card:hover::before {
+            opacity: 1;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ff4444;
+        }
+        
+        .mood-tags, .genre-tags, .theme-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background: rgba(255, 68, 68, 0.1);
+            color: #ff4444;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 68, 68, 0.3);
+        }
+        
+        .technical-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .spec-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 68, 68, 0.1);
+        }
+        
+        .spec-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff4444;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .spec-label {
+            color: #cccccc;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .lyrical-analysis {
+            background: linear-gradient(135deg, rgba(255, 68, 68, 0.05) 0%, transparent 100%);
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 3rem 0;
+            border: 1px solid rgba(255, 68, 68, 0.1);
+        }
+        
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 68, 68, 0.2);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            color: #cccccc;
+            text-decoration: none;
+            padding: 1rem;
+            border: 1px solid rgba(255, 68, 68, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: #ff4444;
+            border-color: #ff4444;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .title {
+                font-size: clamp(3rem, 10vw, 6rem);
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .glitch {
+            position: relative;
+            animation: glitch 2s infinite;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { transform: translateX(0); }
+            10% { transform: translateX(-2px); }
+            20% { transform: translateX(2px); }
+            30% { transform: translateX(-2px); }
+            40% { transform: translateX(2px); }
+            50% { transform: translateX(0); }
+        }
+		
+		 /* Gallery section */
+    .gallery-section {
+      margin: 4rem 0;
+    }
+
+    .gallery-section h2 {
+      font-family: 'Righteous', cursive;
+      color: var(--text-light);
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      text-shadow: 3px 3px 6px var(--chocolate);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      border-radius: 20px;
+      display: block;
+      text-decoration: none;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(45deg, var(--soul-orange), var(--disco-pink));
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255, 107, 53, 0.3), rgba(255, 20, 147, 0.3));
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .gallery-item .gallery-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(60, 24, 16, 0.9));
+      color: var(--text-light);
+      font-family: 'Righteous', cursive;
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      z-index: 3;
+      text-shadow: 2px 2px 4px var(--chocolate);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 20px 50px var(--shadow-warm);
+    }
+
+    .gallery-item:nth-child(even):hover {
+      transform: scale(1.08) rotate(2deg);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item:hover::before {
+      background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(50, 205, 50, 0.2));
+    }
+    </style>
+</head>
+<body>
+    <div class="particle-bg" id="particleBg"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="hero-content">
+                <div class="artists">Bastart & Circé</div>
+                <h1 class="title glitch">COMRADES!</h1>
+                <p class="subtitle">A revolutionary fusion of Marxist philosophy and quantum mathematics in hip-hop form</p>
+                <button class="play-button">▶ Listen Now</button>
+            </div>
+        </header>
+        
+        <!-- Hidden audio element -->
+        <audio id="audioPlayer" preload="metadata">
+            <source src="comrades.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <section class="section">
+            <h2 class="section-title">Musical Analysis</h2>
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h3 class="card-title">Genre & Style</h3>
+                    <p>A unique blend of Hip Hop with Soul and R&B influences, featuring lo-fi and downtempo elements that create a chillhop atmosphere.</p>
+                    <div class="genre-tags">
+                        <span class="tag">Hip Hop (85%)</span>
+                        <span class="tag">Soul (75%)</span>
+                        <span class="tag">R&B (70%)</span>
+                        <span class="tag">Lo-fi (80%)</span>
+                        <span class="tag">Jazz Rap (60%)</span>
+                    </div>
+                </div>
+                
+                <div class="analysis-card">
+                    <h3 class="card-title">Emotional Landscape</h3>
+                    <p>The track navigates complex emotional terrain, balancing despair with hope, frustration with intellectual curiosity.</p>
+                    <div class="mood-tags">
+                        <span class="tag">Despairing (90%)</span>
+                        <span class="tag">Reflective (80%)</span>
+                        <span class="tag">Intellectual (75%)</span>
+                        <span class="tag">Frustrated (70%)</span>
+                        <span class="tag">Hopeful (60%)</span>
+                    </div>
+                </div>
+                
+                <div class="analysis-card">
+                    <h3 class="card-title">Thematic Core</h3>
+                    <p>Deep exploration of social justice, revolutionary change, and collective struggle through a philosophical lens.</p>
+                    <div class="theme-tags">
+                        <span class="tag">Collective Struggle (90%)</span>
+                        <span class="tag">Social Justice (85%)</span>
+                        <span class="tag">Historical Context (80%)</span>
+                        <span class="tag">Revolutionary Change (75%)</span>
+                        <span class="tag">Philosophy (70%)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="technical-specs">
+                <div class="spec-item">
+                    <div class="spec-value">89.1</div>
+                    <div class="spec-label">BPM</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-value">D♭</div>
+                    <div class="spec-label">Key (Minor)</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-value">LOW/MID</div>
+                    <div class="spec-label">Vocal Range</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-value">CHILL</div>
+                    <div class="spec-label">Primary Mood</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Lyrical Exploration</h2>
+            <div class="lyrical-analysis">
+                <div class="quote">
+                    "The lyrics explore the complex interplay of historical and social dynamics, focusing on the struggles of the working class against oppressive systems through Hegelian dialectics and revolutionary philosophy."
+                </div>
+                <p style="text-align: center; color: #cccccc;">
+                    The song weaves together mathematical imagery and Marxist theory, creating a unique narrative that portrays both despair and hope within societal structures. Mathematical and scientific principles serve as metaphors for the chaotic yet inevitable nature of social change and resistance.
+                </p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Sonic Identity</h2>
+            <div class="analysis-card" style="max-width: 800px; margin: 0 auto;">
+                <h3 class="card-title">Sound Description</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                    <strong>Marxist punk</strong> with influences from <strong>Rage Against the Machine</strong> - delivering agitprop rage through a distinctive blend of drums, synth, and guitar, creating an atmosphere of revolutionary tension and intellectual rebellion.
+                </p>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <span style="color: #ff4444; font-family: 'JetBrains Mono', monospace; font-size: 1.1rem;">
+                        EQUATIONS • SPECTERS • REVOLUTION
+                    </span>
+                </div>
+            </div>
+        </section>
+    </div>
+	 <!-- Gallery Section -->
+    <section class="gallery-section">
+      <h2 class="section-title">CENTRAL COUNCIL</h2>
+      <div class="gallery-grid">
+        <a href="https://love-nolimits-113en.netlify.app" class="gallery-item" data-has-image>
+          <img src="tnn.gif" alt="THERE IS NO REASON TO LOVE" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">THERE IS NO REASON TO LOVE</div>
+        </a>
+        <a href="https://binary-ballet-0nonzs.netlify.app/" class="gallery-item" data-has-image>
+          <img src="song1.gif" alt="DREAMS OF INTIMIDATION" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">DREAMS OF INTIMIDATION</div>
+        </a>
+        <a href="https://echoes-ofdelusion-gh05t.netlify.app/" class="gallery-item" data-has-image>
+          <img src="song2.gif" alt="ECHOES OF DELUSION" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">ECHOES OF DELUSION</div>
+        </a>
+        <a href="https://joy-tobe-1808kb.netlify.app" class="gallery-item" data-has-image>
+          <img src="song5.gif" alt="The Joy To Be" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">The Joy To Be</div>
+        </a>
+        <a href="https://universal-tragedy-6518.netlify.app/" class="gallery-item" data-has-image>
+          <img src="roles.gif" alt="UNIVERSAL TRAGEDY" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">ROLES IN FALSE ARTS</div>
+        </a>
+        <a href="https://bastart-portfolio-666.netlify.app" class="gallery-item" data-has-image>
+          <img src="song3.gif" alt="BASTART" onerror="this.style.display='none'; this.parentElement.removeAttribute('data-has-image')">
+          <div class="gallery-label">BASTART</div>
+        </a>
+      </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Bastart & Circé. Revolutionary music for the quantum age.</p>
+            <div class="social-links">
+                <a href="https://open.spotify.com/intl-de/track/39qz1HZqAdyReRn5YHCQDG?si=dbe9b39345d04de5" class="social-link">Spotify</a>
+                <a href="https://music.apple.com/de/album/comrades-single/1818826112" class="social-link">Apple Music</a>
+                <a href="https://music.apple.com/de/album/comrades-single/1818826112" class="social-link">iTunes</a>
+                <a href="https://music.youtube.com/playlist?list=OLAK5uy_lXBxh7oooWpjrGIa3Xa4RgdydepiUHPc8&si=O0eCLYG51tBNLVUB" class="social-link">YouTube</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Floating mathematical equations
+        const equations = [
+            'ψ = Ae^(ikx)',
+            '∇²φ = 0',
+            'E = mc²',
+            'F = ma',
+            '∂u/∂t = α∇²u',
+            'λ = h/p',
+            '∫f(x)dx',
+            'Δx·Δp ≥ ħ/2',
+            'S = k log W',
+            '∇·E = ρ/ε₀'
+        ];
+        
+        function createEquation() {
+            const equation = document.createElement('div');
+            equation.className = 'equation';
+            equation.textContent = equations[Math.floor(Math.random() * equations.length)];
+            equation.style.left = Math.random() * window.innerWidth + 'px';
+            equation.style.animationDelay = Math.random() * 20 + 's';
+            equation.style.animationDuration = (15 + Math.random() * 10) + 's';
+            document.getElementById('particleBg').appendChild(equation);
+            
+            setTimeout(() => {
+                equation.remove();
+            }, 25000);
+        }
+        
+        // Create equations periodically
+        setInterval(createEquation, 3000);
+        
+        // Initial equations
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createEquation, i * 1000);
+        }
+        
+        // Audio player functionality
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playButton = document.querySelector('.play-button');
+        let isPlaying = false;
+        
+        playButton.addEventListener('click', function() {
+            if (!isPlaying) {
+                audioPlayer.play();
+                this.innerHTML = '⏸ Pause';
+                isPlaying = true;
+                this.style.background = 'linear-gradient(45deg, #cc0000, #990000)';
+            } else {
+                audioPlayer.pause();
+                this.innerHTML = '▶ Listen Now';
+                isPlaying = false;
+                this.style.background = 'linear-gradient(45deg, #ff4444, #cc0000)';
+            }
+        });
+        
+        // Reset button when audio ends
+        audioPlayer.addEventListener('ended', function() {
+            playButton.innerHTML = '▶ Listen Now';
+            playButton.style.background = 'linear-gradient(45deg, #ff4444, #cc0000)';
+            isPlaying = false;
+        });
+        
+        // Handle audio loading errors
+        audioPlayer.addEventListener('error', function() {
+            playButton.innerHTML = '⚠ Audio Unavailable';
+            playButton.disabled = true;
+            playButton.style.opacity = '0.5';
+        });
+        
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

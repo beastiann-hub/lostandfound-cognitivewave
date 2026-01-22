@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bastart666.com/sitemap.xml

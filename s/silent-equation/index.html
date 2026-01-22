@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- META-OG-START -->
+<title>ECHOES OF DELUSION — Bastart &amp; Circé</title>
+<meta name="description" content="Step inside the mind&#x27;s maze. Every echo is a question.">
+
+<link rel="canonical" href="https://bastart666.com/s/silent-equation/">
+
+<meta property="og:type" content="music.song">
+<meta property="og:site_name" content="Bastart & Circé">
+<meta property="og:title" content="ECHOES OF DELUSION — Bastart &amp; Circé">
+<meta property="og:description" content="Step inside the mind&#x27;s maze. Every echo is a question.">
+<meta property="og:url" content="https://bastart666.com/s/silent-equation/">
+<meta property="og:image" content="https://echoes-ofdelusion-gh05t.netlify.app/assets/og/echoes.jpg">
+<meta property="og:image:alt" content="ECHOES OF DELUSION — Bastart &amp; Circé">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ECHOES OF DELUSION — Bastart &amp; Circé">
+<meta name="twitter:description" content="Step inside the mind&#x27;s maze. Every echo is a question.">
+<meta name="twitter:image" content="https://echoes-ofdelusion-gh05t.netlify.app/assets/og/echoes.jpg">
+<meta name="twitter:url" content="https://echoes-ofdelusion-gh05t.netlify.app/">
+<!-- META-OG-END -->
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap');
+    :root {
+      --bg-dark: #11141a;
+      --blue-glow: #8ed1fc;
+      --purple-glow: #9f6cff;
+      --peach: #e5af7c;
+      --red-pink: #e0535e;
+      --mint: #95fc84;
+      --text-soft: #aee6ff;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at 60% 20%, #23243a 60%, #181925 100%);
+      color: white;
+      font-family: 'Space Grotesk', 'Orbitron', Arial, sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top:0; left:0; width:100vw; height:100vh;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.05) 0,
+        rgba(0,0,0,0.06) 1.2px,
+        transparent 1.2px,
+        transparent 3px
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 1.5rem 1rem;
+      z-index: 10;
+      position: relative;
+    }
+    .glitch {
+      font-size: 2.7rem;
+      color: var(--blue-glow);
+      font-family: 'Orbitron', monospace;
+      position: relative;
+      letter-spacing: 0.15em;
+      filter: blur(0.6px) brightness(1.12);
+    }
+    .glitch span {
+      color: var(--purple-glow);
+      text-shadow: 0 0 14px var(--blue-glow);
+      font-style: italic;
+      font-weight: bold;
+    }
+    .song-title {
+      font-size: 2.9rem;
+      color: var(--purple-glow);
+      letter-spacing: 0.11em;
+      font-family: 'Orbitron', 'Space Grotesk', Arial, sans-serif;
+      margin-bottom: 0.2rem;
+      text-shadow: 0 0 18px var(--blue-glow);
+      filter: blur(0.2px);
+      transition: letter-spacing .3s;
+    }
+    .song-title:hover {
+      letter-spacing: 0.16em;
+      filter: blur(1.2px) brightness(1.15);
+    }
+    .subtitle {
+      color: var(--text-soft);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: 0.01em;
+      text-shadow: 0 0 4px #263443;
+    }
+    .hero-reflection {
+      display: flex; flex-direction: column; align-items: center;
+      margin-bottom: 1rem;
+    }
+    /* Lyric Visualizations */
+    #lyric-visuals {
+      position:relative;
+      width: 100vw;
+      height: 130px;
+      margin-bottom: 1.5rem;
+      overflow: visible;
+      z-index: 10;
+      pointer-events: auto;
+    }
+    .lyric-float {
+      position: absolute;
+      font-size: 1.25rem;
+      color: var(--text-soft);
+      opacity: 0;
+      pointer-events: auto;
+      font-style: italic;
+      text-shadow: 0 0 10px #264e7b, 0 0 18px var(--blue-glow);
+      transition: opacity 2.2s, filter 0.7s, text-shadow 0.4s;
+      filter: blur(2px);
+      user-select: none;
+      white-space: pre-line;
+      cursor: pointer;
+      mix-blend-mode: lighten;
+    }
+    /* Mood Palette */
+    #mood-palette {
+      display: flex; flex-wrap: wrap; gap: 1.7rem; justify-content: center;
+      margin: 2.8rem 0 2rem 0;
+      z-index: 14;
+      position: relative;
+    }
+    .mood-orb {
+      background: linear-gradient(135deg, var(--blue-glow), var(--purple-glow));
+      border-radius: 50%;
+      padding: 1.25rem 1.5rem;
+      font-weight: bold;
+      color: #181925;
+      cursor: pointer;
+      box-shadow: 0 0 24px 6px var(--blue-glow), 0 0 8px var(--purple-glow) inset;
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.28s, box-shadow 0.25s, background 0.3s;
+      user-select: none;
+      outline: none;
+    }
+    .mood-orb[data-mood="Confused"] { background: linear-gradient(120deg, #9f6cff 65%, #5d4e92 100%);}
+    .mood-orb[data-mood="Reflective"] { background: linear-gradient(120deg, #6fe6fc 80%, #1d475e 100%);}
+    .mood-orb[data-mood="Yearning"] { background: linear-gradient(120deg, #e5af7c 85%, #573a21 100%);}
+    .mood-orb[data-mood="Trapped"] { background: linear-gradient(120deg, #e0535e 85%, #7a2d2d 100%);}
+    .mood-orb[data-mood="Introspective"] { background: linear-gradient(120deg, #95fc84 80%, #255633 100%);}
+    .mood-orb:focus, .mood-orb:hover {
+      transform: scale(1.19) rotate(-4deg);
+      box-shadow: 0 0 40px 12px var(--blue-glow), 0 0 22px 6px #fff2 inset;
+      background: linear-gradient(120deg, #fff3, #bdfcfa 100%);
+      color: #0d1a26;
+    }
+    /* Self Reflection Card */
+    #self-reflection {
+      margin:4rem auto;
+      max-width: 570px;
+      text-align:center;
+      background: rgba(22,29,40,0.80);
+      border-radius: 21px;
+      padding: 2.3rem 1.2rem 2.5rem 1.2rem;
+      box-shadow: 0 0 25px 3px #1e2a34c9;
+      z-index: 14;
+      position: relative;
+    }
+    #self-reflection h2 {
+      color: var(--blue-glow);
+      font-family: 'Space Grotesk', 'Orbitron', Arial, sans-serif;
+      margin-bottom: 0.9rem;
+      font-size: 1.45rem;
+    }
+    #reflectionInput {
+      width:85%; padding:0.8rem; border-radius:7px;
+      border:1.2px solid #3b4460; margin-bottom:1.1rem;
+      background: #181825;
+      color:#fff; font-size:1.02rem;
+      resize: none;
+      outline: none;
+      font-family: inherit;
+      box-shadow: 0 0 8px #3b446054;
+    }
+    #echoButton {
+      background: var(--blue-glow);
+      color: #222; border:none; border-radius:7px;
+      padding:0.63rem 1.2rem; margin-bottom:0.6rem;
+      font-weight: bold;
+      font-size: 1.08rem;
+      cursor:pointer; transition: filter .18s;
+      box-shadow: 0 0 12px 3px #3849a5a0;
+    }
+    #echoButton:hover { filter: brightness(1.18) contrast(1.3);}
+    #echoOutput {
+      margin-top:1.1rem; color: var(--text-soft);
+      min-height:33px; font-size:1.07rem;
+      font-family: 'Space Grotesk', Arial, sans-serif;
+      letter-spacing: .04em;
+      text-shadow: 0 0 5px #5588bd;
+    }
+
+    /* Gallery Section */
+    #gallery {
+      margin: 4rem auto;
+      max-width: 1100px;
+      padding: 0 2rem;
+      z-index: 14;
+      position: relative;
+    }
+    #gallery h2 {
+      text-align: center;
+      color: var(--purple-glow);
+      font-family: 'Orbitron', 'Space Grotesk', Arial, sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      text-shadow: 0 0 18px var(--blue-glow);
+      letter-spacing: 0.08em;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+    }
+    .gallery-item {
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 1;
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      background: linear-gradient(135deg, rgba(142, 209, 252, 0.1), rgba(159, 108, 255, 0.1));
+      border: 2px solid rgba(142, 209, 252, 0.3);
+      box-shadow: 0 0 20px 5px rgba(142, 209, 252, 0.2);
+    }
+    .gallery-item:hover {
+      transform: scale(1.08) rotate(2deg);
+      box-shadow: 0 0 35px 10px var(--blue-glow), 0 0 15px var(--purple-glow) inset;
+      border-color: var(--blue-glow);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: filter 0.4s ease;
+      filter: brightness(0.8) contrast(1.1);
+    }
+    .gallery-item:hover img {
+      filter: brightness(1.1) contrast(1.2) saturate(1.2);
+    }
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 1.5rem 1rem 1rem;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover .gallery-overlay {
+      transform: translateY(0);
+    }
+    .gallery-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--blue-glow);
+      text-shadow: 0 0 8px var(--blue-glow);
+    }
+    .gallery-description {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.4;
+    }
+
+    /* Ambient Visualizer BG */
+    #bgVisualizer {
+      position: fixed;
+      left:0; top:0;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.17;
+      filter: blur(0.3px);
+    }
+
+    #bg-gif {
+      position: fixed;
+      left: -10vw; top: -10vh;
+      width: 120vw; height: 120vh;
+      z-index: 0;
+      pointer-events: none;
+      background: url('EchoesOfDelusion.gif') center center / cover no-repeat;
+      opacity: 0.28;
+      transition: opacity 1s, transform 0.1s ease-out;
+      mix-blend-mode: lighten;
+      will-change: transform;
+    }
+    body, #bgVisualizer { z-index: 1; }
+
+    /* Audio Error Message */
+    .audio-error {
+      color: var(--red-pink);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align:center;
+      padding:2.2rem 1rem 1.2rem 1rem;
+      color: #546071;
+      font-size:0.88rem;
+      position: relative;
+      z-index: 12;
+      margin-top: 2rem;
+    }
+
+	/* Button Container */
+        .cognitivewave-nav {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        /* Main Button Styles */
+        .gallery-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover Effects */
+        .gallery-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
+        .gallery-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Icon Styles */
+        .gallery-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-button:hover .gallery-icon {
+            transform: translateX(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-button {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+            
+            .gallery-icon {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        
+  </style>
+
+</head>
+<body>
+<div class="cognitivewave-nav">
+            <a href="https://cognitivewave-gallery-101cb.netlify.app" class="gallery-button">
+                <svg class="gallery-icon" viewBox="0 0 24 24">
+                    <path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"/>
+                </svg>
+                Back to Gallery
+            </a>
+        </div>
+<div id="bg-gif"></div>
+<social-links></social-links>
+
+  <!-- Ambient BG Visualizer -->
+  <canvas id="bgVisualizer"></canvas>
+  <header>
+    <div class="glitch">BASTART <span>& Circé</span></div>
+    <div class="song-title">Echoes Of Delusion</div>
+    <div class="subtitle">Step inside the mind's maze. Every echo is a question.</div>
+   <div class="hero-reflection">
+  <audio id="audioPlayer" preload="auto" loop>
+    <source src="EchoesOfDelusion.mp3" type="audio/mpeg">
+    <source src="echo.wav" type="audio/wav">
+    <source src="EchoesOfDelusion.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+  </audio>
+  <button id="playButton"
+    style="padding:0.75rem 2rem; font-size:1.14rem; border-radius:6px; border:2px solid var(--blue-glow); color:var(--blue-glow); background:transparent; margin-top:1.3rem; transition:.2s; font-weight:700; letter-spacing:.05em;">
+    ▶ PLAY
+  </button>
+  <div class="audio-error" id="audioError">Audio file not found. Please check that 'EchoesOfDelusion.mp3' is in the same folder.</div>
+</div>
+  
+    </div>
+  </header>
+  <!-- Lyric-Driven Visualizations -->
+  <section id="lyric-visuals"></section>
+  <!-- Mood Palette -->
+  <section id="mood-palette"></section>
+  <!-- Self-Reflection Prompt -->
+  <section id="self-reflection">
+    <h2>What illusions shape your choices?</h2>
+    <textarea id="reflectionInput" rows="3" placeholder="Type your thoughts... (Just for you)"></textarea><br>
+    <button id="echoButton">Generate Echo</button>
+    <div id="echoOutput"></div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Visual Echoes</h2>
+    <div class="gallery-grid">
+      <a href="https://thecrowd-sampler-9cirba.netlify.app" target="_blank" class="gallery-item">
+        <img src="tc.gif" alt="Gallery Image 1">
+        <div class="gallery-overlay">
+          <div class="gallery-title">THE CROWD!</div>
+          <div class="gallery-description">Get your hands on the Sampler! </div>
+        </div>
+      </a>
+      <a href="https://their-names-2604eb.netlify.app" target="_blank" class="gallery-item">
+        <img src="tnn.gif" alt="Gallery Image 2">
+        <div class="gallery-overlay">
+          <div class="gallery-title">THEIR NAMES</div>
+          <div class="gallery-description">The psychological mirror.</div>
+        </div>
+      </a>
+      <a href="https://silent-equation-1508cb.netlify.app" target="_blank" class="gallery-item">
+        <img src="tn.gif" alt="Gallery Image 3">
+        <div class="gallery-overlay">
+          <div class="gallery-title">SILENT EQUATION</div>
+          <div class="gallery-description">Decoding human variables.</div>
+        </div>
+      </a>
+      <a href="https://phoenix-codex.carrd.co" target="_blank" class="gallery-item">
+        <img src="Enter.gif" alt="Gallery Image 4">
+        <div class="gallery-overlay">
+          <div class="gallery-title">PHOENIX CODEX</div>
+          <div class="gallery-description">The musical philosophy.</div>
+        </div>
+      </a>
+	   <a href="https://electric-dreams-1c6918.netlify.app" target="_blank" class="gallery-item">
+        <img src="ed.gif" alt="Gallery Image 4">
+        <div class="gallery-overlay">
+          <div class="gallery-title">ELECTRIC DREAMS</div>
+          <div class="gallery-description">Cognitive Aural Synthesis.</div>
+        </div>
+      </a>
+	  <a href="https://magnificent-unicorn-6b876e.netlify.app/?cache=v2" target="_blank" class="gallery-item">
+        <img src="come.gif" alt="Gallery Image 4">
+        <div class="gallery-overlay">
+          <div class="gallery-title">THE BOOKLET</div>
+          <div class="gallery-description">Come On In.</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer>© 2025 BASTART & Circé • All rights encrypted</footer>
+  <!-- SCRIPTS -->
+  <script>
+  window.SOCIAL_DEFAULTS = {
+    instagram: "https://www.instagram.com/a_bastart",
+    youtube:   "https://www.youtube.com/@Cognitive-wave",
+    tiktok:    "https://www.tiktok.com/@am_bastart_ma",
+    facebook:  "https://facebook.com/bastian.neumann.75",
+    bandcamp:  "https://lostandfoundart.bandcamp.com",
+    website:   "https://bastart666.com",
+
+    podcast_spotify: "https://open.spotify.com/show/4pp2WsZDvsAOtV1wML7TxR?si=175c5cad04274f09",
+    podcast_youtube: "https://youtube.com/playlist?list=PL8eUxrFChU0AkQqkgOvwxHmfYBD7WkSrh&si=YfCECRqgz2BTJBcO",
+    podcast_apple: null
+  };
+</script>
+<script type="module" src="/assets/social-links.js"></script>
+  <script>
+  /* === Lyric-Driven Visualizations === */
+  const lyricLines = [
+  "Every path winds deeper into your own reflection.",
+  "In the maze of mind, you search for an exit that's never real.",
+  "Illusions sing softly where truth hides in shadow.",
+  "Choices repeat, but who guides your hand?",
+  "Your freedom flickers between memory and desire.",
+  "The echo you chase is your own longing, folded in silence.",
+  "Behind each thought, an old pattern waits.",
+  "Walls of the labyrinth are made from all you never said.",
+  "You run toward the light, but footsteps fade behind you.",
+  "When the mind is lost, even mirrors become doors."
+];
+
+  let lyricIndex = 0;
+  function showLyricLine() {
+    const lyricDiv = document.createElement('div');
+    lyricDiv.textContent = lyricLines[lyricIndex];
+    lyricDiv.className = 'lyric-float';
+    lyricDiv.style.left = (Math.random() * 60 + 20) + '%';
+    lyricDiv.style.top = (Math.random() * 60 + 10) + '%';
+
+    lyricDiv.addEventListener('mouseover', () => {
+      lyricDiv.style.filter = 'blur(0px) hue-rotate(60deg) contrast(120%)';
+      lyricDiv.style.textShadow = '0 0 18px #6f8ad9, 0 0 30px #fff5';
+    });
+    lyricDiv.addEventListener('mouseout', () => {
+      lyricDiv.style.filter = 'blur(2px)';
+      lyricDiv.style.textShadow = '0 0 10px #264e7b, 0 0 18px var(--blue-glow)';
+    });
+
+    document.getElementById('lyric-visuals').appendChild(lyricDiv);
+
+    setTimeout(() => {
+      lyricDiv.style.opacity = 1;
+      lyricDiv.style.filter = 'blur(0px)';
+    }, 130);
+    setTimeout(() => {
+      lyricDiv.style.opacity = 0;
+      lyricDiv.style.filter = 'blur(8px)';
+    }, 4300);
+    setTimeout(() => {
+      lyricDiv.remove();
+    }, 6100);
+
+    lyricIndex = (lyricIndex + 1) % lyricLines.length;
+  }
+  setInterval(showLyricLine, 5200);
+  document.getElementById('lyric-visuals').addEventListener('click', showLyricLine);
+  // Show first lyric at load
+  setTimeout(showLyricLine, 400);
+
+  /* === Mood Palette (with synth tones) === */
+  const moodData = [
+    { name: "Confused", color: "#9f6cff", freq: 277 },
+    { name: "Reflective", color: "#6fe6fc", freq: 330 },
+    { name: "Yearning", color: "#e5af7c", freq: 392 },
+    { name: "Trapped", color: "#e0535e", freq: 185 },
+    { name: "Introspective", color: "#95fc84", freq: 247 }
+  ];
+  const paletteDiv = document.getElementById('mood-palette');
+  let ctxForMoods = null;
+  let gainForMoods = null;
+  function playMoodTone(freq) {
+    if (!window.AudioContext && !window.webkitAudioContext) return;
+    if (!ctxForMoods) {
+      ctxForMoods = new (window.AudioContext || window.webkitAudioContext)();
+      gainForMoods = ctxForMoods.createGain();
+      gainForMoods.gain.value = 0.17;
+      gainForMoods.connect(ctxForMoods.destination);
+    }
+    const osc = ctxForMoods.createOscillator();
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+    osc.connect(gainForMoods);
+    osc.start();
+    osc.stop(ctxForMoods.currentTime + 0.27);
+  }
+  moodData.forEach(mood => {
+    const orb = document.createElement('div');
+    orb.textContent = mood.name;
+    orb.className = 'mood-orb';
+    orb.setAttribute('data-mood', mood.name);
+    orb.style.background = mood.color;
+    orb.tabIndex = 0;
+    orb.addEventListener('mouseover', () => {
+      orb.style.transform = 'scale(1.19) rotate(-4deg)';
+      orb.style.boxShadow = `0 0 40px 12px ${mood.color}, 0 0 22px 7px #fff4 inset`;
+      playMoodTone(mood.freq);
+    });
+    orb.addEventListener('mouseout', () => {
+      orb.style.transform = '';
+      orb.style.boxShadow = `0 0 24px 7px ${mood.color}`;
+    });
+    paletteDiv.appendChild(orb);
+  });
+
+  /* === Self-Reflection Prompt (with echo phrase generator) === */
+  const echoPhrases = [
+  "Your decisions echo in rooms you've never seen.",
+  "The truth bends quietly behind your intentions.",
+  "You circle the maze, but the center is you.",
+  "What's hidden shapes the road you walk.",
+  "A shadow is just a memory that won't leave.",
+  "You reach for freedom, but it's drawn in chalk.",
+  "The voice that guides you is an old habit in disguise.",
+  "Where certainty slips, understanding can begin.",
+  "You are both the puzzle and the answer."
+];
+
+  document.getElementById('echoButton').onclick = function() {
+    const idx = Math.floor(Math.random() * echoPhrases.length);
+    document.getElementById('echoOutput').textContent = echoPhrases[idx];
+  };
+
+  /* === Audio and BG Visualizer === */
+  let audioContext, masterGain, bgVisSetup = false;
+  function initAudio() {
+    if (audioContext) return;
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    masterGain = audioContext.createGain();
+    masterGain.connect(audioContext.destination);
+    setupBGVisualizer();
+  }
+
+  // Ambient BG Visualizer (soft waveform)
+  function setupBGVisualizer() {
+    if (bgVisSetup) return;
+    bgVisSetup = true;
+    const canvas = document.getElementById('bgVisualizer');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    let analyser = null, dataArray = null;
+    function draw() {
+      requestAnimationFrame(draw);
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      let centerY = canvas.height * 0.55;
+      let waveAmp = canvas.height * 0.09 + Math.sin(Date.now()/2300)*10;
+      let length = canvas.width;
+      ctx.save();
+      ctx.globalAlpha = 0.89;
+      ctx.beginPath();
+      for (let x = 0; x < length; x += 6) {
+        let t = (x / length) * Math.PI * 2;
+        let y = centerY + Math.sin(t*3 + Date.now()/1700) * waveAmp;
+        if (analyser && dataArray) {
+          let idx = Math.floor(x/length * dataArray.length);
+          y += (dataArray[idx]-128)/8;
+        }
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = 'rgba(110, 175, 255, 0.38)';
+      ctx.lineWidth = 4.3;
+      ctx.shadowBlur = 13;
+      ctx.shadowColor = "#8ed1fc";
+      ctx.stroke();
+      ctx.restore();
+    }
+    draw();
+    const audio = document.getElementById('audioPlayer');
+    audio.addEventListener('play', () => {
+      if (!audioContext) initAudio();
+      if (!analyser) {
+        analyser = audioContext.createAnalyser();
+        analyser.fftSize = 128;
+        dataArray = new Uint8Array(analyser.frequencyBinCount);
+        const src = audioContext.createMediaElementSource(audio);
+        src.connect(analyser);
+        analyser.connect(masterGain);
+      }
+      setInterval(() => {
+        if (analyser && dataArray) analyser.getByteFrequencyData(dataArray);
+      }, 1000/24);
+    });
+  }
+
+  // Enhanced PLAY/PAUSE button handler with error handling
+  const btn = document.getElementById('playButton');
+  const audio = document.getElementById('audioPlayer');
+  const errorDiv = document.getElementById('audioError');
+
+  btn.addEventListener('click', async function() {
+    if (!audio) {
+      console.error('Audio element not found!');
+      return;
+    }
+
+    try {
+      if (audio.paused) {
+        // Initialize audio context on first user interaction
+        if (!audioContext) {
+          initAudio();
+        }
+        
+        await audio.play();
+        btn.textContent = '❚❚ PAUSE';
+        errorDiv.style.display = 'none';
+      } else {
+        audio.pause();
+        btn.textContent = '▶ PLAY';
+      }
+    } catch (error) {
+      console.error('Audio playback failed:', error);
+      errorDiv.style.display = 'block';
+      btn.textContent = '⚠ ERROR';
+      
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        btn.textContent = '▶ PLAY';
+      }, 3000);
+    }
+  });
+
+  // Handle audio loading errors
+  audio.addEventListener('error', function(e) {
+    console.error('Audio loading error:', e);
+    errorDiv.style.display = 'block';
+    btn.textContent = '⚠ ERROR';
+  });
+
+  // Handle successful audio load
+  audio.addEventListener('canplaythrough', function() {
+    errorDiv.style.display = 'none';
+    if (btn.textContent === '⚠ ERROR') {
+      btn.textContent = '▶ PLAY';
+    }
+  });
+
+  // Auto-init BG visualizer on load
+  window.addEventListener('DOMContentLoaded', () => {
+    setupBGVisualizer();
+    initParallax();
+  });
+
+  // Parallax Background Effect
+  function initParallax() {
+    const bgElement = document.getElementById('bg-gif');
+    let ticking = false;
+
+    function updateParallax() {
+      const scrollTop = window.pageYOffset;
+      const parallaxSpeed = 0.5; // Adjust this value (0.1 = slow, 1 = normal speed)
+      
+      // Calculate the transform value
+      const yPos = -(scrollTop * parallaxSpeed);
+      
+      // Apply the transform
+      bgElement.style.transform = `translate3d(0, ${yPos}px, 0)`;
+      
+      ticking = false;
+    }
+
+    function requestParallaxUpdate() {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }
+
+    // Listen for scroll events
+    window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+    
+    // Initial call
+    updateParallax();
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- META-OG-START -->
+<title>CARE — Bastart &amp; Circé</title>
+<meta name="description" content="Sometimes the most beautiful music emerges from our deepest longing. CARE was born from a guitar riff that lived in my heart for years, waiting for the perfect moment to bloom into something meaningful.">
+
+<link rel="canonical" href="https://bastart666.com/s/longing-is-caring/">
+
+<meta property="og:type" content="music.song">
+<meta property="og:site_name" content="Bastart & Circé">
+<meta property="og:title" content="CARE — Bastart &amp; Circé">
+<meta property="og:description" content="Sometimes the most beautiful music emerges from our deepest longing. CARE was born from a guitar riff that lived in my heart for years, waiting for the perfect moment to bloom into something meaningful.">
+<meta property="og:url" content="https://bastart666.com/s/longing-is-caring/">
+<meta property="og:image" content="https://longing-is-caring.netlify.app/assets/og/care.jpg">
+<meta property="og:image:alt" content="CARE — Bastart &amp; Circé">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CARE — Bastart &amp; Circé">
+<meta name="twitter:description" content="Sometimes the most beautiful music emerges from our deepest longing. CARE was born from a guitar riff that lived in my heart for years, waiting for the perfect moment to bloom into something meaningful.">
+<meta name="twitter:image" content="https://longing-is-caring.netlify.app/assets/og/care.jpg">
+<meta name="twitter:url" content="https://longing-is-caring.netlify.app/">
+<!-- META-OG-END -->
+
+  
+  
+
+
+  
+  
+
+
+    
+    
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a0033, #2d1b4e, #4a3773, #1a0033);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 40px;
+        }
+
+        .artist-name {
+            font-size: 1.2rem;
+            color: #ff6b9d;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .song-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ff6b9d;
+            text-shadow: 0 0 30px rgba(255, 107, 157, 0.5);
+            letter-spacing: 8px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 30px rgba(255, 107, 157, 0.5); }
+            to { text-shadow: 0 0 50px rgba(255, 107, 157, 0.8), 0 0 60px rgba(255, 107, 157, 0.4); }
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #a8dadc;
+            font-style: italic;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            align-items: start;
+        }
+
+        .story-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .story-section h2 {
+            color: #ff6b9d;
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+
+        .story-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .music-player {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: sticky;
+            top: 20px;
+        }
+
+        .album-art {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(45deg, #ff6b9d, #4ecdc4, #45b7d1);
+            background-image: url('care.gif'); /* ADD YOUR COVER IMAGE HERE */
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .music-note {
+            opacity: 0; /* Hidden when cover image is present */
+            transition: opacity 0.3s ease;
+        }
+
+        /* Show music note if image fails to load */
+        .album-art:not([style*="background-image"]) .music-note {
+            opacity: 1;
+        }
+
+        .album-art:hover {
+            transform: scale(1.05);
+        }
+
+        .player-controls {
+            margin: 30px 0;
+        }
+
+        .play-button {
+            background: linear-gradient(45deg, #ff6b9d, #ff8e9b);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+        }
+
+        .play-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.6);
+        }
+
+        .song-info {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: #a8dadc;
+        }
+
+        .mood-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .mood-tag {
+            background: rgba(255, 107, 157, 0.2);
+            color: #ff6b9d;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 107, 157, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .mood-tag:hover {
+            background: rgba(255, 107, 157, 0.3);
+            transform: scale(1.05);
+        }
+
+        .lyrics-section {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .lyrics-section h3 {
+            color: #ff6b9d;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .lyrics {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+            white-space: pre-line;
+        }
+
+        .rain-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 15px;
+            background: linear-gradient(transparent, rgba(255, 255, 255, 0.1));
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(10deg); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(100vh) rotate(10deg); opacity: 0; }
+        }
+
+        .connection-message {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border-left: 4px solid #ff6b9d;
+        }
+
+        .connection-message h3 {
+            color: #ff6b9d;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .connection-message p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .song-title {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+            
+            .album-art {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 107, 157, 0.3);
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+		/* Gallery section */
+    .gallery-section {
+      margin: 4rem 0;
+    }
+
+    .gallery-section h2 {
+      font-family: 'Georgia', cursive;
+      color: var(--text-light);
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      text-shadow: 3px 3px 6px var(--chocolate);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      border-radius: 20px;
+      display: block;
+      text-decoration: none;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(45deg, var(--soul-orange), var(--disco-pink));
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(0, 0, 128, 0.3), rgba(0, 255, 255, 0.3));
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .gallery-item .gallery-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(60, 24, 16, 0.9));
+      color: var(--text-light);
+      font-family: 'Righteous', cursive;
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      z-index: 3;
+      text-shadow: 2px 2px 4px var(--chocolate);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 20px 50px var(--shadow-warm);
+    }
+
+    .gallery-item:nth-child(even):hover {
+      transform: scale(1.08) rotate(2deg);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item:hover::before {
+      background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(50, 205, 50, 0.2));
+    }
+	/* Button Container */
+        .cognitivewave-nav {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        /* Main Button Styles */
+        .gallery-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover Effects */
+        .gallery-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
+        .gallery-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Icon Styles */
+        .gallery-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-button:hover .gallery-icon {
+            transform: translateX(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-button {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+            
+            .gallery-icon {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    </style>
+	
+
+
+<link rel="canonical" href="https://longing-is-caring.netlify.app/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <div class="rain-effect" id="rain"></div>
+    <div class="floating-hearts" id="hearts"></div>
+
+    <div class="container">
+        <div class="header">
+            <div class="artist-name">Bastart & Circé</div>
+            <h1 class="song-title">CARE</h1>
+            <div class="subtitle">apparatus mundi</div>
+        </div>
+		<div class="cognitivewave-nav">
+            <a href="https://cognitivewave-gallery-101cb.netlify.app" class="gallery-button">
+                <svg class="gallery-icon" viewBox="0 0 24 24">
+                    <path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"/>
+                </svg>
+                Back to Gallery
+            </a>
+        </div>
+
+        <div class="main-content">
+            <div class="story-section">
+                <h2>The Story Behind the Song</h2>
+                <p class="story-text">
+                    Sometimes the most beautiful music emerges from our deepest longing. "CARE" was born from a guitar riff that lived in my heart for years, waiting for the perfect moment to bloom into something meaningful.
+                </p>
+                <p class="story-text">
+                    That moment came during a quiet, sleepless night when my love was away for two weeks. In the silence, with only my thoughts and that persistent melody, I found myself crafting something that felt both deeply personal and universally human.
+                </p>
+                <p class="story-text">
+                    What started as a message to someone special became something larger—a song for everyone who has ever felt the ache of distance, the beauty of missing someone, and the hope that connects us even when we're apart.
+                </p>
+                
+                <div class="mood-tags">
+                    <span class="mood-tag">Melancholic</span>
+                    <span class="mood-tag">Hopeful</span>
+                    <span class="mood-tag">Introspective</span>
+                    <span class="mood-tag">Yearning</span>
+                    <span class="mood-tag">Dreamy</span>
+                </div>
+            </div>
+
+            <div class="music-player">
+                <div class="album-art" onclick="togglePlay()">
+                    <!-- Music note will be hidden when cover image loads -->
+                    <span class="music-note">♪</span>
+                </div>
+                
+                <!-- Audio element - ADD YOUR SOUND FILE HERE -->
+                <audio id="audioPlayer" preload="metadata">
+                    <source src="care.mp3" type="audio/mpeg">
+                    <source src="path/to/your/care-preview.wav" type="audio/wav">
+                    <source src="path/to/your/care-preview.ogg" type="audio/ogg">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <div class="player-controls">
+                    <button class="play-button" onclick="togglePlay()" id="playButton">
+                        ▶ Listen to Preview
+                    </button>
+                </div>
+                
+                <div class="song-info">
+                    <strong>Genre:</strong> Soul • Alternative Rock<br>
+                    <strong>Key:</strong> A Major<br>
+                    <strong>BPM:</strong> 112<br>
+                    <strong>Instruments:</strong> Guitar, Piano, Drums
+                </div>
+            </div>
+        </div>
+
+        <div class="connection-message">
+            <h3>A Song for All Who Long</h3>
+            <p>
+                "CARE" is more than just a song—it's a bridge between hearts separated by distance, 
+                a gentle reminder that love transcends physical space, and a warm embrace for anyone 
+                who has ever stared at the ceiling during those quiet, contemplative hours when 
+                the world sleeps but your heart stays awake, reaching across the darkness for connection.
+            </p>
+        </div>
+
+        <div class="lyrics-section">
+            <h3>Feel the Emotion</h3>
+            <div class="lyrics">
+Stars are hiding now
+Sky is painted grey
+Stars refuse to show
+Chasing dreams away
+
+Silent rain keeps falling
+Heart is softly calling
+Whishing you were here
+            </div>
+        </div>
+    </div>
+	  <footer>
+      <div class="grid-2">
+        <div>
+          <small>© <span id="year"></span> Bastart — All rights reserved.</small>
+        </div>
+        <div style="text-align:right">
+          <small>CONTACT: <a href="mailto:lostandfound@bastart666.com">lostandfound@bastart666.com</a> </small>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        // Create stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Create rain effect
+        function createRain() {
+            const rainContainer = document.getElementById('rain');
+            for (let i = 0; i < 50; i++) {
+                const drop = document.createElement('div');
+                drop.className = 'raindrop';
+                drop.style.left = Math.random() * 100 + '%';
+                drop.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                drop.style.animationDelay = Math.random() * 2 + 's';
+                rainContainer.appendChild(drop);
+            }
+        }
+
+        // Create floating hearts
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            setInterval(() => {
+                if (heartsContainer.children.length < 10) {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = '♥';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                    heartsContainer.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        if (heart.parentNode) {
+                            heart.parentNode.removeChild(heart);
+                        }
+                    }, 7000);
+                }
+            }, 3000);
+        }
+
+        // Music player functionality (real audio)
+        let isPlaying = false;
+        const audio = document.getElementById('audioPlayer');
+        
+        function togglePlay() {
+            const button = document.getElementById('playButton');
+            const albumArt = document.querySelector('.album-art');
+            
+            if (!isPlaying) {
+                audio.play().then(() => {
+                    button.innerHTML = '⏸ Pause Preview';
+                    button.style.background = 'linear-gradient(45deg, #ff8e9b, #4ecdc4)';
+                    albumArt.style.animation = 'spin 4s linear infinite';
+                    isPlaying = true;
+                }).catch(error => {
+                    console.error('Error playing audio:', error);
+                    alert('Unable to play audio. Please check if the file path is correct.');
+                });
+            } else {
+                audio.pause();
+                button.innerHTML = '▶ Listen to Preview';
+                button.style.background = 'linear-gradient(45deg, #ff6b9d, #ff8e9b)';
+                albumArt.style.animation = 'none';
+                isPlaying = false;
+            }
+        }
+
+        // Handle audio events
+        audio.addEventListener('ended', () => {
+            const button = document.getElementById('playButton');
+            const albumArt = document.querySelector('.album-art');
+            button.innerHTML = '▶ Listen to Preview';
+            button.style.background = 'linear-gradient(45deg, #ff6b9d, #ff8e9b)';
+            albumArt.style.animation = 'none';
+            isPlaying = false;
+        });
+
+        audio.addEventListener('error', (e) => {
+            console.error('Audio error:', e);
+            alert('Error loading audio file. Please check the file path and format.');
+        });
+
+        // Add spin animation for album art
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                from { transform: rotate(0deg) scale(1.05); }
+                to { transform: rotate(360deg) scale(1.05); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize effects
+        createStars();
+        createRain();
+        createHearts();
+
+        // Add interactive hover effects
+        document.querySelectorAll('.mood-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', () => {
+                tag.style.boxShadow = '0 5px 15px rgba(255, 107, 157, 0.4)';
+            });
+            tag.addEventListener('mouseleave', () => {
+                tag.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

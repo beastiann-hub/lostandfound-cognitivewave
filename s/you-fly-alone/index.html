@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Fly Alone - BASTART</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            background: radial-gradient(ellipse at center, #0d0d0d 0%, #000000 70%);
+            color: #c0c0c0;
+            overflow-x: hidden;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        .vignette {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 20%, rgba(0,0,0,0.8) 80%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+            z-index: 2;
+        }
+
+        .title {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+            letter-spacing: 0.05em;
+            font-family: 'Times New Roman', serif;
+            text-transform: none;
+        }
+
+        .artist {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: 300;
+            color: #888888;
+            margin-bottom: 3rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .description {
+            max-width: 700px;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-bottom: 3rem;
+            color: #a0a0a0;
+            line-height: 1.8;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .warning-text {
+            max-width: 600px;
+            font-size: 0.9rem;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-left: 2px solid #444;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .cta-button {
+            padding: 1rem 3rem;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid #333333;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 0;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            font-family: 'Times New Roman', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 400;
+        }
+
+        .cta-button:hover {
+            background: rgba(20, 20, 20, 0.8);
+            border-color: #555555;
+            transform: none;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .link-row {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .link-btn {
+            padding: 0.5rem 1.2rem;
+            background: rgba(30, 30, 30, 0.7);
+            border: 1px solid #444;
+            color: #e0e0e0;
+            text-decoration: none;
+            border-radius: 2px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 400;
+        }
+        .link-btn:hover {
+            background: #181818;
+            color: #fff;
+            border-color: #888;
+        }
+
+        .theme-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .theme-item {
+            text-align: center;
+            color: #666;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-weight: 300;
+        }
+
+        .theme-text {
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .lyrics-section {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5rem 2rem;
+            border-top: 1px solid #222;
+            position: relative;
+            z-index: 2;
+        }
+
+        .lyrics-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .lyrics-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            font-weight: 300;
+            font-family: 'Times New Roman', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .lyrics {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #b8b8b8;
+            font-style: normal;
+            text-align: left;
+            white-space: pre-line;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 3rem;
+            border: 1px solid #1a1a1a;
+            font-family: 'Times New Roman', serif;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .statement-section {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 4rem 2rem;
+            border-top: 1px solid #1a1a1a;
+            position: relative;
+            z-index: 2;
+        }
+
+        .statement-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .statement-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            font-weight: 400;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .statement-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #a0a0a0;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .help-resources {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #2a2a2a;
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #555;
+            font-size: 0.8rem;
+            background: #000;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .cta-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .theme-indicators {
+                gap: 2rem;
+            }
+            
+            .lyrics {
+                text-align: center;
+                padding: 2rem;
+            }
+        }
+
+        .shadow-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0.6) 100%),
+                radial-gradient(circle at 20% 80%, rgba(0,0,0,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0,0,0,0.2) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle, #ffffff 1px, transparent 1px);
+            background-size: 25px 25px;
+            animation: grain 0.8s steps(8, end) infinite;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -10%); }
+            20% { transform: translate(-15%, 5%); }
+            30% { transform: translate(7%, -25%); }
+            40% { transform: translate(-5%, 25%); }
+            50% { transform: translate(-15%, 10%); }
+            60% { transform: translate(15%, 0%); }
+            70% { transform: translate(0%, 15%); }
+            80% { transform: translate(3%, 35%); }
+            90% { transform: translate(-10%, 10%); }
+        }
+    </style>
+<link rel="canonical" href="https://bastart666.com/s/Youfly/">
+<meta property="og:url" content="https://bastart666.com/s/Youfly/">
+</head>
+<body>
+    <div class="vignette"></div>
+    <div class="shadow-overlay"></div>
+    <div class="grain"></div>
+    
+    <section class="hero">
+        <h1 class="title">You Fly Alone</h1>
+        <p class="artist">BASTART</p>
+        <p class="description">
+            A confrontation with the darkness that lives within. This song emerges from the depths of depression—not as surrender, but as testimony. Through layers of acoustic guitar, delay, and reverb, it maps the territory of isolation and the slow, difficult journey toward something that might resemble flight.
+        </p>
+        
+        <p class="warning-text">
+            This work explores themes of depression, suicidal ideation, and profound isolation. It is intended as artistic expression and connection for those who understand these depths.
+        </p>
+        
+        <div class="theme-indicators">
+            <div class="theme-item">
+                <div class="theme-text">Darkness</div>
+            </div>
+            <div class="theme-item">
+                <div class="theme-text">Isolation</div>
+            </div>
+            <div class="theme-item">
+                <div class="theme-text">Truth</div>
+            </div>
+            <div class="theme-item">
+                <div class="theme-text">Survival</div>
+            </div>
+        </div>
+        
+        <div class="cta-container">
+            <a href="#" class="cta-button" id="listen-btn">Listen</a>
+            <audio id="audio-player" src="dp.mp3" preload="auto" style="display:none;"></audio>
+            <a href="#lyrics" class="cta-button">Read</a>
+        </div>
+        <div class="link-row">
+            <a class="link-btn" href="https://linktr.ee/cognitivewave/" target="_blank" rel="noopener">ALL MY STUFF!</a>
+            <a class="link-btn" href="https://love-nolimits-113en.netlify.app/" target="_blank" rel="noopener">THERE IS NO REASON TO LOVE</a>
+            <a class="link-btn" href="https://universal-tragedy-6518.netlify.app/" target="_blank" rel="noopener">ROLES IN FALSE ARTS</a>
+        </div>
+    </section>
+    
+    <section class="lyrics-section" id="lyrics">
+        <div class="lyrics-container">
+            <h2 class="lyrics-title">The Words</h2>
+            <div class="lyrics">You are alone in this old town
+Street lights flicker hearts are down
+No voices calling no laughter sound
+Lonely whispers all around
+
+You live alone inside your room
+Walls are cold they spell out doom
+Windows show a moon in gloom
+Silent nights where shadows bloom
+
+You are alone you live alone
+Hearts of stone no one's home
+You die alone you fly alone
+Lonely throne you're on your own
+
+Morning comes still you feel
+Numb and voiceless none to heal
+Empty chair it's all surreal
+Loneliness is what you feel
+
+Dreams of light they come and go
+But in your heart the darkness grows
+Times of joy long ago
+Now you're where the lonely flows
+
+You are alone you live alone
+Hearts of stone no one's home
+You die alone you fly alone
+Lonely throne you're on your own</div>
+        </div>
+    </section>
+    
+    <section class="statement-section">
+        <div class="statement-container">
+            <h2 class="statement-title">Artist Statement</h2>
+            <p class="statement-text">
+                Depression is not a metaphor. It is not romantic. It is a disease that kills, slowly and thoroughly, erasing the self from the inside out. This song was written in that space—where breath becomes labor and existence feels like an elaborate cruelty.
+            </p>
+            <p class="statement-text">
+                But within that truthful acknowledgment of darkness, something else emerges. The ability to name the thing. To give it form through sound. To transform the weight of isolation into something that might reach another person drowning in their own silence.
+            </p>
+            <p class="statement-text">
+                "You fly alone"—this is both the cruelest truth and the beginning of freedom. When you have nothing left to lose, when you have descended to the bottom of your own psyche, there is a strange liberation. You learn that you can survive in places you never thought possible. You learn to fly with broken wings.
+            </p>
+            
+            <div class="help-resources">
+                <p><strong>Falls du mit Depressionen oder Suizidgedanken kämpfst:</strong></p>
+                <p>Telefonseelsorge: 0800 111 0 111 oder 0800 111 0 222 (kostenlos, rund um die Uhr)<br>
+                Nummer gegen Kummer: 116 123 (kostenlos)<br>
+                Online-Beratung: <em>telefonseelsorge.de</em> • <em>youth-life-line.de</em><br>
+                Freunde fürs Leben: <em>frnd.de</em></p>
+                <p>Du bist nicht allein. Professionelle Hilfe ist verfügbar. Dein Leben hat einen Wert, den dein momentaner Schmerz dir nicht sehen lässt.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p>© 2025 BASTART<br>
+        <em>"In the end, we will remember not the words of our enemies, but the silence of our friends."</em><br>
+        This song is dedicated to all who fight battles that remain invisible.</p>
+    </footer>
+
+    <script>
+        // Subtle scroll effects for depth
+        let ticking = false;
+        function updateElements() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+            ticking = false;
+        }
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateElements);
+                ticking = true;
+            }
+        }
+        window.addEventListener('scroll', requestTick);
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#') return; // allow Listen button to work
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Audio player logic for Listen button
+        const listenBtn = document.getElementById('listen-btn');
+        const audioPlayer = document.getElementById('audio-player');
+        if (listenBtn && audioPlayer) {
+            listenBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (audioPlayer.paused) {
+                    audioPlayer.play();
+                } else {
+                    audioPlayer.pause();
+                    audioPlayer.currentTime = 0;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
