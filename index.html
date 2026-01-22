@@ -1600,10 +1600,14 @@
             }
         ];
 
-        const CANON_BASE = "https://bastart666.com/s/";
-        songs.forEach(s => {
-          s.url = `${CANON_BASE}${s.canonicalId ? s.canonicalId : s.id}/`;
-        });
+        // Wichtig: relative Base für GitHub Pages (Repo-Unterpfad)
+const CANON_BASE = "s/";
+
+songs.forEach(s => {
+  const slug = (s.canonicalId && String(s.canonicalId).trim()) ? s.canonicalId : s.id;
+  s.url = `${CANON_BASE}${slug}/`;
+});
+
 
         let filteredSongs = [...songs];
         let currentView = 'grid';
